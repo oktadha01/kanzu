@@ -7,6 +7,7 @@
 // define('KONEK', 'kanpa');
 
 // PUBLIC
+// tes
 define('HOST','localhost');
 define('USER','root');
 define('PASS','kanpa2020');
