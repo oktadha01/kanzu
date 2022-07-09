@@ -3,6 +3,7 @@ include '../koneksi.php';
 $action_perum = $_POST['action-perum'];
 
 if ($action_perum == 'simpanperum') {
+    $nm_perum = $_POST['in-foto-logo'];
     $nm_perum = $_POST['nm-perum'];
     $alamat = $_POST['alamat'];
     $map = $_POST['map'];
@@ -18,8 +19,8 @@ if ($action_perum == 'simpanperum') {
     $upload_fot_logo = move_uploaded_file($tmp_fot_logo, $path_fot_logo);
 
     if ($upload_fot_logo) {
-        $simpanperum  = mysqli_query($koneksi, "INSERT INTO perumahan (nm_perum, alamat, video, map, deskripsi, logo, status_perum)
-         values ('$nm_perum', '$alamat', '$map', '$deskripsi', '$video', '$new_fot_logo', '$status')");
+        $simpanperum  = mysqli_query($koneksi, "INSERT INTO perumahan (logo)
+         values ('$new_fot_logo')");
         if ($simpanperum) { // Cek jika proses simpan ke database sukses atau tidak
             // Jika Sukses, Lakukanlllllllldggdhhfhfh :
             echo 'Proses Berhasil';
