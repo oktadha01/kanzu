@@ -49,7 +49,7 @@ $row = mysqli_fetch_array($ambil_data);
 									<div class="tab-pane fade show active" id="edit-perum" role="tabpanel" aria-labelledby="edit-perum-tab">
 										<?php
 
-										$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE id_perum = '$data_id'");
+										$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE id_perum = $data_id");
 										while ($row = mysqli_fetch_array($ambil_data)) {
 
 										?>
@@ -151,7 +151,7 @@ $row = mysqli_fetch_array($ambil_data);
 														// include '../koneksi.php';
 														// $data_id = $_POST['id-lokasi'];
 														$no = 1;
-														$ambil_data1 = mysqli_query($koneksi, "SELECT *FROM fasilitas WHERE fasilitas.id_fasperum = '$data_id'");
+														$ambil_data1 = mysqli_query($koneksi, "SELECT *FROM fasilitas WHERE fasilitas.id_fasperum = $data_id");
 														while ($row = mysqli_fetch_array($ambil_data1)) {
 														?>
 															<tr>
@@ -186,7 +186,7 @@ $row = mysqli_fetch_array($ambil_data);
 														// include '../koneksi.php';
 														// $data_id = $_POST['id-lokasi'];
 														$no = 1;
-														$ambil_data1 = mysqli_query($koneksi, "SELECT *FROM lok_terdekat WHERE id_lokperum = '$data_id'");
+														$ambil_data1 = mysqli_query($koneksi, "SELECT *FROM lok_terdekat WHERE id_lokperum = $data_id");
 														while ($row = mysqli_fetch_array($ambil_data1)) {
 														?>
 															<tr>
@@ -213,7 +213,7 @@ $row = mysqli_fetch_array($ambil_data);
 										// include '../koneksi.php';
 										// if (isset($_POST["data_id"])) {
 										//     $data_id = $_POST["data_id"];
-										$ambil_data = mysqli_query($koneksi, "SELECT *FROM spesifikasi WHERE id_spekperum = '$data_id'");
+										$ambil_data = mysqli_query($koneksi, "SELECT *FROM spesifikasi WHERE id_spekperum = $data_id");
 										while ($row = mysqli_fetch_array($ambil_data)) {
 
 										?>
@@ -395,7 +395,7 @@ $row = mysqli_fetch_array($ambil_data);
 										<?php
 										// $perum = $_GET['id'];
 										$no = 1;
-										$ambil_data = mysqli_query($koneksi, "SELECT *FROM tipe WHERE id_tipeperum = '$data_id'");
+										$ambil_data = mysqli_query($koneksi, "SELECT *FROM tipe WHERE id_tipeperum = $data_id");
 										while ($row = mysqli_fetch_array($ambil_data)) {
 										?>
 											<button type="button" id="<?php echo $row['id_tipe']; ?>" class="btn btn-xs bg-gradient-info elevation-3 edit-data-tipe" data-id="">
