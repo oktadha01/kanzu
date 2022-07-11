@@ -39,7 +39,7 @@
 						<div class="bg-product">
 							<a href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>">
 								<?php
-								$fot_display = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = '$id_perum' ORDER BY harga limit 1 ");
+								$fot_display = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
 								while ($foto = mysqli_fetch_array($fot_display)) {
 								?>
 									<img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
@@ -49,8 +49,8 @@
 								<h6 class="mb-0">mulai</h6>
 								<div class="row pl-1">
 									<?php
-									$harga_terendah = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = '$id_perum' ORDER BY harga limit 1 ");
-									// $harga_terendah = mysqli_query($koneksi, "SELECT MIN(harga) AS harga_terendah, promo FROM tipe WHERE id_tipeperum = '$id_perum' limit 1 ");
+									$harga_terendah = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
+									// $harga_terendah = mysqli_query($koneksi, "SELECT MIN(harga) AS harga_terendah, promo FROM tipe WHERE id_tipeperum = $id_perum limit 1 ");
 									while ($harga = mysqli_fetch_array($harga_terendah)) {
 									?>
 										<h6 class="bg-price font-weight-bold p-1">Rp <?php echo $harga['harga']; ?> <sub>jt</sub></h6>
@@ -63,7 +63,7 @@
 										<table>
 											<tr>
 												<?php
-												$data_tipe = mysqli_query($koneksi, "SELECT *FROM tipe WHERE id_tipeperum = '$id_perum' ORDER BY luas_p ASC");
+												$data_tipe = mysqli_query($koneksi, "SELECT *FROM tipe WHERE id_tipeperum = $id_perum ORDER BY luas_p ASC");
 												while ($tipe = mysqli_fetch_array($data_tipe)) {
 												?>
 													<td>
@@ -82,7 +82,7 @@
 										<thead>
 											<tr>
 												<?php
-												$spesifikasi = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = '$id_perum' ORDER BY harga limit 1 ");
+												$spesifikasi = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
 												while ($spek = mysqli_fetch_array($spesifikasi)) {
 												?>
 													<td scope="col" class="text-center">
