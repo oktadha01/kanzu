@@ -5,7 +5,7 @@
 // define('USER', 'root');
 // define('PASS', '');
 // define('KONEK', 'kanpa');
-///
+
 // PUBLIC
 define('HOST','localhost');
 define('USER','root');
