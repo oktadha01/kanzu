@@ -6,7 +6,7 @@ $no = 1;
 $spek = 1;
 $det = 1;
 $jumlah = 1;
-$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, tipe WHERE perumahan.nm_perum = '$data_tipe' AND tipe.id_tipe = '$id_tipe' AND  tipe.id_tipeperum = perumahan.id_perum");
+$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, tipe WHERE perumahan.nm_perum = $data_tipe AND tipe.id_tipe = $id_tipe AND  tipe.id_tipeperum = perumahan.id_perum");
 while ($row = mysqli_fetch_array($ambil_data)) {
     $tipe = $row['id_tipe'];
 ?>
@@ -200,21 +200,6 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                             </td>
                         <?php } ?>
                         <?php
-                        if ($row['ru_keluarga'] == null) { ?>
-
-                        <?php } else { ?>
-                            <td scope="col" class="text-center">
-                                <div class=" m-2">
-                                    <img src="assets/img/ru-keluarga.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
-                                    <input type="hidden" class="det<?php echo $det++; ?>" value="RU-KELUARGA">
-                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['ru_keluarga']; ?>">
-                                    <center>
-                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
-                                    </center>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <?php
                         if ($row['carportr'] == null) { ?>
 
                         <?php } else { ?>
@@ -223,6 +208,21 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                                     <img src="assets/img/carport2.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
                                     <input type="hidden" class="det<?php echo $det++; ?>" value="CARPORT">
                                     <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['carportr']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <?php
+                        if ($row['ru_keluarga'] == null) { ?>
+
+                        <?php } else { ?>
+                            <td scope="col" class="text-center">
+                                <div class=" m-2">
+                                    <img src="assets/img/ru-keluarga.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="RU-KELUARGA">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['ru_keluarga']; ?>">
                                     <center>
                                         <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
                                     </center>

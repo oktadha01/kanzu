@@ -231,10 +231,10 @@ if ($_SESSION['id_user'] == '') {
          formData.append('in-foto-logo', in_foto_logo);
          formData.append('nm-perum', $('#nm-perum').val());
          formData.append('alamat', $('#alamat').val());
-         formData.append('url-map', $('#url-map').val());
-         formData.append('map', $('#map').val());
-         formData.append('deskripsi', $('#deskripsi').val());
          formData.append('video', $('#video').val());
+         formData.append('map', $('#map').val());
+         formData.append('url-map', $('#url-map').val());
+         formData.append('deskripsi', $('#deskripsi').val());
          formData.append('cheklis-rekomendasi-produk', $('#cheklis-rekomendasi-produk').val());
 
          $.ajax({
