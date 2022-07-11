@@ -5,6 +5,7 @@ $action_perum = $_POST['action-perum'];
 if ($action_perum == 'simpanperum') {
     $nm_perum = $_POST['nm-perum'];
     $alamat = $_POST['alamat'];
+    $url_map = $_POST['url-map'];
     $map = $_POST['map'];
     $deskripsi = $_POST['deskripsi'];
     $video = $_POST['video'];
@@ -18,8 +19,8 @@ if ($action_perum == 'simpanperum') {
     $upload_fot_logo = move_uploaded_file($tmp_fot_logo, $path_fot_logo);
 
     if ($upload_fot_logo) {
-        $simpanperum  = mysqli_query($koneksi, "INSERT INTO perumahan (nm_perum, alamat, video, map, deskripsi, logo, status_perum)
-         values ('$nm_perum', '$alamat', '$map', '$deskripsi', '$video', '$new_fot_logo', '$status')");
+        $simpanperum  = mysqli_query($koneksi, "INSERT INTO perumahan (nm_perum, alamat, video, url_map, map, deskripsi, logo, status_perum)
+         values ('$nm_perum', '$alamat', '$map', '$url_map', '$deskripsi', '$video', '$new_fot_logo', '$status')");
         if ($simpanperum) { // Cek jika proses simpan ke database sukses atau tidak
             // Jika Sukses, Lakukanlllllllldggdhhfhfh :
             echo 'Proses Berhasil';
@@ -38,7 +39,7 @@ if ($action_perum == 'simpanperum') {
     $deskripsi = $_POST['edit-deskripsi'];
     $status = $_POST['edit-rekomendasi-produk'];
 
-    $query1 = "UPDATE perumahan SET nm_perum ='" . $nm_perum . "', alamat ='" . $alamat . "', video ='" . $video . "', map ='" . $map . "', deskripsi ='" . $deskripsi . "', status_perum ='" . $status . "' WHERE id_perum='" . $id_perum . "'";
+    $query1 = "UPDATE perumahan SET nm_perum ='" . $nm_perum . "', alamat ='" . $alamat . "', video ='" . $video . "', url_map ='" . $url_map . "', map ='" . $map . "', deskripsi ='" . $deskripsi . "', status_perum ='" . $status . "' WHERE id_perum='" . $id_perum . "'";
     $sql = mysqli_query($koneksi, $query1); // Eksekusi/ Jalankan query dari variabel $query
     if ($sql) {
         // $_SESSION["edit-sukses"] = 'Watchlist data has been successfully changed';

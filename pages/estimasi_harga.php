@@ -18,34 +18,34 @@ $maximum_range = 500;
                 <div class="row">
                     <div class="col-lg-2 col-md-4 col-4">
                         <button type="button" name="" id="harga1" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 200 - 250</h6>
+                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 200 - 250 jt</h6>
                         </button>
                     </div>
                     <div class="col-lg-2 col-md-4 col-4">
                         <button type="button" name="" id="harga2" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 260 - 300</h6>
+                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 251 - 300 jt</h6>
                         </button>
                     </div>
                     <div class="col-lg-2 col-md-4 col-4">
                         <button type="button" name="" id="harga3" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 400 - 500</h6>
+                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 301 - 400 jt</h6>
                         </button>
                     </div>
                 </div>
                 <div class="row mt-1">
                     <div class="col-lg-2 col-md-4 col-4">
                         <button type="button" name="" id="harga4" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 308 - 400</h6>
+                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 401 - 500 jt</h6>
                         </button>
                     </div>
                     <div class="col-lg-2 col-md-4 col-4">
                         <button type="button" name="" id="harga5" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 1 - 400</h6>
+                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 501 - 600 jt</h6>
                         </button>
                     </div>
                     <div class="col-lg-2 col-md-4 col-4">
                         <button type="button" name="" id="harga6" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 308 - 400</h6>
+                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 601 jt - 1 M</h6>
                         </button>
                     </div>
                 </div>
@@ -109,7 +109,7 @@ $maximum_range = 500;
             });
         });
         $('#harga2').click(function(e) {
-            $("#minimum_range").val('260');
+            $("#minimum_range").val('251');
             $("#maximum_range").val('300');
             let formData = new FormData();
             formData.append('minimum_range', $('#minimum_range').val());
@@ -132,8 +132,77 @@ $maximum_range = 500;
             });
         });
         $('#harga3').click(function(e) {
-            $("#minimum_range").val('308');
+            $("#minimum_range").val('301');
             $("#maximum_range").val('400');
+            let formData = new FormData();
+            formData.append('minimum_range', $('#minimum_range').val());
+            formData.append('maximum_range', $('#maximum_range').val());
+            $.ajax({
+                type: 'POST',
+                url: "pages/produk_perum.php",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    // alert(msg);
+                    $('#load_product').fadeIn('slow').html(data);
+
+                },
+                error: function() {
+                    alert("Data Gagal Diupload");
+                }
+            });
+        });
+        $('#harga4').click(function(e) {
+            $("#minimum_range").val('401');
+            $("#maximum_range").val('500');
+            let formData = new FormData();
+            formData.append('minimum_range', $('#minimum_range').val());
+            formData.append('maximum_range', $('#maximum_range').val());
+            $.ajax({
+                type: 'POST',
+                url: "pages/produk_perum.php",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    // alert(msg);
+                    $('#load_product').fadeIn('slow').html(data);
+
+                },
+                error: function() {
+                    alert("Data Gagal Diupload");
+                }
+            });
+        });
+        $('#harga5').click(function(e) {
+            $("#minimum_range").val('501');
+            $("#maximum_range").val('600');
+            let formData = new FormData();
+            formData.append('minimum_range', $('#minimum_range').val());
+            formData.append('maximum_range', $('#maximum_range').val());
+            $.ajax({
+                type: 'POST',
+                url: "pages/produk_perum.php",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    // alert(msg);
+                    $('#load_product').fadeIn('slow').html(data);
+
+                },
+                error: function() {
+                    alert("Data Gagal Diupload");
+                }
+            });
+        });
+        $('#harga6').click(function(e) {
+            $("#minimum_range").val('601');
+            $("#maximum_range").val('1 m');
             let formData = new FormData();
             formData.append('minimum_range', $('#minimum_range').val());
             formData.append('maximum_range', $('#maximum_range').val());

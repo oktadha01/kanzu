@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     <label for="edit-lantai-perum">Lantai</label>
                     <div class="form-group">
                         <input type="teks" id="edit-id-tipe" class="form-control" name="id_tipe" value="<?php echo $row['id_tipe']; ?>" hidden>
-                        <input type="number" id="edit-lantai-perum" class="form-control" name="lantai" placeholder="lantai ..." autocomplete="off" required value="<?php echo $row['lantai'];?>">
+                        <input type="number" id="edit-lantai-perum" class="form-control" name="lantai" placeholder="lantai ..." autocomplete="off" required value="<?php echo $row['lantai']; ?>">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-12">
@@ -133,6 +133,14 @@ while ($row = mysqli_fetch_array($ambil_data)) {
             <label for="edit-status">Promo</label>
             <div class="input-group mb-3">
                 <input type="text" id="edit-promo" name="promo" class="form-control" placeholder="Promo ..." value="<?php echo $row['promo']; ?>">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label for="">URL VR 360</label>
+            <div class="input-group mb-3">
+                <textarea type="text" id="edit-url-vr" name="url_vr" class="form-control" placeholder="URL VR 360 ..."></textarea>
             </div>
         </div>
     </div>
@@ -618,6 +626,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
         formData.append('edit-dapur', $('#edit-dapur').val());
         formData.append('edit-harga', $('#edit-harga').val());
         formData.append('edit-promo', $('#edit-promo').val());
+        formData.append('edit-url-vr', $('#edit-url-vr').val());
 
         $.ajax({
             type: 'POST',

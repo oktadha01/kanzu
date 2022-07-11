@@ -306,10 +306,13 @@
 			</center>
 			<div class="row jus-content">
 				<div class="col-lg-4 col-12 ">
-					<img src="assets/img/logo-btn.png" alt="Logo BTN" class="size-logo-partner">
+					<img src="assets/img/logo bank btn.png" alt="Logo BTN" class="size-logo-partner">
 				</div>
 				<div class="col-lg-4 col-12 ">
-					<img src="assets/img/logo-mandiri.png" alt="Logo BTN" class="size-logo-partner">
+					<img src="assets/img/logo btn syariah.png" alt="Logo BTN" class="size-logo-partner">
+				</div>
+				<div class="col-lg-4 col-12 ">
+					<img src="assets/img/logo mandiri.png" alt="Logo BTN" class="size-logo-partner">
 				</div>
 			</div>
 		</div>

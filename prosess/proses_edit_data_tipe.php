@@ -15,9 +15,10 @@ $ka_mandi = $_POST['edit-ka-mandi'];
 $dapur = $_POST['edit-dapur'];
 $harga = $_POST['edit-harga'];
 $promo = $_POST['edit-promo'];
+$url_vr = $_POST['edit-url-vr'];
 
 $query1 = "UPDATE tipe SET lantai ='" . $lantai . "', luas_t ='" . $luas_t . "', luas_p ='" . $luas_p . "', balkon ='" . $balkon . "', taman ='" . $taman . "', carportr ='" . $carportr . "', ru_tamu ='" . $ru_tamu . "', ru_keluarga ='" . $ru_keluarga . "', ka_tidur ='" . $ka_tidur . "', ka_mandi ='" . $ka_mandi . "', dapur ='" . $dapur . "',
-harga ='" . $harga . "', promo ='" . $promo . "' WHERE id_tipe='" . $id_tipe . "'";
+harga ='" . $harga . "', promo ='" . $promo . "', url_vr ='" . $url_vr . "' WHERE id_tipe='" . $id_tipe . "'";
 $sql = mysqli_query($koneksi, $query1); // Eksekusi/ Jalankan query dari variabel $query
 if ($sql) {
     // $_SESSION["edit-sukses"] = 'Watchlist data has been successfully changed';

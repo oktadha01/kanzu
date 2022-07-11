@@ -141,6 +141,14 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-12">
+        <label for="">URL VR 360</label>
+        <div class="input-group mb-3">
+            <textarea type="text" id="url-vr" name="url_vr" class="form-control" placeholder="URL VR 360 ..."></textarea>
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-lg-3 col-md-3 col-12">
         <div class="form-group">
             <label for="in-foto-display">Gambar Display</label>
@@ -354,6 +362,8 @@
             formData.append('harga', $('#harga').val());
             formData.append('status', $('#status').val());
             formData.append('promo', $('#promo').val());
+            formData.append('promo', $('#promo').val());
+            formData.append('url-vr', $('#url-vr').val());
             formData.append('nm-foto-display', $('#nm-foto-display').val());
             formData.append('nm-foto-grid', $('#nm-foto-grid').val());
             formData.append('nm-foto-lantai1', $('#nm-foto-lantai1').val());

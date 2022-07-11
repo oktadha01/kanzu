@@ -54,19 +54,25 @@ if ($_SESSION['id_user'] == '') {
                                        </div>
                                     </div>
                                     <div class="row">
-                                       <div class="col-lg-4 col-12">
+                                       <div class="col-lg-6 col-12">
                                           <label for="video">Video</label>
                                           <div class="form-group">
                                              <textarea type="text" id="video" class="form-control" name="video" rows="2" placeholder="URL KEY Video  ..." autocomplete="off" required value=""></textarea>
                                           </div>
                                        </div>
-                                       <div class="col-lg-4 col-12">
-                                          <label for="map">GOOGLE MAPS</label>
+                                       <div class="col-lg-6 col-12">
+                                          <label for="url-map">URL Google Maps</label>
+                                          <div class="form-group">
+                                             <textarea type="text" id="url-map" class="form-control" name="url_map" rows="2" placeholder="URL GOOGLE Map  ..." autocomplete="off" required value=""></textarea>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-6 col-12">
+                                          <label for="map">KEY Google Maps</label>
                                           <div class="form-group">
                                              <textarea type="text" id="map" class="form-control" name="map" rows="2" placeholder="URL KEY Map  ..." autocomplete="off" required value=""></textarea>
                                           </div>
                                        </div>
-                                       <div class="col-lg-4 col-12">
+                                       <div class="col-lg-6 col-12">
                                           <label for="deskripsi">Deskripsi</label>
                                           <div class="form-group">
                                              <textarea type="text" id="deskripsi" class="form-control" name="deskripsi" rows="2" placeholder="Deskripsi ..." autocomplete="off" required value=""></textarea>
@@ -225,6 +231,7 @@ if ($_SESSION['id_user'] == '') {
          formData.append('in-foto-logo', in_foto_logo);
          formData.append('nm-perum', $('#nm-perum').val());
          formData.append('alamat', $('#alamat').val());
+         formData.append('url-map', $('#url-map').val());
          formData.append('map', $('#map').val());
          formData.append('deskripsi', $('#deskripsi').val());
          formData.append('video', $('#video').val());

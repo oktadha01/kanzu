@@ -175,7 +175,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                         <?php } else { ?>
                             <td scope="col" class="text-center">
                                 <div class=" m-2">
-                                    <img src="assets/img/carport2.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                    <img src="assets/img/taman.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
                                     <input type="hidden" class="det<?php echo $det++; ?>" value="TAMAN">
                                     <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['taman']; ?>">
                                     <center>
@@ -190,8 +190,8 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                         <?php } else { ?>
                             <td scope="col" class="text-center">
                                 <div class=" m-2">
-                                    <img src="assets/img/carport2.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
-                                    <input type="hidden" class="det<?php echo $det++; ?>" value="BAKON">
+                                    <img src="assets/img/balkon.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="BALKON">
                                     <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['balkon']; ?>">
                                     <center>
                                         <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
@@ -205,7 +205,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                         <?php } else { ?>
                             <td scope="col" class="text-center">
                                 <div class=" m-2">
-                                    <img src="assets/img/carport2.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                    <img src="assets/img/ru-keluarga.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
                                     <input type="hidden" class="det<?php echo $det++; ?>" value="RU-KELUARGA">
                                     <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['ru_keluarga']; ?>">
                                     <center>
@@ -447,12 +447,12 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     <h4>ALAMAT <?php echo $row['nm_perum']; ?></h4>
                 </div>
                 <div class="card-body p-1">
-                    <!-- <iframe class="col-12" src=""></iframe> -->
-                    <!-- <iframe class="col-12" src="http://192.168.18.25/360altongreenhouse/index.html"></iframe> -->
                     <iframe class="col-12" src="<?php echo $row['map']; ?>"></iframe>
-                    <button type="button" name="simpan" id="" class="col-12 btn btn-sm btn-success">
-                        <i class="fa-solid fa-earth-asia"></i> GOOGLE MAPS
-                    </button>
+                    <a href="<?php echo $row['url_map']; ?>">
+                        <button type="button" name="simpan" id="" class="col-12 btn btn-sm btn-success">
+                            <i class="fa-solid fa-earth-asia"></i> GOOGLE MAPS
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -465,29 +465,31 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     <div class="timeline-body">
                         <div class="embed-responsive embed-responsive-16by9">
                             <?php echo $row['video']; ?>
-                            <!-- <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="card p-1">
-        <div class="card-header">
-            <h6>VR 360 PERUMAHAN <?php echo $row['nm_perum']; ?> type <?php echo $row['luas_p']; ?></h6>
-        </div>
-        <div class="card-body p-1">
-            <section class="content-header p-0">
-                <div class="container-fluid p-0">
-                    <!-- <iframe class="responsive-iframe" src="http://192.168.18.25/360altongreenhouse/index.html"></iframe> -->
-                    <div class="rwd-media">
-                        <iframe src="http://192.168.18.25/360altongreenhouse/index.html?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="448" height="252" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <?php
+    if ($row['url_vr'] == '') {
+    } else { ?>
+        <div class="card p-1">
+            <div class="card-header">
+                <h6>VR 360 PERUMAHAN <?php echo $row['nm_perum']; ?> type <?php echo $row['luas_p']; ?></h6>
+            </div>
+            <div class="card-body p-1">
+                <section class="content-header p-0">
+                    <div class="container-fluid p-0">
+                        <!-- <iframe class="responsive-iframe" src="http://192.168.18.25/360altongreenhouse/index.html"></iframe> -->
+                        <div class="rwd-media">
+                            <iframe src="<?php echo $row['url_vr']; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="448" height="252" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                        </div>
                     </div>
-                </div>
-                <!-- <button class="button test">Click me to fullscreen the iframe</button> -->
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
+    <?php } ?>
     <div class="row mt-3">
         <div class="col-12">
             <img src="assets/img/foto_grid/<?php echo $row['fot_grid']; ?>" alt="PT KANPA Logo" class="img-fluid" />
