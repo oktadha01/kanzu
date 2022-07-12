@@ -78,13 +78,13 @@
                                                 </div>
                                             </td>
                                             <?php
-                                            if ($row['ru_makan'] == null) { ?>
+                                            if ($spek['ru_makan'] == null) { ?>
                                             <?php } else { ?>
                                                 <td scope="col" class="text-center">
                                                     <div class="">
                                                         <img src="assets/img/r-makan.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
                                                         <center>
-                                                            <h6 class="mt-1"><?php echo $row['ru_makan']; ?></h6>
+                                                            <h6 class="mt-1"><?php echo $spek['ru_makan']; ?></h6>
                                                         </center>
                                                     </div>
                                                 </td>
