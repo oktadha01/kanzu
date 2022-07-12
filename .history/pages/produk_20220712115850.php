@@ -110,7 +110,6 @@
             ?>
         </div>
     </div>
-    <hr>
     <div class="row mb-5">
         <div class="col-12">
             <div class="gallery js-flickity" data-flickity-options='{ "freeScroll": true }'>
