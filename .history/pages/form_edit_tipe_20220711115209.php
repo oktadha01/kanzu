@@ -113,16 +113,6 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text pad-cus-6px">
-                                <img src="assets/img/r-makan.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
-                            </span>
-                        </div>
-                        <input type="number" id="edit-ru-makan" class="form-control" name="ru_makan" placeholder="Ru-Makan...">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
                     <label for="edit-dapur">Dapur</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -633,7 +623,6 @@ while ($row = mysqli_fetch_array($ambil_data)) {
         formData.append('edit-ru-keluarga', $('#edit-ru-keluarga').val());
         formData.append('edit-ka-tidur', $('#edit-ka-tidur').val());
         formData.append('edit-ka-mandi', $('#edit-ka-mandi').val());
-        formData.append('edit-ru-makan', $('#edit-ru-makan').val());
         formData.append('edit-dapur', $('#edit-dapur').val());
         formData.append('edit-harga', $('#edit-harga').val());
         formData.append('edit-promo', $('#edit-promo').val());
