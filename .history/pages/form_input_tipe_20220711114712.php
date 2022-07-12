@@ -121,16 +121,6 @@
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/r-makan.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
-                        </span>
-                    </div>
-                    <input type="number" id="ka-mandi" class="form-control" name="ka_mandi" placeholder="K-Mandi...">
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-6">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text pad-cus-6px">
                             <img src="assets/img/dapur.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>

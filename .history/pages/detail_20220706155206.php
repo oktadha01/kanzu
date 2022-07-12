@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 		<div class="col-12 height-43rem;">
 			<div class="slider m-0">
 				<?php
-				$data_slideperum = mysqli_query($koneksi, "SELECT *FROM fot_slide WHERE id_fotperum = $id_perum");
+				$data_slideperum = mysqli_query($koneksi, "SELECT *FROM fot_slide WHERE id_fotperum = '$id_perum'");
 				while ($data = mysqli_fetch_array($data_slideperum)) {
 				?>
 					<div>
@@ -135,7 +135,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 										<div class="bg-product">
 											<a href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>">
 												<?php
-												$fot_display = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
+												$fot_display = mysqli_query($koneksi, "SELECT MIN(harga) AS harga_terendah, fot_display FROM tipe WHERE id_tipeperum = '$id_perum' limit 1 ");
 												while ($foto = mysqli_fetch_array($fot_display)) {
 												?>
 													<img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
@@ -145,33 +145,38 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 												<h6 class="mb-0">mulai</h6>
 												<div class="row pl-1">
 													<?php
-													$harga_terendah = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
-													// $harga_terendah = mysqli_query($koneksi, "SELECT MIN(harga) AS harga_terendah, promo FROM tipe WHERE id_tipeperum = $id_perum limit 1 ");
+													$harga_terendah = mysqli_query($koneksi, "SELECT MIN(harga) AS harga_terendah, promo FROM tipe WHERE id_tipeperum = '$id_perum' limit 1 ");
 													while ($harga = mysqli_fetch_array($harga_terendah)) {
 													?>
-														<h6 class="bg-price font-weight-bold p-1">Rp <?php echo $harga['harga']; ?> <sub>jt</sub></h6>
-														<h6 class="ml-1 font-weight-bold">*<?php echo $harga['promo']; ?></h6>
+														<div class="row">
+															<div class="col-12">
+																<h6 class="bg-price font-weight-bold p-1">Rp <?php echo $harga['harga_terendah']; ?> <sub>jt</sub></h6>
+															</div>
+															<div class="col-12">
+																<h6 class="ml-1 font-weight-bold">*<?php echo $harga['promo']; ?></h6>
+															</div>
+														</div>
 													<?php } ?>
 												</div>
-												<h5 class="font-weight-bold">
+												<h6 class="font-weight-bold">
 													<a class="text-dark" href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>"><?php echo $row['nm_perum']; ?></a>
 													<a class="text-dark" href=""> - Tipe mulai
 														<table>
 															<tr>
 																<?php
-																$data_tipe = mysqli_query($koneksi, "SELECT *FROM tipe WHERE id_tipeperum = $id_perum ORDER BY luas_p ASC");
-																while ($tipe = mysqli_fetch_array($data_tipe)) {
+																$data_tipe = mysqli_query($koneksi, "SELECT *FROM tipe WHERE id_tipeperum = '$id_perum' ORDER BY luas_p ASC");
+																while ($data = mysqli_fetch_array($data_tipe)) {
 																?>
 																	<td>
-																		<h4 class="font-weight-bold bor-tip-dash">
-																			<?php echo $tipe['luas_p']; ?>/<?php echo $tipe['luas_t']; ?>
-																		</h4>
+																		<h6 class="font-weight-bold bor-tip-dash">
+																			<?php echo $data['luas_p']; ?>/<?php echo $data['luas_t']; ?>
+																		</h6>
 																	</td>
 																<?php } ?>
 															</tr>
 														</table>
 													</a>
-												</h5>
+												</h6>
 												<p class="font-weight-bold"><?php echo $row['alamat']; ?></p>
 												<div class="col-12 mb-2">
 													<center>

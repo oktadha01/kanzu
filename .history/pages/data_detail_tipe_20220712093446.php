@@ -275,21 +275,6 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                             </td>
                         <?php } ?>
                         <?php
-                        if ($row['ru_makan'] == null) { ?>
-
-                        <?php } else { ?>
-                            <td scope="col" class="text-center">
-                                <div class=" m-2">
-                                    <img src="assets/img/r-mandi.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
-                                    <input type="hidden" class="det<?php echo $det++; ?>" value="RU-MAKAN">
-                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['r-makan']; ?>">
-                                    <center>
-                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
-                                    </center>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <?php
                         if ($row['dapur'] == null) { ?>
 
                         <?php } else { ?>
@@ -427,21 +412,6 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     </th>
                     <th>
                         <h6 class="speksi8"></h6>
-                    </th>
-                </tr>
-            </table>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6 det-spek9">
-            <table>
-                <tr>
-                    <th>
-                        <i class="fa-solid fa-i alphabet"></i>
-                    </th>
-                    <th>
-                        <h6 class="nm-spek9"></h6>
-                    </th>
-                    <th>
-                        <h6 class="speksi9"></h6>
                     </th>
                 </tr>
             </table>
