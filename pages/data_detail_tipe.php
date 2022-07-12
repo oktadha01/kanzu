@@ -6,7 +6,7 @@ $no = 1;
 $spek = 1;
 $det = 1;
 $jumlah = 1;
-$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, tipe WHERE perumahan.nm_perum = $data_tipe AND tipe.id_tipe = $id_tipe AND  tipe.id_tipeperum = perumahan.id_perum");
+$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, tipe WHERE perumahan.nm_perum = '$data_tipe' AND tipe.id_tipe = '$id_tipe' AND  tipe.id_tipeperum = perumahan.id_perum");
 while ($row = mysqli_fetch_array($ambil_data)) {
     $tipe = $row['id_tipe'];
 ?>
