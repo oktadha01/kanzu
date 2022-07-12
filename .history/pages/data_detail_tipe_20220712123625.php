@@ -602,8 +602,6 @@ while ($row = mysqli_fetch_array($ambil_data)) {
             $('.speksi7').text(':' + $('.jumlah7').val());
             $('.nm-spek8').text($('.det8').val());
             $('.speksi8').text(':' + $('.jumlah8').val());
-            $('.nm-spek9').text($('.det9').val());
-            $('.speksi9').text(':' + $('.jumlah9').val());
 
             if ($('.speksi8').text() == ':undefined') {
                 $('.det-spek8').hide();

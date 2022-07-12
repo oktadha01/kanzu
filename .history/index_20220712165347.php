@@ -16,8 +16,8 @@ session_start();
     <style>
         #load {
             margin-top: 0;
-            width: 100%;
-            height: 100%;
+            /* width: 100%;
+            height: 100%; */
             position: fixed;
             z-index: 9999;
             background: url("assets/img/logokanpa.png") no-repeat center center rgba(20 31 70)
