@@ -14,6 +14,16 @@ session_start();
     <title>KANZU GROUP INDONESIA</title>
     <!-- Tell the browser to be responsive to screen width -->
     <!-- Font Awesome -->
+    <style>
+        #load {
+            margin-top: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 9999;
+            background: url("assets/img/logokanpa.png") no-repeat center center rgba(20 31 70)
+        }
+    </style>
     <link rel="shortcut icon" href="assets/img/logokanpatitle.jpeg">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -26,10 +36,24 @@ session_start();
 </head>
 
 <body class="hold-transition lockscreen">
-
-    <div class="container mt-auto pl-0">
+    <div id="load"></div>
+    <script>
+        document.onreadystatechange = function() {
+            var state = document.readyState
+            if (state == 'interactive') {
+                document.getElementById('login').style.visibility = "hidden";
+            } else if (state == 'complete') {
+                setTimeout(function() {
+                    document.getElementById('interactive');
+                    document.getElementById('load').style.visibility = "hidden";
+                    document.getElementById('login').style.visibility = "visible";
+                }, 1000);
+            }
+        }
+    </script>
+    <div id="login" class="container mt-auto pl-0">
         <!-- <center> -->
-        <div id="login" class="lockscreen-wrapper box border-login">
+        <div class="lockscreen-wrapper box border-login">
             <div class="lockscreen-logo">
                 <p><b>KANZU</b>GROUP</p>
             </div>
@@ -53,7 +77,7 @@ session_start();
                         </div>
                     </div>
                     <div class="input-group input-password">
-                        <input id="password" type="password" class="form-control" name="password" placeholder="password" autocomplete="off" value="">
+                        <input id="password" type="password" class="form-control autofocus" name="password" placeholder="password" autocomplete="off" value="">
                         <div class="input-group-append">
                             <button id="btn-login" type="submit" class="btn"><i class="fas fa-arrow-right text-muted"></i></button>
                         </div>
@@ -64,6 +88,7 @@ session_start();
         </div>
         <!-- </center> -->
     </div>
+
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="plugins/daterangepicker/moment.min.js"></script>
@@ -74,7 +99,11 @@ session_start();
     <script src="assets/js/adminlte.js"></script>
     <script src="assets/js/demo.js"></script>
     <script src="assets/js/login.js"></script>
-
+    <script>
+        
+        $('.input-password').hide();
+        document.getElementById('login').style.visibility = "hidden";
+    </script>
     <?php if (@$_SESSION['hak-akses']) { ?>
         <script>
             swal("Oopps!", "<?php echo $_SESSION['hak-akses']; ?>", "error");
@@ -89,7 +118,6 @@ session_start();
         <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
     <?php unset($_SESSION['login-error']);
     } ?>
-    
 </body>
 
 </html>

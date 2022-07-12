@@ -1,5 +1,9 @@
-body{
+body {
     padding-bottom: 0;
+}
+
+.nav-up {
+    top: -40px;
 }
 
 #navbar {
@@ -227,7 +231,7 @@ body{
     margin-top: 5rem;
 }
 
-.pl-32px{
+.pl-32px {
     padding-left: 32px;
 }
 

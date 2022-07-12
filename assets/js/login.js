@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     function disableBtn() {
         document.getElementById("btn-login").disabled = true;
     }
@@ -6,7 +7,7 @@ $(document).ready(function () {
     function enableBtn() {
         document.getElementById("btn-login").disabled = false;
     }
-    $('.input-password').hide();
+    
     $(document).on('keypress', '#username', function (e) {
         if (e.which == 13) {
             // alert('You pressed enter!');
@@ -27,6 +28,7 @@ $(document).ready(function () {
                 if ($('.input-password').val() == 0) {
                     disableBtn();
                     $('.input-password').show(300);
+                    // $('#password').attr('autofocus', true);
                     $('.input-user').hide();
                 } else {
 
@@ -56,6 +58,7 @@ $(document).ready(function () {
             });
         } else {
             $('.input-password').show(300);
+            // $('#password').attr('autofocus', true);
             $('.input-user').hide();
         }
 

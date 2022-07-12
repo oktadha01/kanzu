@@ -13,9 +13,20 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT KANPA</title>
+    <style>
+        #load {
+            margin-top: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 9999;
+            background: url("assets/img/logokanpa.png") no-repeat center center rgba(20 31 70)
+        }
+    </style>
     <link rel="shortcut icon" href="assets/img/logokanpatitle.jpeg">
     <!-- Tell the browser to be responsive to screen width -->
     <!-- Font Awesome -->
+
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -33,15 +44,30 @@ session_start();
 </head>
 
 <body class="container hold-transition layout-top-nav pl-0 pr-0">
+    <div id="load"></div>
+    <script>
+        document.onreadystatechange = function() {
+            var state = document.readyState
+            if (state == 'interactive') {
+                document.getElementById('conten').style.visibility = "hidden";
+            } else if (state == 'complete') {
+                setTimeout(function() {
+                    document.getElementById('interactive');
+                    document.getElementById('load').style.visibility = "hidden";
+                    document.getElementById('conten').style.visibility = "visible";
+                }, 1000);
+            }
+        }
+    </script>
     <div class="">
-        <div class="wrapper">
+        <div id="conten" class="wrapper">
             <!-- Navbar -->
             <nav id="navbar" class="main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">
                 <div class=" container-fluid pr-1">
                     <a href="index.php?=dashboard" class="navbar-brand p-0">
                         <img src="<?php echo 'assets/img/logokanpaheader.jpeg'; ?>" alt="PT KANPA Logo" class="brand-image" style="height: 64px; width: 64px;">
-                        <span class="brand-text font-weight-bold pl-32px"> KANZU PERMAI ABADI</span>
                     </a>
+                    <span class="brand-text font-weight-bold" style="font-size: initial;">KANZU PERMAI ABADI</span>
                     <button class="navbar-toggler order-1 p bg-white" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -235,17 +261,54 @@ session_start();
         </script>
     <?php } ?>
     <script>
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("navbar").style.top = "0";
-            } else {
-                document.getElementById("navbar").style.top = "-100px";
-            }
-            prevScrollpos = currentScrollPos;
-        }
+        // var prevScrollpos = window.pageYOffset;
+        // window.onscroll = function() {
+        //     var currentScrollPos = window.pageYOffset;
+        //     if (prevScrollpos > currentScrollPos) {
+        //         document.getElementById("navbar").style.top = "0";
+        //     } else {
+        //         document.getElementById("navbar").style.top = "-500px";
+        //     }
+        //     prevScrollpos = currentScrollPos;
+        // }
         // alert($('#id-tipe').val());
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('#navbar').outerHeight();
+
+        $(window).scroll(function(event) {
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+
+            // Make sure they scroll more than delta
+            if (Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight) {
+                // Scroll Down
+                $('#navbar').hide(200);
+            } else {
+                // Scroll Up
+                if (st + $(window).height() < $(document).height()) {
+                    $('#navbar').show(200);
+                }
+            }
+
+            lastScrollTop = st;
+        }
     </script>
     <script>
         <?php
