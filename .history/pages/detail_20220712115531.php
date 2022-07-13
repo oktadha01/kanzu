@@ -73,7 +73,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 						while ($row = mysqli_fetch_array($ambil_data)) {
 						?>
 							<div class="col-lg-6 col-12 mt-1">
-								<i class="fa-solid fa-location-dot"></i> <?php echo $row['jarak']; ?> Menit Ke <?php echo $row['lokasi']; ?>
+								<i class="fa-solid fa-location-dot"></i> <?php echo $row['jarak']; ?> Km Dari <?php echo $row['lokasi']; ?>
 							</div>
 						<?php } ?>
 					</div>

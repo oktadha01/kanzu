@@ -151,7 +151,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
         <div class="col-12">
             <label for="">URL VR 360</label>
             <div class="input-group mb-3">
-                <textarea type="text" id="edit-url-vr" name="url_vr" class="form-control" placeholder="URL VR 360 ..."><?php echo $row['url_vr'];?></textarea>
+                <textarea type="text" id="edit-url-vr" name="url_vr" class="form-control" placeholder="URL VR 360 ..."></textarea>
             </div>
         </div>
     </div>
