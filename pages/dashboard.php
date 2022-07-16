@@ -1,7 +1,9 @@
 <!-- /.content -->
 <!-- <img src="assets/img/home1.jpg" alt="PT KANPA Logo" class="bg-img img-fluid elevation-3"> -->
 <!-- Content Header (Page header) -->
-<div class="container">
+
+
+<div id="" class="container">
 	<div class="row mt-5rem">
 		<div class="col-12 p-0">
 			<div class="slider m-0">
@@ -318,7 +320,7 @@
 			</center>
 			<div class="row jus-content">
 				<div class="col-lg-4 col-12 ">
-					<img src="assets/img/logo bank btn.png" alt="Logo BTN" class="img-fluid">
+					<img src="assets/img/logo btn.png" alt="Logo BTN" class="img-fluid">
 				</div>
 				<div class="col-lg-4 col-12 ">
 					<img src="assets/img/logo btn syariah.png" alt="Logo BTN" class="img-fluid">

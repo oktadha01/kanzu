@@ -32,10 +32,14 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <!-- Ionicons -->
     <!-- <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
     <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
     <link rel="stylesheet" href="assets/css/app.min.css">
     <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 
@@ -65,8 +69,8 @@ session_start();
             }
         }
     </script>
-    <div class="">
-        <div id="conten" class="wrapper">
+    <div class="conten">
+        <div class="wrapper">
             <!-- Navbar -->
             <nav id="navbar" class="main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">
                 <div class=" container-fluid pr-1">
@@ -99,6 +103,7 @@ session_start();
                                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                                         <li><a href="index.php?p=tambah_data" class="dropdown-item"> Olah data </a></li>
                                         <li><a href="index.php?p=form_foto_slide" class="dropdown-item"> Olah foto slide </a></li>
+                                        <li><a href="index.php?p=pembeli" class="dropdown-item"> Data Pembeli </a></li>
                                     </ul>
                                 </li>
                             <?php } else { ?>
@@ -239,12 +244,7 @@ session_start();
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="plugins/daterangepicker/moment.min.js"></script>
-
-    <!-- <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
@@ -252,6 +252,11 @@ session_start();
     <script src="plugins/toastr/toastr.min.js"></script>
     <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
     <!-- <script src="assets/js/vendor.min.js"></script> -->
     <!-- AdminLTE App -->
     <script src="assets/js/demo.js"></script>
@@ -263,21 +268,10 @@ session_start();
     while ($row = mysqli_fetch_array($ambil_data)) {
     ?>
         <script type="text/javascript">
-            $('#id-perum-tipe').val('<?php echo $row['nm_perum']; ?>')
+            $('#id-perum-tipe').val('<?php echo $row['nm_perum']; ?>');
         </script>
     <?php } ?>
     <script>
-        // var prevScrollpos = window.pageYOffset;
-        // window.onscroll = function() {
-        //     var currentScrollPos = window.pageYOffset;
-        //     if (prevScrollpos > currentScrollPos) {
-        //         document.getElementById("navbar").style.top = "0";
-        //     } else {
-        //         document.getElementById("navbar").style.top = "-500px";
-        //     }
-        //     prevScrollpos = currentScrollPos;
-        // }
-        // alert($('#id-tipe').val());
         var didScroll;
         var lastScrollTop = 0;
         var delta = 5;
@@ -315,7 +309,18 @@ session_start();
 
             lastScrollTop = st;
         }
+
+        $(function() {
+            $('#reservation').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                locale: {
+                    format: 'DD-MMMM-YYYY'
+                }
+            })
+        });
     </script>
+
     <script>
         <?php
         $no = 1;

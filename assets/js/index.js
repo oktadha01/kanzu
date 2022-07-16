@@ -1,11 +1,15 @@
 $(document).ready(function () {
 
+
     $('#detail').load("pages/form_edit_perum.php");
     $('.data').load("pages/data_perum.php");
     $('.data-fasil').load("pages/fasilitas.php");
     $('.data-lokterdekat').load("pages/form_input_lokterdekat.php");
     $('.data-spek').load("pages/form_input_spesifikasi.php");
     $('.data-tipe').load("pages/form_input_tipe.php");
+    $('#data-pembeli').load('pages/data_pembeli.php');
+
+    
 
     $('.slider').slick({
         autoplay: true,
@@ -71,7 +75,7 @@ $(document).ready(function () {
     $('#detail').attr('hidden', true);
     // $('.data-foto-slide').load("pages/form_foto_slide.php");
 
-    
+
 
     // INPUT TIPE
     $(document).on("click", "#pilih_gambar1", function () {
@@ -270,4 +274,8 @@ $(document).ready(function () {
             }
         });
     });
+
+    
+    // $('.dataTables_filter').attr('hidden', true);
+    // alert($('#reservation').val())
 });

@@ -40,6 +40,20 @@ body {
 
 }
 
+.dataTables_filter {
+    float: right !important;
+}
+
+.dataTables_length {
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.dataTables_filter {
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+
 .bg-img {
     /* background-image: url('../img/home1.jpg'); */
     background-repeat: no-repeat;
@@ -59,6 +73,10 @@ body {
     border-radius: 5px;
     color: white;
     width: fit-content;
+}
+
+.badge{
+    font-size: 90%;
 }
 
 .navbar-nav {
@@ -309,6 +327,10 @@ body {
 
 .text-konten-news {
     font-family: Roboto;
+}
+
+.text-align-justify {
+    text-align: justify;
 }
 
 .tittle-news {
