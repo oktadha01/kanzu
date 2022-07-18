@@ -22,7 +22,7 @@ if ($list == '0') {
     <h6 class="mb-0">mulai</h6>
     <div class="row pl-1">
                <h5 class="bg-price p-1">Rp ' . $row['harga'] . ' <sub>jt</sub></h5>
-               <h6 class="ml-1 font-weight-bold">' . $row['promo'] . '</h6>
+               <h6 class="ml-1 font-weight-bold">*PROMO DICS ' . $row['promo'] . ' <sub>jt</sub></h6>
                </div>
                <h4 class="font-weight-bold">
                <a class="text-dark" href="index.php?p=detail&id=' . $row['nm_perum'] . '">' . $row['nm_perum'] . ' - Tipe mulai' . $row['luas_p'] . '/' . $row['luas_t'] . '

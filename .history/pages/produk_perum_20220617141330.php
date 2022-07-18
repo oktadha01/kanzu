@@ -17,12 +17,12 @@ if ($list == '0') {
 
         echo '<div class="col-lg-4 col-md-12 col-12 mt-3">
         <div class="bg-product">
-        <img src="assets/img/foto_display' . $row['fot_display'] . '" alt="PT KANPA Logo" class="img-fluid" />
+        <img src="assets/img/' . $row['fot_display'] . '" alt="PT KANPA Logo" class="img-fluid" />
     <div class="p-2">
     <h6 class="mb-0">mulai</h6>
     <div class="row pl-1">
                <h5 class="bg-price p-1">Rp ' . $row['harga'] . ' <sub>jt</sub></h5>
-               <h6 class="ml-1 font-weight-bold">' . $row['promo'] . '</h6>
+               <h6 class="ml-1 font-weight-bold">*PROMO DICS ' . $row['promo'] . ' <sub>jt</sub></h6>
                </div>
                <h4 class="font-weight-bold">
                <a class="text-dark" href="index.php?p=detail&id=' . $row['nm_perum'] . '">' . $row['nm_perum'] . ' - Tipe mulai' . $row['luas_p'] . '/' . $row['luas_t'] . '
