@@ -49,8 +49,10 @@ session_start();
 
 <body class="container hold-transition layout-top-nav pl-0 pr-0">
     <div class="row">
-        <div class="col">
-            <div id="load"></div>
+        <div class="col-12">
+            <div class="container">
+                <div id="load"></div>
+            </div>
         </div>
     </div>
     <script>
