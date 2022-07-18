@@ -8,11 +8,11 @@
 		<div class="col-12 p-0">
 			<div class="slider m-0">
 				<?php
-				$ambil_data = mysqli_query($koneksi, "SELECT file_slidedashboard, link FROM fot_slide WHERE file_slidedashboard");
+				$ambil_data = mysqli_query($koneksi, "SELECT file_slidedashboard FROM fot_slide");
 				while ($slide = mysqli_fetch_array($ambil_data)) {
 				?>
 					<div>
-						<a href="<?php echo $slide['link']; ?>">
+						<a href="#">
 							<img class="img-fluid" src="assets/img/foto_slidedashboard/<?php echo $slide['file_slidedashboard']; ?>" alt="Image 1">
 						</a>
 					</div>

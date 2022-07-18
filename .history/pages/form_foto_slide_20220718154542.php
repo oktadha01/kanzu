@@ -20,12 +20,11 @@ if ($_SESSION['id_user'] == '') {
                     $newfilefoto      = date('dmYHis') . $fileName;
                     $targetFilePath  = $uploadsDir . $newfilefoto;
                     $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
-                    $link      = $_POST['link'];
                     $uploadOk = 1;
 
                     if (in_array($fileType, $allowedFileType)) {
                         if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                            $sqlVal = "('" . $newfilefoto . "', '" . $link . "')";
+                            $sqlVal = "('" . $newfilefoto . "')";
                         } else {
                             $response = array(
                                 "status" => "alert-danger",
@@ -40,7 +39,7 @@ if ($_SESSION['id_user'] == '') {
                     }
                     // Add into MySQL database
                     if (!empty($sqlVal)) {
-                        $insert = $koneksi->query("INSERT INTO fot_slide (file_slidedashboard, link) VALUES $sqlVal");
+                        $insert = $koneksi->query("INSERT INTO fot_slide (file_slidedashboard) VALUES $sqlVal");
                         if ($insert) {
                             $response = array(
                                 "status" => "alert-success",
@@ -244,9 +243,6 @@ if ($_SESSION['id_user'] == '') {
                             <input type="text" id="in-dashboard" name="upload_foto_dashboard" value="0" hidden>
                             <input type="text" id="id-pilih-perum" name="id_fotperum" value="" hidden>
                             <input type="text" id="id-pilih-tipe" name="id_fottipe" value="" hidden>
-                            <div class="form-group ">
-                                <input type="text" id="link" class="form-control" name="link" placeholder="Link ..." autocomplete="off" required value="">
-                            </div>
                             <div class="custom-file">
                                 <input type="file" name="file_foto[]" class="custom-file-input" id="chooseFile" multiple disabled>
                                 <label class="custom-file-label" for="chooseFile">Pilih file foto slide</label>
@@ -323,7 +319,6 @@ if ($_SESSION['id_user'] == '') {
         $(document).ready(function() {
 
             $('#chooseFile').attr('disabled');
-            $('#link').attr('hidden', true);
 
             $('#pilih-tipe').change(function(e) {
                 var tipe = $("#pilih-tipe").find(':selected').val();
@@ -336,10 +331,8 @@ if ($_SESSION['id_user'] == '') {
                     // profesi.push($(this).val());
                     $('#in-dashboard').val('dashboard');
                     $('#chooseFile').removeAttr('disabled', true);
-                    $('#link').removeAttr('hidden', true);
                 } else {
-                    $('#link').attr('hidden', true);
-                    $('#chooseFile').attr('disabled', true);
+                    $('#chooseFile').attr('disabled');
                     $('#in-dashboard').val('0');
                     // alert('tdk');
                 }

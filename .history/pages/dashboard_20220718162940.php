@@ -12,7 +12,7 @@
 				while ($slide = mysqli_fetch_array($ambil_data)) {
 				?>
 					<div>
-						<a href="<?php echo $slide['link']; ?>">
+						<a href="#">
 							<img class="img-fluid" src="assets/img/foto_slidedashboard/<?php echo $slide['file_slidedashboard']; ?>" alt="Image 1">
 						</a>
 					</div>

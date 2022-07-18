@@ -3,186 +3,126 @@ if ($_SESSION['id_user'] == '') {
     header("location:index.php");
 } else {
     if (isset($_POST['submit'])) {
-        $dashboard      = $_POST['upload_foto_dashboard'];
-        if ($dashboard == 'dashboard') {
-            $uploadsDir = "assets/img/foto_slidedashboard/";
-            // $uploadsDir = "uploads/";
-            $allowedFileType = array('jpg', 'png', 'jpeg');
-
-            // Velidate if files exist
-            if (!empty(array_filter($_FILES['file_foto']['name']))) {
-
-                // Loop through file items
-                foreach ($_FILES['file_foto']['name'] as $id => $val) {
-                    // Get files upload path
-                    $fileName        = $_FILES['file_foto']['name'][$id];
-                    $tempLocation    = $_FILES['file_foto']['tmp_name'][$id];
-                    $newfilefoto      = date('dmYHis') . $fileName;
-                    $targetFilePath  = $uploadsDir . $newfilefoto;
-                    $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
-                    $link      = $_POST['link'];
-                    $uploadOk = 1;
-
-                    if (in_array($fileType, $allowedFileType)) {
-                        if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                            $sqlVal = "('" . $newfilefoto . "', '" . $link . "')";
-                        } else {
-                            $response = array(
-                                "status" => "alert-danger",
-                                "message" => "File coud not be uploaded."
-                            );
-                        }
-                    } else {
-                        $response = array(
-                            "status" => "alert-danger",
-                            "message" => "Only .jpg, .jpeg and .png file formats allowed."
-                        );
-                    }
-                    // Add into MySQL database
-                    if (!empty($sqlVal)) {
-                        $insert = $koneksi->query("INSERT INTO fot_slide (file_slidedashboard, link) VALUES $sqlVal");
-                        if ($insert) {
-                            $response = array(
-                                "status" => "alert-success",
-                                "message" => "File berhasil diupload."
-                            );
-                        } else {
-                            $response = array(
-                                "status" => "alert-danger",
-                                "message" => "Files coudn't be uploaded due to database error."
-                            );
-                        }
-                    }
-                }
-            } else {
-                // Error
-                $response = array(
-                    "status" => "alert-danger",
-                    "message" => "Silahkan pilih foto."
-                );
-            }
+        $id_perum      = $_POST['id_fotperum'];
+        if ($id_perum == '0') {
+            $response = array(
+                "status" => "alert-danger",
+                "message" => "Pilihan tidak boleh kosong"
+            );
         } else {
-            $id_perum      = $_POST['id_fotperum'];
-            if ($id_perum == '0') {
-                $response = array(
-                    "status" => "alert-danger",
-                    "message" => "Pilihan tidak boleh kosong"
-                );
-            } else {
-                if ($_POST['id_fottipe'] == '') {
-                    $uploadsDir = "assets/img/foto_slideperum/";
-                    // $uploadsDir = "uploads/";
-                    $allowedFileType = array('jpg', 'png', 'jpeg');
+            if ($_POST['id_fottipe'] == '') {
+                $uploadsDir = "assets/img/foto_slideperum/";
+                // $uploadsDir = "uploads/";
+                $allowedFileType = array('jpg', 'png', 'jpeg');
 
-                    // Velidate if files exist
-                    if (!empty(array_filter($_FILES['file_foto']['name']))) {
+                // Velidate if files exist
+                if (!empty(array_filter($_FILES['file_foto']['name']))) {
 
-                        // Loop through file items
-                        foreach ($_FILES['file_foto']['name'] as $id => $val) {
-                            // Get files upload path
-                            $fileName        = $_FILES['file_foto']['name'][$id];
-                            $tempLocation    = $_FILES['file_foto']['tmp_name'][$id];
-                            $newfilefoto      = date('dmYHis') . $fileName;
-                            $targetFilePath  = $uploadsDir . $newfilefoto;
-                            $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
-                            $id_perum      = $_POST['id_fotperum'];
-                            $uploadOk = 1;
+                    // Loop through file items
+                    foreach ($_FILES['file_foto']['name'] as $id => $val) {
+                        // Get files upload path
+                        $fileName        = $_FILES['file_foto']['name'][$id];
+                        $tempLocation    = $_FILES['file_foto']['tmp_name'][$id];
+                        $newfilefoto      = date('dmYHis') . $fileName;
+                        $targetFilePath  = $uploadsDir . $newfilefoto;
+                        $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+                        $id_perum      = $_POST['id_fotperum'];
+                        $uploadOk = 1;
 
-                            if (in_array($fileType, $allowedFileType)) {
-                                if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                                    $sqlVal = "('" . $id_perum . "', '" . $newfilefoto . "')";
-                                } else {
-                                    $response = array(
-                                        "status" => "alert-danger",
-                                        "message" => "File coud not be uploaded."
-                                    );
-                                }
+                        if (in_array($fileType, $allowedFileType)) {
+                            if (move_uploaded_file($tempLocation, $targetFilePath)) {
+                                $sqlVal = "('" . $id_perum . "', '" . $newfilefoto . "')";
                             } else {
                                 $response = array(
                                     "status" => "alert-danger",
-                                    "message" => "Only .jpg, .jpeg and .png file formats allowed."
+                                    "message" => "File coud not be uploaded."
                                 );
                             }
-                            // Add into MySQL database
-                            if (!empty($sqlVal)) {
-                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fotperum, file_slideperum) VALUES $sqlVal");
-                                if ($insert) {
-                                    $response = array(
-                                        "status" => "alert-success",
-                                        "message" => "File berhasil diupload."
-                                    );
-                                } else {
-                                    $response = array(
-                                        "status" => "alert-danger",
-                                        "message" => "Files coudn't be uploaded due to database error."
-                                    );
-                                }
+                        } else {
+                            $response = array(
+                                "status" => "alert-danger",
+                                "message" => "Only .jpg, .jpeg and .png file formats allowed."
+                            );
+                        }
+                        // Add into MySQL database
+                        if (!empty($sqlVal)) {
+                            $insert = $koneksi->query("INSERT INTO fot_slide (id_fotperum, file_slideperum) VALUES $sqlVal");
+                            if ($insert) {
+                                $response = array(
+                                    "status" => "alert-success",
+                                    "message" => "File berhasil diupload."
+                                );
+                            } else {
+                                $response = array(
+                                    "status" => "alert-danger",
+                                    "message" => "Files coudn't be uploaded due to database error."
+                                );
                             }
                         }
-                    } else {
-                        // Error
-                        $response = array(
-                            "status" => "alert-danger",
-                            "message" => "Silahkan pilih foto."
-                        );
                     }
                 } else {
-                    $uploadsDir = "assets/img/foto_slidetipe/";
-                    // $uploadsDir = "uploads/";
-                    $allowedFileType = array('jpg', 'png', 'jpeg');
+                    // Error
+                    $response = array(
+                        "status" => "alert-danger",
+                        "message" => "Silahkan pilih foto."
+                    );
+                }
+            } else {
+                $uploadsDir = "assets/img/foto_slidetipe/";
+                // $uploadsDir = "uploads/";
+                $allowedFileType = array('jpg', 'png', 'jpeg');
 
-                    // Velidate if files exist
-                    if (!empty(array_filter($_FILES['file_foto']['name']))) {
+                // Velidate if files exist
+                if (!empty(array_filter($_FILES['file_foto']['name']))) {
 
-                        // Loop through file items
-                        foreach ($_FILES['file_foto']['name'] as $id => $val) {
-                            // Get files upload path
-                            $fileName        = $_FILES['file_foto']['name'][$id];
-                            $tempLocation    = $_FILES['file_foto']['tmp_name'][$id];
-                            $newfilefoto      = date('dmYHis') . $fileName;
-                            $targetFilePath  = $uploadsDir . $newfilefoto;
-                            $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
-                            $id_tipe      = $_POST['id_fottipe'];
-                            $uploadOk = 1;
+                    // Loop through file items
+                    foreach ($_FILES['file_foto']['name'] as $id => $val) {
+                        // Get files upload path
+                        $fileName        = $_FILES['file_foto']['name'][$id];
+                        $tempLocation    = $_FILES['file_foto']['tmp_name'][$id];
+                        $newfilefoto      = date('dmYHis') . $fileName;
+                        $targetFilePath  = $uploadsDir . $newfilefoto;
+                        $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+                        $id_tipe      = $_POST['id_fottipe'];
+                        $uploadOk = 1;
 
-                            if (in_array($fileType, $allowedFileType)) {
-                                if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                                    $sqlVal = "('" . $id_tipe . "', '" . $newfilefoto . "')";
-                                } else {
-                                    $response = array(
-                                        "status" => "alert-danger",
-                                        "message" => "File coud not be uploaded."
-                                    );
-                                }
+                        if (in_array($fileType, $allowedFileType)) {
+                            if (move_uploaded_file($tempLocation, $targetFilePath)) {
+                                $sqlVal = "('" . $id_tipe . "', '" . $newfilefoto . "')";
                             } else {
                                 $response = array(
                                     "status" => "alert-danger",
-                                    "message" => "Only .jpg, .jpeg and .png file formats allowed."
+                                    "message" => "File coud not be uploaded."
                                 );
                             }
-                            // Add into MySQL database
-                            if (!empty($sqlVal)) {
-                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fottipe, file_slidetipe) VALUES $sqlVal");
-                                if ($insert) {
-                                    $response = array(
-                                        "status" => "alert-success",
-                                        "message" => "File berhasil diupload."
-                                    );
-                                } else {
-                                    $response = array(
-                                        "status" => "alert-danger",
-                                        "message" => "Files coudn't be uploaded due to database error."
-                                    );
-                                }
+                        } else {
+                            $response = array(
+                                "status" => "alert-danger",
+                                "message" => "Only .jpg, .jpeg and .png file formats allowed."
+                            );
+                        }
+                        // Add into MySQL database
+                        if (!empty($sqlVal)) {
+                            $insert = $koneksi->query("INSERT INTO fot_slide (id_fottipe, file_slidetipe) VALUES $sqlVal");
+                            if ($insert) {
+                                $response = array(
+                                    "status" => "alert-success",
+                                    "message" => "File berhasil diupload."
+                                );
+                            } else {
+                                $response = array(
+                                    "status" => "alert-danger",
+                                    "message" => "Files coudn't be uploaded due to database error."
+                                );
                             }
                         }
-                    } else {
-                        // Error
-                        $response = array(
-                            "status" => "alert-danger",
-                            "message" => "Silahkan pilih foto."
-                        );
                     }
+                } else {
+                    // Error
+                    $response = array(
+                        "status" => "alert-danger",
+                        "message" => "Silahkan pilih foto."
+                    );
                 }
             }
         }
@@ -244,9 +184,6 @@ if ($_SESSION['id_user'] == '') {
                             <input type="text" id="in-dashboard" name="upload_foto_dashboard" value="0" hidden>
                             <input type="text" id="id-pilih-perum" name="id_fotperum" value="" hidden>
                             <input type="text" id="id-pilih-tipe" name="id_fottipe" value="" hidden>
-                            <div class="form-group ">
-                                <input type="text" id="link" class="form-control" name="link" placeholder="Link ..." autocomplete="off" required value="">
-                            </div>
                             <div class="custom-file">
                                 <input type="file" name="file_foto[]" class="custom-file-input" id="chooseFile" multiple disabled>
                                 <label class="custom-file-label" for="chooseFile">Pilih file foto slide</label>
@@ -323,7 +260,6 @@ if ($_SESSION['id_user'] == '') {
         $(document).ready(function() {
 
             $('#chooseFile').attr('disabled');
-            $('#link').attr('hidden', true);
 
             $('#pilih-tipe').change(function(e) {
                 var tipe = $("#pilih-tipe").find(':selected').val();
@@ -336,10 +272,8 @@ if ($_SESSION['id_user'] == '') {
                     // profesi.push($(this).val());
                     $('#in-dashboard').val('dashboard');
                     $('#chooseFile').removeAttr('disabled', true);
-                    $('#link').removeAttr('hidden', true);
                 } else {
-                    $('#link').attr('hidden', true);
-                    $('#chooseFile').attr('disabled', true);
+                    $('#chooseFile').attr('disabled');
                     $('#in-dashboard').val('0');
                     // alert('tdk');
                 }

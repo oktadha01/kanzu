@@ -40,7 +40,7 @@ if ($_SESSION['id_user'] == '') {
                     }
                     // Add into MySQL database
                     if (!empty($sqlVal)) {
-                        $insert = $koneksi->query("INSERT INTO fot_slide (file_slidedashboard, link) VALUES $sqlVal");
+                        $insert = $koneksi->query("INSERT INTO fot_slide (file_slidedashboard) VALUES $sqlVal");
                         if ($insert) {
                             $response = array(
                                 "status" => "alert-success",

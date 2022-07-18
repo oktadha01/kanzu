@@ -175,7 +175,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                         <?php } else { ?>
                             <td scope="col" class="text-center">
                                 <div class=" m-2">
-                                    <img src="assets/img/taman01.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <img src="assets/img/TAMAN-01.png" alt="PT KANPA Logo" class="height-5rem"><br>
                                     <input type="hidden" class="det<?php echo $det++; ?>" value="TAMAN">
                                     <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['taman']; ?>">
                                     <center>
@@ -205,7 +205,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                         <?php } else { ?>
                             <td scope="col" class="text-center">
                                 <div class="m-2">
-                                    <img src="assets/img/carport-02.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <img src="assets/img/carport2.png" alt="PT KANPA Logo" class="height-5rem"><br>
                                     <input type="hidden" class="det<?php echo $det++; ?>" value="CARPORT">
                                     <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['carportr']; ?>">
                                     <center>
