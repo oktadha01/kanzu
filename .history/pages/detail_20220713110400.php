@@ -34,7 +34,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 				<div class="col-lg-4 col-md-4 col-12 pt-3">
 					<center>
 						<h4 class="font-weight-bold">KETERANGAN DETAIL</h4>
-						<p class="teks-desk text-align-justify">
+						<p class="teks-desk">
 							<?php echo $row['deskripsi']; ?>
 						</p>
 					</center>

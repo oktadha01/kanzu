@@ -39,7 +39,6 @@
             </div>
             <div class="card-body table-responsive p-0">
                 <div id="data-pembeli"></div>
-
             </div>
         </div>
         <div class="row">
