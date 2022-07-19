@@ -25,10 +25,10 @@
     <div class="col-lg-8 col-md-8 col-12">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-12">
-                <label for="lantai-rumah">Lantai</label>
+                <label for="lantai1">Lantai</label>
                 <div class="form-group">
                     <input type="hidden" id="id-tipeperum" class="form-control" name="id_tipeperum" value="">
-                    <input type="number" id="lantai-rumah" class="form-control" name="lantai" placeholder="lantai ..." autocomplete="off" required value="">
+                    <input type="number" id="lantai1" class="form-control" name="lantai" placeholder="lantai ..." autocomplete="off" required value="">
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-12">
@@ -347,7 +347,7 @@
             $('#id-tipeperum').val(perum);
         });
         $("#simpan-data-tipe").click(function() {
-            alert($('#lantai-rumah').val())
+            alert($('#lantai1').val())
             const in_foto_display = $('#in-foto-display').prop('files')[0];
             const in_foto_grid = $('#in-foto-grid').prop('files')[0];
             const in_foto_lantai1 = $('#in-foto-lantai1').prop('files')[0];
@@ -358,7 +358,7 @@
             formData.append('in-foto-lantai1', in_foto_lantai1);
             formData.append('in-foto-lantai2', in_foto_lantai2);
             formData.append('id-tipeperum', $('#id-tipeperum').val());
-            formData.append('lantai', $('#lantai-rumah').val());
+            formData.append('lantai', $('#lantai').val());
             formData.append('luas-t', $('#luas-t').val());
             formData.append('luas-p', $('#luas-p').val());
             formData.append('balkon', $('#balkon').val());

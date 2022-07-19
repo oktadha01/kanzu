@@ -347,7 +347,7 @@
             $('#id-tipeperum').val(perum);
         });
         $("#simpan-data-tipe").click(function() {
-            alert($('#lantai-rumah').val())
+            alert($('#lantai').val())
             const in_foto_display = $('#in-foto-display').prop('files')[0];
             const in_foto_grid = $('#in-foto-grid').prop('files')[0];
             const in_foto_lantai1 = $('#in-foto-lantai1').prop('files')[0];
