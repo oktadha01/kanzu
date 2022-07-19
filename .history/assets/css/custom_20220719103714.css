@@ -75,7 +75,7 @@ body {
     width: fit-content;
 }
 
-.badge {
+.badge{
     font-size: 90%;
 }
 
@@ -94,7 +94,6 @@ body {
 .height-3rem {
     height: 3rem;
 }
-
 .height-5rem {
     height: 5rem;
 }
@@ -148,9 +147,7 @@ body {
     box-shadow: none;
     color: black;
 }
-
-.bor-est-active,
-.bor-est:hover {
+.bor-est-active, .bor-est:hover {
     background-color: #065cf747;
     border-color: #0642f9;
     box-shadow: none;
@@ -344,11 +341,9 @@ body {
 .text-align-justify {
     text-align: justify;
 }
-
-.calibri {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+.calibri{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
-
 .tittle-news {
     font-family: Roboto, sans-serif;
 }
