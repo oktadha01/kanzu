@@ -375,6 +375,55 @@ while ($row = mysqli_fetch_array($ambil_data)) {
             $('#slidesperum1').addClass('diplay-block');
             $('#slideslantai').addClass('diplay-block');
 
+            $('.spek1').text('A');
+            $('.spek2').text('B');
+            $('.spek3').text('C');
+            $('.spek4').text('D');
+            $('.spek5').text('E');
+            $('.spek6').text('F');
+            $('.spek7').text('G');
+            $('.spek8').text('H');
+            $('.spek9').text('I');
+
+            $('.nm-spek1').text($('.det1').val());
+            $('.speksi1').text(':' + $('.jumlah1').val());
+            $('.nm-spek2').text($('.det2').val());
+            $('.speksi2').text(':' + $('.jumlah2').val());
+            $('.nm-spek3').text($('.det3').val());
+            $('.speksi3').text(':' + $('.jumlah3').val());
+            $('.nm-spek4').text($('.det4').val());
+            $('.speksi4').text(':' + $('.jumlah4').val());
+            $('.nm-spek5').text($('.det5').val());
+            $('.speksi5').text(':' + $('.jumlah5').val());
+            $('.nm-spek6').text($('.det6').val());
+            $('.speksi6').text(':' + $('.jumlah6').val());
+            $('.nm-spek6').text($('.det6').val());
+            $('.speksi6').text(':' + $('.jumlah6').val());
+            $('.nm-spek7').text($('.det7').val());
+            $('.speksi7').text(':' + $('.jumlah7').val());
+            $('.nm-spek8').text($('.det8').val());
+            $('.speksi8').text(':' + $('.jumlah8').val());
+            $('.nm-spek9').text($('.det9').val());
+            $('.speksi9').text(':' + $('.jumlah9').val());
+
+            if ($('.speksi9').text() == ':undefined') {
+                $('.det-spek9').hide();
+                // alert('1')
+            }
+            if ($('.speksi8').text() == ':undefined') {
+                $('.det-spek8').hide();
+                // alert('1')
+            }
+            if ($('.speksi7').text() == ':undefined') {
+                $('.det-spek7').hide();
+                // alert('2')
+            }
+            if ($('.speksi6').text() == ':undefined') {
+                $('.det-spek6').hide();
+            }
+            if ($('.speksi5').text() == ':undefined') {
+                $('.det-spek5').hide();
+            }
             // $('.id1').addClass('show active');
             $(document).on('click', '.tab-tipe', function() {
                 // $("#dynamic_field-edit").remove();

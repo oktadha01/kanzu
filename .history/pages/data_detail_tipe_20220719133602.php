@@ -172,32 +172,20 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                         <td scope="col" class="text-center">
                             <img src="assets/img/ikon-detail/ikon-taman.png" alt="PT KANPA Logo" class="height-5rem"><br>
                             <center>
-                                <h6><?php echo $row['taman']; ?></h6>
+                                <h6>1</h6>
                             </center>
                         </td>
                         <td scope="col" class="text-center">
                             <img src="assets/img/ikon-detail/ikon-carport.png" alt="PT KANPA Logo" class="height-5rem"><br>
-                            <center>
-                                <h6><?php echo $row['carportr']; ?></h6>
-                            </center>
                         </td>
                         <td scope="col" class="text-center">
                             <img src="assets/img/ikon-detail/ikon-ru-tamu.png" alt="PT KANPA Logo" class="height-5rem"><br>
-                            <center>
-                                <h6><?php echo $row['ru_tamu']; ?></h6>
-                            </center>
                         </td>
                         <td scope="col" class="text-center">
                             <img src="assets/img/ikon-detail/ikon-ka-tidur.png" alt="PT KANPA Logo" class="height-5rem"><br>
-                            <center>
-                                <h6><?php echo $row['ka_tidur']; ?></h6>
-                            </center>
                         </td>
                         <td scope="col" class="text-center">
                             <img src="assets/img/ikon-detail/ikon-ka-mandi.png" alt="PT KANPA Logo" class="height-5rem"><br>
-                            <center>
-                                <h6><?php echo $row['ka_mandi']; ?></h6>
-                            </center>
                         </td>
                         <?php
                         if ($row['dapur'] == null) { ?>
@@ -205,31 +193,55 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                         <?php } else { ?>
                             <td scope="col" class="text-center">
                                 <img src="assets/img/ikon-detail/ikon-dapur.png" alt="PT KANPA Logo" class="height-5rem"><br>
-                                <center>
-                                    <h6><?php echo $row['dapur']; ?></h6>
-                                </center>
                             </td>
                         <?php } ?>
                         <?php
                         if ($row['ru_keluarga'] == null) { ?>
 
                         <?php } else { ?>
-                            <td scope="col" class="text-center">
-                                <img src="assets/img/ikon-detail/ikon-ru-keluarga.png" alt="PT KANPA Logo" class="height-5rem"><br>
-                                <center>
-                                    <h6><?php echo $row['ru_keluarga']; ?></h6>
-                                </center>
-                            </td>
+                        <td scope="col" class="text-center">
+                            <img src="assets/img/ikon-detail/ikon-ru-keluarga.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                        </td>
                         <?php } ?>
                         <?php
                         if ($row['ru_makan'] == null) { ?>
 
                         <?php } else { ?>
+                        <td scope="col" class="text-center">
+                            <img src="assets/img/ikon-detail/ikon-ru-makan.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                        </td>
+                        <?php } ?>
+                        <?php
+                        if ($row['balkon'] == null) { ?>
+
+                        <?php } else { ?>
+                        <td scope="col" class="text-center">
+                            <img src="assets/img/ikon-detail/ikon-balkon.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                        </td>
+                        <?php } ?>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="row jus-content">
+        <div class="table-responsive p-0">
+            <table class="table table-head-fixed text-nowrap table-hover">
+                <thead>
+                    <tr>
+                        <?php
+                        if ($row['taman'] == null) { ?>
+
+                        <?php } else { ?>
                             <td scope="col" class="text-center">
-                                <img src="assets/img/ikon-detail/ikon-ru-makan.png" alt="PT KANPA Logo" class="height-5rem"><br>
-                                <center>
-                                    <h6><?php echo $row['ru_makan']; ?></h6>
-                                </center>
+                                <div class=" m-2">
+                                    <img src="assets/img/taman01.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="TAMAN">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['taman']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
                             </td>
                         <?php } ?>
                         <?php
@@ -237,14 +249,261 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 
                         <?php } else { ?>
                             <td scope="col" class="text-center">
-                                <img src="assets/img/ikon-detail/ikon-balkon.png" alt="PT KANPA Logo" class="height-5rem"><br>
-                                <center>
-                                    <h6><?php echo $row['balkon']; ?></h6>
-                                </center>
+                                <div class=" m-2">
+                                    <img src="assets/img/balkon.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="BALKON">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['balkon']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <?php
+                        if ($row['carportr'] == null) { ?>
+
+                        <?php } else { ?>
+                            <td scope="col" class="text-center">
+                                <div class="m-2">
+                                    <img src="assets/img/carport-02.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="CARPORT">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['carportr']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <?php
+                        if ($row['ru_keluarga'] == null) { ?>
+
+                        <?php } else { ?>
+                            <td scope="col" class="text-center">
+                                <div class=" m-2">
+                                    <img src="assets/img/ru-keluarga.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="RU-KELUARGA">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['ru_keluarga']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <?php
+                        if ($row['ru_tamu'] == null) { ?>
+
+                        <?php } else { ?>
+                            <td scope="col" class="text-center">
+                                <div class=" m-2">
+                                    <img src="assets/img/ruang-tamu.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="RU-TAMU">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['ru_tamu']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <?php
+                        if ($row['ka_tidur'] == null) { ?>
+
+                        <?php } else { ?>
+                            <td scope="col" class="text-center">
+                                <div class=" m-2">
+                                    <img src="assets/img/kamar-tidur.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="KA-TIDUR">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['ka_tidur']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <?php
+                        if ($row['ka_mandi'] == null) { ?>
+
+                        <?php } else { ?>
+                            <td scope="col" class="text-center">
+                                <div class=" m-2">
+                                    <img src="assets/img/kamar-mandi.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="KA-MANDI">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['ka_mandi']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <?php
+                        if ($row['ru_makan'] == null) { ?>
+
+                        <?php } else { ?>
+                            <td scope="col" class="text-center">
+                                <div class=" m-2">
+                                    <img src="assets/img/r-makan.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="RU-MAKAN">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['ru_makan']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <?php
+                        if ($row['dapur'] == null) { ?>
+
+                        <?php } else { ?>
+                            <td scope="col" class="text-center">
+                                <div class=" m-2">
+                                    <img src="assets/img/dapur.png" alt="PT KANPA Logo" class="height-5rem"><br>
+                                    <input type="hidden" class="det<?php echo $det++; ?>" value="DAPUR">
+                                    <input type="hidden" class="jumlah<?php echo $jumlah++; ?>" value="<?php echo $row['dapur']; ?>">
+                                    <center>
+                                        <h6 class="mt-1 spek<?php echo $spek++; ?>"></h6>
+                                    </center>
+                                </div>
                             </td>
                         <?php } ?>
                     </tr>
                 </thead>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-6">
+            <table>
+                <tr>
+                    <th>
+                        <i class="fa-solid fa-a alphabet"></i>
+                    </th>
+                    <th>
+                        <h6 class="nm-spek1"></h6>
+                    </th>
+                    <th>
+                        <h6 class="speksi1"></h6>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <table>
+                <tr>
+                    <th>
+                        <i class="fa-solid fa-b alphabet"></i>
+                    </th>
+                    <th>
+                        <h6 class="nm-spek2"></h6>
+                    </th>
+                    <th>
+                        <h6 class="speksi2"></h6>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <table>
+                <tr>
+                    <th>
+                        <i class="fa-solid fa-c alphabet"></i>
+                    </th>
+                    <th>
+                        <h6 class="nm-spek3"></h6>
+                    </th>
+                    <th>
+                        <h6 class="speksi3"></h6>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <table>
+                <tr>
+                    <th>
+                        <i class="fa-solid fa-d alphabet"></i>
+                    </th>
+                    <th>
+                        <h6 class="nm-spek4"></h6>
+                    </th>
+                    <th>
+                        <h6 class="speksi4"></h6>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6 det-spek5">
+            <table>
+
+                <tr>
+                    <th>
+                        <i class="fa-solid fa-e alphabet"></i>
+                    </th>
+                    <th>
+                        <h6 class="nm-spek5"></h6>
+                    </th>
+                    <th>
+                        <h6 class="speksi5"></h6>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6 det-spek6">
+            <table>
+                <tr>
+                    <th>
+                        <i class="fa-solid fa-f alphabet"></i>
+                    </th>
+                    <th>
+                        <h6 class="nm-spek6"></h6>
+                    </th>
+                    <th>
+                        <h6 class="speksi6"></h6>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6 det-spek7">
+            <table>
+                <tr>
+                    <th>
+                        <i class="fa-solid fa-g alphabet"></i>
+                    </th>
+                    <th>
+                        <h6 class="nm-spek7"></h6>
+                    </th>
+                    <th>
+                        <h6 class="speksi7"></h6>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6 det-spek8">
+            <table>
+                <tr>
+                    <th>
+                        <i class="fa-solid fa-h alphabet"></i>
+                    </th>
+                    <th>
+                        <h6 class="nm-spek8"></h6>
+                    </th>
+                    <th>
+                        <h6 class="speksi8"></h6>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6 det-spek9">
+            <table>
+                <tr>
+                    <th>
+                        <i class="fa-solid fa-i alphabet"></i>
+                    </th>
+                    <th>
+                        <h6 class="nm-spek9"></h6>
+                    </th>
+                    <th>
+                        <h6 class="speksi9"></h6>
+                    </th>
+                </tr>
             </table>
         </div>
     </div>
@@ -375,6 +634,55 @@ while ($row = mysqli_fetch_array($ambil_data)) {
             $('#slidesperum1').addClass('diplay-block');
             $('#slideslantai').addClass('diplay-block');
 
+            $('.spek1').text('A');
+            $('.spek2').text('B');
+            $('.spek3').text('C');
+            $('.spek4').text('D');
+            $('.spek5').text('E');
+            $('.spek6').text('F');
+            $('.spek7').text('G');
+            $('.spek8').text('H');
+            $('.spek9').text('I');
+
+            $('.nm-spek1').text($('.det1').val());
+            $('.speksi1').text(':' + $('.jumlah1').val());
+            $('.nm-spek2').text($('.det2').val());
+            $('.speksi2').text(':' + $('.jumlah2').val());
+            $('.nm-spek3').text($('.det3').val());
+            $('.speksi3').text(':' + $('.jumlah3').val());
+            $('.nm-spek4').text($('.det4').val());
+            $('.speksi4').text(':' + $('.jumlah4').val());
+            $('.nm-spek5').text($('.det5').val());
+            $('.speksi5').text(':' + $('.jumlah5').val());
+            $('.nm-spek6').text($('.det6').val());
+            $('.speksi6').text(':' + $('.jumlah6').val());
+            $('.nm-spek6').text($('.det6').val());
+            $('.speksi6').text(':' + $('.jumlah6').val());
+            $('.nm-spek7').text($('.det7').val());
+            $('.speksi7').text(':' + $('.jumlah7').val());
+            $('.nm-spek8').text($('.det8').val());
+            $('.speksi8').text(':' + $('.jumlah8').val());
+            $('.nm-spek9').text($('.det9').val());
+            $('.speksi9').text(':' + $('.jumlah9').val());
+
+            if ($('.speksi9').text() == ':undefined') {
+                $('.det-spek9').hide();
+                // alert('1')
+            }
+            if ($('.speksi8').text() == ':undefined') {
+                $('.det-spek8').hide();
+                // alert('1')
+            }
+            if ($('.speksi7').text() == ':undefined') {
+                $('.det-spek7').hide();
+                // alert('2')
+            }
+            if ($('.speksi6').text() == ':undefined') {
+                $('.det-spek6').hide();
+            }
+            if ($('.speksi5').text() == ':undefined') {
+                $('.det-spek5').hide();
+            }
             // $('.id1').addClass('show active');
             $(document).on('click', '.tab-tipe', function() {
                 // $("#dynamic_field-edit").remove();
