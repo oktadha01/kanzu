@@ -328,11 +328,7 @@ body {
     border-radius: 1rem;
 }
 
-.border-radius-5px{
-    border-radius: 5px;
-}
-
-.btn-soft-primary {
+..btn-soft-primary {
     background-color: rgba(83, 105, 248, .15);
     color: #5369f8;
     border-color: rgba(83, 105, 248, .15);

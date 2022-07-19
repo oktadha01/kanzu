@@ -328,11 +328,7 @@ body {
     border-radius: 1rem;
 }
 
-.border-radius-5px{
-    border-radius: 5px;
-}
-
-.btn-soft-primary {
+..btn-soft-primary {
     background-color: rgba(83, 105, 248, .15);
     color: #5369f8;
     border-color: rgba(83, 105, 248, .15);
@@ -348,18 +344,6 @@ body {
     background-color: rgba(255, 190, 11, .15);
     color: #ffbe0b;
     border-color: rgba(255, 190, 11, .15);
-}
-
-.btn-soft-success {
-    background-color: rgba(67, 211, 158, .15);
-    color: #43d39e;
-    border-color: rgba(67, 211, 158, .15);
-}
-
-.btn-soft-info {
-    background-color: rgba(37,194,227,.15);
-    color: #25c2e3;
-    border-color: rgba(37,194,227,.15);
 }
 
 .text-publishing {

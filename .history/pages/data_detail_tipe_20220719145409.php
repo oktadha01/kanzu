@@ -250,10 +250,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
     </div>
     <hr>
     <div class="row">
-        <div class="col">
-            <h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $row['harga']; ?> <sub>jt</sub></h6>
-        </div>
-        <!-- <button class="btn btn-md btn-soft-danger">Rp. <?php echo $row['harga'];?> <sup>jt</sup> </button> -->
+        <button class="btn btn-md btn-soft-danger"><?php echo $row['harga'];?> <sup>jt</sup> </button>
     </div>
     <div class="row">
         <div class="col-lg-4 col-sm-8 col-xs-8 mb-1">
