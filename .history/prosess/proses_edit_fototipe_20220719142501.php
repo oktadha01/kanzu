@@ -47,7 +47,7 @@ if ($edit_gambar == 'display') {
     }
 } else if ($edit_gambar == 'lantai1') {
 
-    $fot_display = $data['fot_display'];
+    $foto_display = $data['fot_display'];
     // $fot_lantai1 = $data['fot_lantai1'];
     $fot_lantai2 = $data['fot_lantai2'];
     $fot_grid = $data['fot_grid'];
@@ -76,7 +76,7 @@ if ($edit_gambar == 'display') {
     }
 } else if ($edit_gambar == 'lantai2') {
 
-    $fot_display = $data['fot_display'];
+    $foto_display = $data['fot_display'];
     $fot_lantai1 = $data['fot_lantai1'];
     // $fot_lantai2 = $data['fot_lantai2'];
     $fot_grid = $data['fot_grid'];
@@ -105,7 +105,7 @@ if ($edit_gambar == 'display') {
     }
 } else if ($edit_gambar == 'grid') {
 
-    $fot_display = $data['fot_display'];
+    $foto_display = $data['fot_display'];
     $fot_lantai1 = $data['fot_lantai1'];
     $fot_lantai2 = $data['fot_lantai2'];
     // $fot_grid = $data['fot_grid'];
