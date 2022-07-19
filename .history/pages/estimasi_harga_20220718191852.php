@@ -12,10 +12,10 @@ $maximum_range = 500;
 <section class="content-header pt-5rem">
     <div class="container-fluid">
         <div class="card">
-            <div id="myDIV" class="card-body">
+            <div class="card-body">
                 <!-- <h3 align="center">Membuat Filter Harga Menggunakan AJAXJQuery Dan PHP</h3> -->
                 <h5>Pilih Harga</h5>
-                <div class="row">
+                <div id="myDIV" class="row">
                     <div class="col-lg-2 col-md-4 col-4 ">
                         <button type="button" name="" id="harga1" class="btn btn-xs bor-est bor-est-active">
                             <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 200 - 250 jt</h6>
@@ -59,8 +59,13 @@ $maximum_range = 500;
         </div>
     </div>
 </section>
-<input type="text" id="minimum_range" value="200" hidden>
-<input type="text" id="maximum_range" value="250" hidden>
+<?php
+$harga_est = mysqli_query($koneksi, "SELECT * FROM tipe ORDER BY harga limit 1 ");
+while ($est = mysqli_fetch_array($harga_est)) {
+?>
+    <input type="text" id="minimum_range" value="<?php echo $est['harga'];?>" hidden>
+    <input type="text" id="maximum_range" value="250" hidden>
+<?php } ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

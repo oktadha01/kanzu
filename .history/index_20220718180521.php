@@ -260,6 +260,13 @@ session_start();
     <script src="assets/js/demo.js"></script>
     <script src="assets/js/adminlte.js"></script>
     <script src="assets/js/index.js"></script>
+    <?php
+    $get_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE nm_perum='$_GET[id]'");
+    $data = mysqli_fetch_array($get_data)
+    ?>
+    <script type="text/javascript">
+        $('#id-perum-tipe').val('<?php echo $data['nm_perum']; ?>');
+    </script>
     <script>
         var didScroll;
         var lastScrollTop = 0;
@@ -322,12 +329,8 @@ session_start();
             });
         <?php } ?>
     </script>
-    <?php
-    $get_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE nm_perum='$_GET[id]'");
-    $data = mysqli_fetch_array($get_data)
-    ?>
-    <script type="text/javascript">
-        $('#id-perum-tipe').val('<?php echo $data['nm_perum']; ?>');
+    <script>
+
     </script>
 </body>
 

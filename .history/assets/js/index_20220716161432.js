@@ -9,6 +9,8 @@ $(document).ready(function () {
     $('.data-tipe').load("pages/form_input_tipe.php");
     $('#data-pembeli').load('pages/data_pembeli.php');
 
+    
+
     $('.slider').slick({
         autoplay: true,
         autoplaySpeed: 2500,
@@ -273,7 +275,7 @@ $(document).ready(function () {
         });
     });
 
-
+    
     // $('.dataTables_filter').attr('hidden', true);
     // alert($('#reservation').val())
 });

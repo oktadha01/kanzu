@@ -9,6 +9,17 @@ $(document).ready(function () {
     $('.data-tipe').load("pages/form_input_tipe.php");
     $('#data-pembeli').load('pages/data_pembeli.php');
 
+    var header = document.getElementById("myDIV");
+    var btns = header.getElementsByClassName("bor-est");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            alert('ya');
+            var current = document.getElementsByClassName("bor-est-active");
+            current[0].className = current[0].className.replace(" bor-est-active", "");
+            this.className += " bor-est-active";
+        });
+    }
+
     $('.slider').slick({
         autoplay: true,
         autoplaySpeed: 2500,

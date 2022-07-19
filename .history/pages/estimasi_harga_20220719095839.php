@@ -12,10 +12,10 @@ $maximum_range = 500;
 <section class="content-header pt-5rem">
     <div class="container-fluid">
         <div class="card">
-            <div id="myDIV" class="card-body">
+            <div class="card-body">
                 <!-- <h3 align="center">Membuat Filter Harga Menggunakan AJAXJQuery Dan PHP</h3> -->
                 <h5>Pilih Harga</h5>
-                <div class="row">
+                <div id="myDIV" class="row">
                     <div class="col-lg-2 col-md-4 col-4 ">
                         <button type="button" name="" id="harga1" class="btn btn-xs bor-est bor-est-active">
                             <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 200 - 250 jt</h6>

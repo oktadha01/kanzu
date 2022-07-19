@@ -147,13 +147,13 @@ body {
     box-shadow: none;
     color: black;
 }
-/* .bor-est:hover {
+.bor-est:hover {
     background-color: #065cf747;
     border-color: #0642f9;
     box-shadow: none;
     color: black;
-} */
-.bor-est-active, .bor-est:hover {
+}
+.bor-est:hover :active {
     background-color: #065cf747;
     border-color: #0642f9;
     box-shadow: none;

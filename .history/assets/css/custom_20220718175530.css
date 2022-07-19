@@ -147,13 +147,13 @@ body {
     box-shadow: none;
     color: black;
 }
-/* .bor-est:hover {
+.bor-est:hover {
     background-color: #065cf747;
     border-color: #0642f9;
     box-shadow: none;
     color: black;
-} */
-.bor-est-active, .bor-est:hover {
+}
+.bor-est:hover >button.active {
     background-color: #065cf747;
     border-color: #0642f9;
     box-shadow: none;
@@ -467,30 +467,11 @@ body {
     color: white;
 }
 
-/* .flickity-viewport {
-    height: 45rem !important;
-    touch-action: pan-y;
-} */
 
 .flickity-slider {
     left: -80px !important;
 
-
-    /* transform: translateX(0.5%) !important; */
-
 }
-
-/* .menu:hover {
-    background: #000;
-}
-
-.menu:hover,
-.menu:active {
-    background: #000;
-} */
-/* ul.nav li.nav-item a.active{
-    color: #00256a !important;
-} */
 
 ul.menu li a.active {
     color: green;
