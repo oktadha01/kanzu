@@ -86,9 +86,9 @@ session_start();
                     <button class="navbar-toggler order-1 p bg-white" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse order-3 border-b" id="navbarCollapse">
+                    <div id="sub-header" class="collapse navbar-collapse order-3 border-b" id="navbarCollapse">
                         <!-- Left navbar links -->
-                        <ul class="navbar-nav border-b">
+                        <ul id="menu" class="navbar-nav border-b">
                             <li class="nav-item">
                                 <a href="index.php?=dashboard" class="nav-link menu-nav">Home</a>
                             </li>
@@ -106,9 +106,9 @@ session_start();
                                 <li class="nav-item dropdown">
                                     <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link menu-nav dropdown-toggle">DATA</a>
                                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                        <li><a href="index.php?p=tambah_data" class="dropdown-item"> Olah data </a></li>
-                                        <li><a href="index.php?p=form_foto_slide" class="dropdown-item"> Olah foto slide </a></li>
-                                        <li><a href="index.php?p=pembeli" class="dropdown-item"> Data Pembeli </a></li>
+                                        <li><a href="index.php?p=tambah_data" class="dropdown-item menu-nav"> Olah data </a></li>
+                                        <li><a href="index.php?p=form_foto_slide" class="dropdown-item menu-nav"> Olah foto slide </a></li>
+                                        <li><a href="index.php?p=pembeli" class="dropdown-item menu-nav"> Data Pembeli </a></li>
                                     </ul>
                                 </li>
                             <?php } else { ?>
@@ -315,18 +315,18 @@ session_start();
             lastScrollTop = st;
         }
 
-        $(function() {
-            // this will get the full URL at the address bar
-            var url = window.location.href;
+        // $(function() {
+        //     // this will get the full URL at the address bar
+        //     var url = window.location.href;
 
-            // passes on every "a" tag 
-            $("#navbar a").each(function() {
-                // checks if its the same on the address bar
-                if (url == (this.href)) {
-                    $(this).closest("a").addClass("menu-nav-active");
-                }
-            });
-        });
+        //     // passes on every "a" tag 
+        //     $("#sub-header a").each(function() {
+        //         // checks if its the same on the address bar
+        //         if (url == (this.href)) {
+        //             $(this).closest("a").addClass("menu-nav-active");
+        //         }
+        //     });
+        // });
 
         $(function() {
             $('#reservation').daterangepicker({

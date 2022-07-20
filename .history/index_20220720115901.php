@@ -86,29 +86,29 @@ session_start();
                     <button class="navbar-toggler order-1 p bg-white" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse order-3 border-b" id="navbarCollapse">
+                    <div id="sub-header" class="collapse navbar-collapse order-3 border-b" id="navbarCollapse">
                         <!-- Left navbar links -->
-                        <ul class="navbar-nav border-b">
+                        <ul id="menu" class="navbar-nav border-b">
                             <li class="nav-item">
-                                <a href="index.php?=dashboard" class="nav-link menu-nav">Home</a>
+                                <a href="index.php?=dashboard" class="nav-link ">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?p=produk" class="nav-link menu-nav">Produk</a>
+                                <a href="index.php?p=produk" class="nav-link ">Produk</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?p=estimasi_harga" class="nav-link menu-nav">Estimasi Harga</a>
+                                <a href="index.php?p=estimasi_harga" class="nav-link ">Estimasi Harga</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?p=berita" class="nav-link menu-nav">Berita</a>
+                                <a href="index.php?p=berita" class="nav-link ">Berita</a>
                             </li>
                             <?php
                             if (@$_SESSION['privilege'] == 'Admin') { ?>
                                 <li class="nav-item dropdown">
-                                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link menu-nav dropdown-toggle">DATA</a>
+                                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link  dropdown-toggle">DATA</a>
                                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                        <li><a href="index.php?p=tambah_data" class="dropdown-item"> Olah data </a></li>
-                                        <li><a href="index.php?p=form_foto_slide" class="dropdown-item"> Olah foto slide </a></li>
-                                        <li><a href="index.php?p=pembeli" class="dropdown-item"> Data Pembeli </a></li>
+                                        <li><a href="index.php?p=tambah_data" class="dropdown-item "> Olah data </a></li>
+                                        <li><a href="index.php?p=form_foto_slide" class="dropdown-item "> Olah foto slide </a></li>
+                                        <li><a href="index.php?p=pembeli" class="dropdown-item "> Data Pembeli </a></li>
                                     </ul>
                                 </li>
                             <?php } else { ?>
@@ -121,7 +121,7 @@ session_start();
                             <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto border-r">
                                 <!-- Messages Dropdown Menu -->
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link menu-nav" href="logout.php">
+                                    <a class="nav-link " href="logout.php">
                                         <i class="fa-solid fa-right-to-bracket"></i> LOGOUT
                                     </a>
                                 </li>
@@ -315,18 +315,18 @@ session_start();
             lastScrollTop = st;
         }
 
-        $(function() {
-            // this will get the full URL at the address bar
-            var url = window.location.href;
+        // $(function() {
+        //     // this will get the full URL at the address bar
+        //     var url = window.location.href;
 
-            // passes on every "a" tag 
-            $("#navbar a").each(function() {
-                // checks if its the same on the address bar
-                if (url == (this.href)) {
-                    $(this).closest("a").addClass("menu-nav-active");
-                }
-            });
-        });
+        //     // passes on every "a" tag 
+        //     $("#sub-header a").each(function() {
+        //         // checks if its the same on the address bar
+        //         if (url == (this.href)) {
+        //             $(this).closest("a").addClass("menu-nav-active");
+        //         }
+        //     });
+        // });
 
         $(function() {
             $('#reservation').daterangepicker({

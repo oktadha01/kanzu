@@ -90,7 +90,7 @@ session_start();
                         <!-- Left navbar links -->
                         <ul class="navbar-nav border-b">
                             <li class="nav-item">
-                                <a href="index.php?=dashboard" class="nav-link menu-nav">Home</a>
+                                <a href="index.php?=dashboard" class="nav-link menu-nav menu-nav-active">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a href="index.php?p=produk" class="nav-link menu-nav">Produk</a>

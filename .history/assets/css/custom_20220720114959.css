@@ -558,3 +558,8 @@ body {
     left: 0;
 
 }
+
+.dropdown,
+.dropdown-menu :hover {
+    display: block !important;
+}

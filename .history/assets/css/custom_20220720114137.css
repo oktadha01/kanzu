@@ -542,12 +542,7 @@ body {
     transform: scaleX(1);
 }
 
-.menu-nav-active {
-    color: rgb(109 175 237) !important;
-    font-weight: bold;
-}
-
-.menu-nav-active:before {
+.menu-nav-active:hover:before  {
     transform: scaleX(1);
     content: '';
     width: 100%;
@@ -556,5 +551,7 @@ body {
     background-color: rgb(109 175 237);
     bottom: 0;
     left: 0;
+    color: rgb(109 175 237) !important;
+    font-weight: bold;
 
 }

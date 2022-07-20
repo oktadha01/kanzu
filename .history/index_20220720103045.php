@@ -10,16 +10,9 @@ session_start();
 
 <head>
     <meta charset="utf-8">
-    <title>Rumah Murah di Semarang di Bawah Rp 200 Jt Terlengkap | Kanpa.co.id</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-    <!-- Meta untuk SEO -->
-    <meta name="description" content="Cari rumah dijual di Semarang di Bawah Rp 200 Jt. Rumah minimalis terjangkau termurah di semarang Bisa KPR ✔️ Harga paling murah ✔️ Lokasi strategis ✔️ Proses mudah &amp; cepat">
-    <meta name="keywords" content="PT Kanpa, rumah murah di semarang, KPR rumah murah terjangkau di semarang, perumahan murah, KPR murah terjangkau, KPR murah proses mudah di semarang, carikpr rumah di semarang murah terjangkau">
-    <meta name="robots" content="INDEX,FOLLOW">
-    <!-- akhir Meta untuk SEO -->
-
+    <title>PT KANPA</title>
     <style>
         #load {
             margin-top: 0;
@@ -90,7 +83,7 @@ session_start();
                         <!-- Left navbar links -->
                         <ul class="navbar-nav border-b">
                             <li class="nav-item">
-                                <a href="index.php?=dashboard" class="nav-link menu-nav">Home</a>
+                                <a href="index.php?=dashboard" class="nav-link menu-nav-active">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a href="index.php?p=produk" class="nav-link menu-nav">Produk</a>
@@ -106,9 +99,9 @@ session_start();
                                 <li class="nav-item dropdown">
                                     <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link menu-nav dropdown-toggle">DATA</a>
                                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                        <li><a href="index.php?p=tambah_data" class="dropdown-item"> Olah data </a></li>
-                                        <li><a href="index.php?p=form_foto_slide" class="dropdown-item"> Olah foto slide </a></li>
-                                        <li><a href="index.php?p=pembeli" class="dropdown-item"> Data Pembeli </a></li>
+                                        <li><a href="index.php?p=tambah_data" class="dropdown-item menu-nav"> Olah data </a></li>
+                                        <li><a href="index.php?p=form_foto_slide" class="dropdown-item menu-nav"> Olah foto slide </a></li>
+                                        <li><a href="index.php?p=pembeli" class="dropdown-item menu-nav"> Data Pembeli </a></li>
                                     </ul>
                                 </li>
                             <?php } else { ?>
@@ -267,15 +260,6 @@ session_start();
     <script src="assets/js/demo.js"></script>
     <script src="assets/js/adminlte.js"></script>
     <script src="assets/js/index.js"></script>
-    <?php
-    $no = 1;
-    $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE nm_perum='$_GET[id]'");
-    while ($row = mysqli_fetch_array($ambil_data)) {
-    ?>
-        <script type="text/javascript">
-            $('#id-perum-tipe').val('<?php echo $row['nm_perum']; ?>');
-        </script>
-    <?php } ?>
     <script>
         var didScroll;
         var lastScrollTop = 0;
@@ -316,19 +300,6 @@ session_start();
         }
 
         $(function() {
-            // this will get the full URL at the address bar
-            var url = window.location.href;
-
-            // passes on every "a" tag 
-            $("#navbar a").each(function() {
-                // checks if its the same on the address bar
-                if (url == (this.href)) {
-                    $(this).closest("a").addClass("menu-nav-active");
-                }
-            });
-        });
-
-        $(function() {
             $('#reservation').daterangepicker({
                 singleDatePicker: true,
                 showDropdowns: true,
@@ -351,8 +322,12 @@ session_start();
             });
         <?php } ?>
     </script>
-    <script>
-
+    <?php
+    $get_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE nm_perum='$_GET[id]'");
+    $data = mysqli_fetch_array($get_data)
+    ?>
+    <script type="text/javascript">
+        $('#id-perum-tipe').val('<?php echo $data['nm_perum']; ?>');
     </script>
 </body>
 

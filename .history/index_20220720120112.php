@@ -316,19 +316,6 @@ session_start();
         }
 
         $(function() {
-            // this will get the full URL at the address bar
-            var url = window.location.href;
-
-            // passes on every "a" tag 
-            $("#navbar a").each(function() {
-                // checks if its the same on the address bar
-                if (url == (this.href)) {
-                    $(this).closest("a").addClass("menu-nav-active");
-                }
-            });
-        });
-
-        $(function() {
             $('#reservation').daterangepicker({
                 singleDatePicker: true,
                 showDropdowns: true,
