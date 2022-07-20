@@ -88,31 +88,31 @@
 												while ($spek = mysqli_fetch_array($spesifikasi)) {
 												?>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/taman.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-disptaman.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
 															<h6><?php echo $spek['taman']; ?></h6>
 														</center>
 													</td>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
 															<h6><?php echo $spek['carportr']; ?></h6>
 														</center>
 													</td>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
 															<h6><?php echo $spek['ru_tamu']; ?></h6>
 														</center>
 													</td>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
 															<h6><?php echo $spek['ka_tidur']; ?></h6>
 														</center>
 													</td>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
 															<h6><?php echo $spek['ka_mandi']; ?></h6>
 														</center>
@@ -122,7 +122,7 @@
 
 													<?php } else { ?>
 														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-5rem"><br>
 															<center>
 																<h6><?php echo $spek['dapur']; ?></h6>
 															</center>
@@ -133,7 +133,7 @@
 
 													<?php } else { ?>
 														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-5rem"><br>
 															<center>
 																<h6><?php echo $spek['ru_keluarga']; ?></h6>
 															</center>
@@ -144,7 +144,7 @@
 
 													<?php } else { ?>
 														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-5rem"><br>
 															<center>
 																<h6><?php echo $spek['ru_makan']; ?></h6>
 															</center>
@@ -155,7 +155,7 @@
 
 													<?php } else { ?>
 														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-5rem"><br>
 															<center>
 																<h6><?php echo $spek['balkon']; ?></h6>
 															</center>

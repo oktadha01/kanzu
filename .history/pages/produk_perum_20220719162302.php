@@ -18,22 +18,22 @@ if ($list == '0') {
         echo '<div class="col-lg-4 col-md-12 col-12 mt-3">
         <div class="bg-product">
                         <a href="index.php?p=detail&id='. $row['nm_perum'] . '">
-                            <img src="assets/img/foto_display/' . $row['fot_display'] . '" alt="PT KANPA Logo" class="img-fluid" />
+                            <img src="assets/img/foto_display/' . ['fot_display'] . '" alt="PT KANPA Logo" class="img-fluid" />
                         </a>
                         <div class="p-2">
                             <h6 class="mb-0">mulai</h6>
                             <div class="row pl-1">
-                                <h5 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp ' . $row['harga'] . ' <sub>jt</sub></h5>
-                                <h6 class="ml-1 font-weight-bold">*' . $row['promo'] . '</h6>
+                                <h5 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp ' . ['harga'] . ' <sub>jt</sub></h5>
+                                <h6 class="ml-1 font-weight-bold">*' . ['promo'] . '</h6>
                             </div>
                             <h4 class="font-weight-bold">
-                                <a class="text-dark" href="index.php?p=detail&id=' . $row['nm_perum'] . '">' . $row['nm_perum'] . ' - Tipe mulai
+                                <a class="text-dark" href="index.php?p=detail&id=' . ['nm_perum'] . '">' . ['nm_perum'] . ' - Tipe mulai
                                     <h4 class="font-weight-bold bor-tip-dash fit-conten">
-                                        ' . $row['luas_p'] . '/' . $row['luas_t'] . '
+                                        ' . ['luas_p'] . '/' . ['luas_t'] . '
                                     </h4>
                                 </a>
                             </h4>
-                            <p class="font-weight-bold">' . $row['alamat'] . '</p>
+                            <p class="font-weight-bold">' . ['alamat'] . '</p>
                             <div class="table-responsive p-0">
                                 <table class="table table-head-fixed text-nowrap table-hover">
                                     <thead>
@@ -41,69 +41,73 @@ if ($list == '0') {
                                             <td scope="col" class="text-center">
                                                 <img src="assets/img/ikon-display/taman.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                 <center>
-                                                    <h6>' . $row['taman'] . '</h6>
+                                                    <h6>' . ['taman'] . '</h6>
                                                 </center>
                                             </td>
                                             <td scope="col" class="text-center">
                                                 <img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                 <center>
-                                                    <h6>' . $row['carportr'] . '</h6>
+                                                    <h6>' . ['carportr'] . '</h6>
                                                 </center>
                                             </td>
                                             <td scope="col" class="text-center">
                                                 <img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                 <center>
-                                                    <h6>' . $row['ru_tamu'] . '</h6>
+                                                    <h6>' . ['ru_tamu'] . '</h6>
                                                 </center>
                                             </td>
                                             <td scope="col" class="text-center">
                                                 <img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                 <center>
-                                                    <h6>' . $row['ka_tidur'] . '</h6>
+                                                    <h6>' . ['ka_tidur'] . '</h6>
                                                 </center>
                                             </td>
                                             <td scope="col" class="text-center">
                                                 <img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                 <center>
-                                                    <h6>' . $row['ka_mandi'] . '</h6>
+                                                    <h6>' . ['ka_mandi'] . '</h6>
                                                 </center>
                                             </td>
-                                            '.($row['dapur'] == null).' { 
+                                            (' . $row['dapur'] . '== null) {
 
                                             } else {
                                                 <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
-                                                        <h6>' . $row['dapur'] . '</h6>
+                                                        <h6>' . ['dapur'] . '</h6>
                                                     </center>
                                                 </td>
-                                            } '.($row['ru_keluarga'] == null) .'{ 
+                                            }
+                                            <?php
+                                            if (' . $row['ru_keluarga'] . ' == null) {
 
                                             } else {
                                                 <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
-                                                        <h6>' . $row['ru_keluarga'] . '</h6>
+                                                        <h6>' . ['ru_keluarga'] . '</h6>
                                                     </center>
                                                 </td>
                                             }
-                                            '.($row['ru_makan'] == null) .'{ 
+                                            <?php
+                                            if (' . $row['ru_makan'] . ' == null) {
 
                                             } else {
                                                 <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
-                                                        <h6>' . $row['ru_makan'] . '</h6>
+                                                        <h6>' . ['ru_makan'] . '</h6>
                                                     </center>
                                                 </td>
                                             }
-                                            '.($row['balkon'] == null) .'{ 
+                                            <?php
+                                            if (' . $row['balkon'] . ' == null) {
 
                                             } else {
                                                 <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
-                                                        <h6>' . $row['balkon'] . '</h6>
+                                                        <h6>' . ['balkon'] . '</h6>
                                                     </center>
                                                 </td>
                                             }
@@ -113,7 +117,7 @@ if ($list == '0') {
                             </div>
                             <div class="col-12 mb-2">
                                 <center>
-                                    <a href="index.php?p=detail&id=' . $row['nm_perum'] . '" data-id="" class="btn-sm bg-btn-detail btn-primary">Lihat Detail >></a>
+                                    <a href="index.php?p=detail&id=' . ['nm_perum'] . '" data-id="" class="btn-sm bg-btn-detail btn-primary">Lihat Detail >></a>
                                 </center>
                             </div>
                         </div>

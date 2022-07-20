@@ -88,79 +88,82 @@
 												while ($spek = mysqli_fetch_array($spesifikasi)) {
 												?>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/taman.png" alt="PT KANPA Logo" class="height-4rem"><br>
-														<center>
-															<h6><?php echo $spek['taman']; ?></h6>
-														</center>
-													</td>
-													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="height-4rem"><br>
-														<center>
-															<h6><?php echo $spek['carportr']; ?></h6>
-														</center>
-													</td>
-													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-4rem"><br>
-														<center>
-															<h6><?php echo $spek['ru_tamu']; ?></h6>
-														</center>
-													</td>
-													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-4rem"><br>
-														<center>
-															<h6><?php echo $spek['ka_tidur']; ?></h6>
-														</center>
-													</td>
-													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-4rem"><br>
-														<center>
-															<h6><?php echo $spek['ka_mandi']; ?></h6>
-														</center>
-													</td>
-													<?php
-													if ($spek['dapur'] == null) { ?>
-
-													<?php } else { ?>
-														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<div class="">
+															<img src="assets/img/ikon-display/taman.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
 															<center>
-																<h6><?php echo $spek['dapur']; ?></h6>
+																<h6 class="mt-1"><?php echo $spek['taman']; ?></h6>
 															</center>
-														</td>
-													<?php } ?>
-													<?php
-													if ($spek['ru_keluarga'] == null) { ?>
-
-													<?php } else { ?>
-														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
-															<center>
-																<h6><?php echo $spek['ru_keluarga']; ?></h6>
-															</center>
-														</td>
-													<?php } ?>
-													<?php
-													if ($spek['ru_makan'] == null) { ?>
-
-													<?php } else { ?>
-														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
-															<center>
-																<h6><?php echo $spek['ru_makan']; ?></h6>
-															</center>
-														</td>
-													<?php } ?>
+														</div>
+													</td>
 													<?php
 													if ($spek['balkon'] == null) { ?>
 
 													<?php } else { ?>
 														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
-															<center>
-																<h6><?php echo $spek['balkon']; ?></h6>
-															</center>
+															<div class="">
+																<img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+																<center>
+																	<h6 class="mt-1"><?php echo $spek['balkon']; ?></h6>
+																</center>
+															</div>
 														</td>
 													<?php } ?>
+													<td scope="col" class="text-center">
+														<div class="">
+															<img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+															<center>
+																<h6 class="mt-1"><?php echo $spek['carportr']; ?></h6>
+															</center>
+														</div>
+													</td>
+													<?php
+													if ($spek['ru_tamu'] == null) { ?>
+													<?php } else { ?>
+														<td scope="col" class="text-center">
+															<div class="">
+																<img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+																<center>
+																	<h6 class="mt-1"><?php echo $spek['ru_tamu']; ?></h6>
+																</center>
+															</div>
+														</td>
+													<?php } ?>
+													<td scope="col" class="text-center">
+														<div class="">
+															<img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+															<center>
+																<h6 class="mt-1"><?php echo $spek['ka_tidur']; ?></h6>
+															</center>
+														</div>
+													</td>
+													<td scope="col" class="text-center">
+														<div class="">
+															<img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+															<center>
+																<h6 class="mt-1"><?php echo $spek['ka_mandi']; ?></h6>
+															</center>
+														</div>
+													</td>
+													<?php
+													if ($spek['ru_makan'] == null) { ?>
+													<?php } else { ?>
+														<td scope="col" class="text-center">
+															<div class="">
+																<img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+																<center>
+																	<h6 class="mt-1"><?php echo $spek['ru_makan']; ?></h6>
+																</center>
+															</div>
+														</td>
+													<?php } ?>
+													<td scope="col" class="text-center">
+														<div class="">
+															<img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+															<center>
+																<h6 class="mt-1"><?php echo $spek['dapur']; ?></h6>
+															</center>
+														</div>
+													</td>
 												<?php } ?>
 											</tr>
 										</thead>

@@ -148,7 +148,7 @@ body {
 
 .bor-est {
     background-color: #0000001a;
-    border-color: #07080947;
+    border-color: #070809;
     box-shadow: none;
     color: black;
 }
@@ -156,7 +156,7 @@ body {
 .bor-est-active,
 .bor-est:hover {
     background-color: #065cf747;
-    border-color: #0642f985;
+    border-color: #0642f9;
     box-shadow: none;
     color: black;
 }

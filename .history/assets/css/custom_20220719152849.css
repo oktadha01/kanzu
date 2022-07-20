@@ -95,10 +95,6 @@ body {
     height: 3rem;
 }
 
-.height-4rem {
-    height: 4rem;
-}
-
 .height-5rem {
     height: 5rem;
 }
@@ -148,7 +144,7 @@ body {
 
 .bor-est {
     background-color: #0000001a;
-    border-color: #07080947;
+    border-color: #070809;
     box-shadow: none;
     color: black;
 }
@@ -156,7 +152,7 @@ body {
 .bor-est-active,
 .bor-est:hover {
     background-color: #065cf747;
-    border-color: #0642f985;
+    border-color: #0642f9;
     box-shadow: none;
     color: black;
 }
@@ -332,7 +328,7 @@ body {
     border-radius: 1rem;
 }
 
-.border-radius-5px {
+.border-radius-5px{
     border-radius: 5px;
 }
 
@@ -361,9 +357,9 @@ body {
 }
 
 .btn-soft-info {
-    background-color: rgba(37, 194, 227, .15);
+    background-color: rgba(37,194,227,.15);
     color: #25c2e3;
-    border-color: rgba(37, 194, 227, .15);
+    border-color: rgba(37,194,227,.15);
 }
 
 .text-publishing {

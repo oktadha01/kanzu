@@ -79,92 +79,89 @@
 									</a>
 								</h5>
 								<p class="font-weight-bold"><?php echo $row['alamat']; ?></p>
-								<div class="table-responsive p-0">
-									<table class="table table-head-fixed text-nowrap table-hover">
-										<thead>
-											<tr>
-												<?php
-												$spesifikasi = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
-												while ($spek = mysqli_fetch_array($spesifikasi)) {
-												?>
+								<div class="row jus-content">
+									<div class="table-responsive p-0">
+										<table class="table table-head-fixed text-nowrap table-hover">
+											<thead>
+												<tr>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/taman.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-detail/ikon-taman.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
-															<h6><?php echo $spek['taman']; ?></h6>
+															<h6><?php echo $row['taman']; ?></h6>
 														</center>
 													</td>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-detail/ikon-carport.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
-															<h6><?php echo $spek['carportr']; ?></h6>
+															<h6><?php echo $row['carportr']; ?></h6>
 														</center>
 													</td>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-detail/ikon-ru-tamu.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
-															<h6><?php echo $spek['ru_tamu']; ?></h6>
+															<h6><?php echo $row['ru_tamu']; ?></h6>
 														</center>
 													</td>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-detail/ikon-ka-tidur.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
-															<h6><?php echo $spek['ka_tidur']; ?></h6>
+															<h6><?php echo $row['ka_tidur']; ?></h6>
 														</center>
 													</td>
 													<td scope="col" class="text-center">
-														<img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-4rem"><br>
+														<img src="assets/img/ikon-detail/ikon-ka-mandi.png" alt="PT KANPA Logo" class="height-5rem"><br>
 														<center>
-															<h6><?php echo $spek['ka_mandi']; ?></h6>
+															<h6><?php echo $row['ka_mandi']; ?></h6>
 														</center>
 													</td>
 													<?php
-													if ($spek['dapur'] == null) { ?>
+													if ($row['dapur'] == null) { ?>
 
 													<?php } else { ?>
 														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<img src="assets/img/ikon-detail/ikon-dapur.png" alt="PT KANPA Logo" class="height-5rem"><br>
 															<center>
-																<h6><?php echo $spek['dapur']; ?></h6>
+																<h6><?php echo $row['dapur']; ?></h6>
 															</center>
 														</td>
 													<?php } ?>
 													<?php
-													if ($spek['ru_keluarga'] == null) { ?>
+													if ($row['ru_keluarga'] == null) { ?>
 
 													<?php } else { ?>
 														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<img src="assets/img/ikon-detail/ikon-ru-keluarga.png" alt="PT KANPA Logo" class="height-5rem"><br>
 															<center>
-																<h6><?php echo $spek['ru_keluarga']; ?></h6>
+																<h6><?php echo $row['ru_keluarga']; ?></h6>
 															</center>
 														</td>
 													<?php } ?>
 													<?php
-													if ($spek['ru_makan'] == null) { ?>
+													if ($row['ru_makan'] == null) { ?>
 
 													<?php } else { ?>
 														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<img src="assets/img/ikon-detail/ikon-ru-makan.png" alt="PT KANPA Logo" class="height-5rem"><br>
 															<center>
-																<h6><?php echo $spek['ru_makan']; ?></h6>
+																<h6><?php echo $row['ru_makan']; ?></h6>
 															</center>
 														</td>
 													<?php } ?>
 													<?php
-													if ($spek['balkon'] == null) { ?>
+													if ($row['balkon'] == null) { ?>
 
 													<?php } else { ?>
 														<td scope="col" class="text-center">
-															<img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<img src="assets/img/ikon-detail/ikon-balkon.png" alt="PT KANPA Logo" class="height-5rem"><br>
 															<center>
-																<h6><?php echo $spek['balkon']; ?></h6>
+																<h6><?php echo $row['balkon']; ?></h6>
 															</center>
 														</td>
 													<?php } ?>
-												<?php } ?>
-											</tr>
-										</thead>
-									</table>
+												</tr>
+											</thead>
+										</table>
+									</div>
 								</div>
 								<div class="col-12 mb-2">
 									<center>

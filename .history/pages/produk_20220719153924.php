@@ -13,7 +13,7 @@
                         <div class="p-2">
                             <h6 class="mb-0">mulai</h6>
                             <div class="row pl-1">
-                                <h5 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $row['harga']; ?> <sub>jt</sub></h5>
+                                <h5 class="bg-price p-1">Rp <?php echo $row['harga']; ?> <sub>jt</sub></h5>
                                 <h6 class="ml-1 font-weight-bold">*<?php echo $row['promo']; ?></h6>
                             </div>
                             <h4 class="font-weight-bold">

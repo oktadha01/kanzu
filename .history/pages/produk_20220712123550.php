@@ -13,7 +13,7 @@
                         <div class="p-2">
                             <h6 class="mb-0">mulai</h6>
                             <div class="row pl-1">
-                                <h5 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $row['harga']; ?> <sub>jt</sub></h5>
+                                <h5 class="bg-price p-1">Rp <?php echo $row['harga']; ?> <sub>jt</sub></h5>
                                 <h6 class="ml-1 font-weight-bold">*<?php echo $row['promo']; ?></h6>
                             </div>
                             <h4 class="font-weight-bold">
@@ -29,79 +29,82 @@
                                     <thead>
                                         <tr>
                                             <td scope="col" class="text-center">
-                                                <img src="assets/img/ikon-display/taman.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                <center>
-                                                    <h6><?php echo $row['taman']; ?></h6>
-                                                </center>
-                                            </td>
-                                            <td scope="col" class="text-center">
-                                                <img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                <center>
-                                                    <h6><?php echo $row['carportr']; ?></h6>
-                                                </center>
-                                            </td>
-                                            <td scope="col" class="text-center">
-                                                <img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                <center>
-                                                    <h6><?php echo $row['ru_tamu']; ?></h6>
-                                                </center>
-                                            </td>
-                                            <td scope="col" class="text-center">
-                                                <img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                <center>
-                                                    <h6><?php echo $row['ka_tidur']; ?></h6>
-                                                </center>
-                                            </td>
-                                            <td scope="col" class="text-center">
-                                                <img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                <center>
-                                                    <h6><?php echo $row['ka_mandi']; ?></h6>
-                                                </center>
-                                            </td>
-                                            <?php
-                                            if ($row['dapur'] == null) { ?>
-
-                                            <?php } else { ?>
-                                                <td scope="col" class="text-center">
-                                                    <img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+                                                <div class="">
+                                                    <img src="assets/img/taman.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
                                                     <center>
-                                                        <h6><?php echo $row['dapur']; ?></h6>
+                                                        <h6 class="mt-1"><?php echo $row['taman']; ?></h6>
                                                     </center>
-                                                </td>
-                                            <?php } ?>
-                                            <?php
-                                            if ($row['ru_keluarga'] == null) { ?>
-
-                                            <?php } else { ?>
-                                                <td scope="col" class="text-center">
-                                                    <img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                    <center>
-                                                        <h6><?php echo $row['ru_keluarga']; ?></h6>
-                                                    </center>
-                                                </td>
-                                            <?php } ?>
-                                            <?php
-                                            if ($row['ru_makan'] == null) { ?>
-
-                                            <?php } else { ?>
-                                                <td scope="col" class="text-center">
-                                                    <img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                    <center>
-                                                        <h6><?php echo $row['ru_makan']; ?></h6>
-                                                    </center>
-                                                </td>
-                                            <?php } ?>
+                                                </div>
+                                            </td>
                                             <?php
                                             if ($row['balkon'] == null) { ?>
 
                                             <?php } else { ?>
                                                 <td scope="col" class="text-center">
-                                                    <img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                    <center>
-                                                        <h6><?php echo $row['balkon']; ?></h6>
-                                                    </center>
+                                                    <div class="">
+                                                        <img src="assets/img/balkon.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                                        <center>
+                                                            <h6 class="mt-1"><?php echo $row['balkon']; ?></h6>
+                                                        </center>
+                                                    </div>
                                                 </td>
                                             <?php } ?>
+                                            <td scope="col" class="text-center">
+                                                <div class="">
+                                                    <img src="assets/img/carport2.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                                    <center>
+                                                        <h6 class="mt-1"><?php echo $row['carportr']; ?></h6>
+                                                    </center>
+                                                </div>
+                                            </td>
+                                            <?php
+                                            if ($row['ru_tamu'] == null) { ?>
+                                            <?php } else { ?>
+                                                <td scope="col" class="text-center">
+                                                    <div class="">
+                                                        <img src="assets/img/ruang-tamu.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                                        <center>
+                                                            <h6 class="mt-1"><?php echo $row['ru_tamu']; ?></h6>
+                                                        </center>
+                                                    </div>
+                                                </td>
+                                            <?php } ?>
+                                            <td scope="col" class="text-center">
+                                                <div class="">
+                                                    <img src="assets/img/kamar-tidur.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                                    <center>
+                                                        <h6 class="mt-1"><?php echo $row['ka_tidur']; ?></h6>
+                                                    </center>
+                                                </div>
+                                            </td>
+                                            <?php
+                                            if ($row['ru_makan'] == null) { ?>
+                                            <?php } else { ?>
+                                                <td scope="col" class="text-center">
+                                                    <div class="">
+                                                        <img src="assets/img/r-makan.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                                        <center>
+                                                            <h6 class="mt-1"><?php echo $row['ru_makan']; ?></h6>
+                                                        </center>
+                                                    </div>
+                                                </td>
+                                            <?php } ?>
+                                            <td scope="col" class="text-center">
+                                                <div class="">
+                                                    <img src="assets/img/kamar-mandi.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                                    <center>
+                                                        <h6 class="mt-1"><?php echo $row['ka_mandi']; ?></h6>
+                                                    </center>
+                                                </div>
+                                            </td>
+                                            <td scope="col" class="text-center">
+                                                <div class="">
+                                                    <img src="assets/img/dapur.png" alt="PT KANPA Logo" class="height-3rem img-circle elevation-3"><br>
+                                                    <center>
+                                                        <h6 class="mt-1"><?php echo $row['dapur']; ?></h6>
+                                                    </center>
+                                                </div>
+                                            </td>
                                         </tr>
                                     </thead>
                                 </table>

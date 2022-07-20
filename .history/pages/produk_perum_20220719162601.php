@@ -68,7 +68,7 @@ if ($list == '0') {
                                                     <h6>' . $row['ka_mandi'] . '</h6>
                                                 </center>
                                             </td>
-                                            '.($row['dapur'] == null).' { 
+                                            (' . $row['dapur'] . '== null) {
 
                                             } else {
                                                 <td scope="col" class="text-center">
@@ -77,7 +77,9 @@ if ($list == '0') {
                                                         <h6>' . $row['dapur'] . '</h6>
                                                     </center>
                                                 </td>
-                                            } '.($row['ru_keluarga'] == null) .'{ 
+                                            }
+                                            <?php
+                                            if (' . $row['ru_keluarga'] == null . ') {
 
                                             } else {
                                                 <td scope="col" class="text-center">
@@ -87,7 +89,8 @@ if ($list == '0') {
                                                     </center>
                                                 </td>
                                             }
-                                            '.($row['ru_makan'] == null) .'{ 
+                                            <?php
+                                            if (' . $row['ru_makan'] == null .') {
 
                                             } else {
                                                 <td scope="col" class="text-center">
@@ -97,7 +100,8 @@ if ($list == '0') {
                                                     </center>
                                                 </td>
                                             }
-                                            '.($row['balkon'] == null) .'{ 
+                                            <?php
+                                            if (' . $row['balkon'] == null . ') {
 
                                             } else {
                                                 <td scope="col" class="text-center">
