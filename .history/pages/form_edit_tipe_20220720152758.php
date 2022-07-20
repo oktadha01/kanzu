@@ -60,7 +60,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text pad-cus-6px">
-                                <img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
+                                <img src="assets/img/ikon-display/carport2.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                             </span>
                         </div>
                         <input type="number" id="edit-carportr" class="form-control" name="carportr" placeholder="Carportr..." value="<?php echo $row['carportr']; ?>">
@@ -71,7 +71,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text pad-cus-6px">
-                                <img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
+                                <img src="assets/img/ikon-display/ruang-tamu.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                             </span>
                         </div>
                         <input type="number" id="edit-ru-tamu" class="form-control" name="ru_tamu" placeholder="R-Tamu..." value="<?php echo $row['ru_tamu']; ?>">
@@ -84,7 +84,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text pad-cus-6px">
-                                <img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
+                                <img src="assets/img/ikon-display/kamar-tidur.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                             </span>
                         </div>
                         <input type="number" id="edit-ru-keluarga" class="form-control" name="ru_keluarga" placeholder="Ru_Keluarga..." value="<?php echo $row['ru_keluarga']; ?>">
@@ -95,7 +95,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text pad-cus-6px">
-                                <img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
+                                <img src="assets/img/ikon-display/kamar-tidur.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                             </span>
                         </div>
                         <input type="number" id="edit-ka-tidur" class="form-control" name="ka_tidur" placeholder="K-Tidur..." value="<?php echo $row['ka_tidur']; ?>">
@@ -106,7 +106,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text pad-cus-6px">
-                                <img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
+                                <img src="assets/img/ikon-display/kamar-mandi.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                             </span>
                         </div>
                         <input type="number" id="edit-ka-mandi" class="form-control" name="ka_mandi" placeholder="K-Mandi..." value="<?php echo $row['ka_mandi']; ?>">
@@ -117,7 +117,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text pad-cus-6px">
-                                <img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
+                                <img src="assets/img/ikon-display/r-makan.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                             </span>
                         </div>
                         <input type="number" id="edit-ru-makan" class="form-control" name="ru_makan" placeholder="Ru-Makan..." value="<?php echo $row['ru_makan'];?>">

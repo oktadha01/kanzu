@@ -1,5 +1,6 @@
 <div class="row">
     <div class="col-6">
+
         <div class="form-group">
             <label>Pilih Perumahan</label>
             <select id="change-perumtipe" class="custom-select">
@@ -45,7 +46,6 @@
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="balkon">Balkon</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
@@ -56,7 +56,6 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="taman">Taman</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
@@ -67,7 +66,6 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="carport">Carport</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
@@ -78,7 +76,6 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ru-tamu">R-Tamu</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
@@ -91,7 +88,6 @@
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ru-keluarga">R-Keluarga</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
@@ -102,7 +98,6 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ka-tidur">K-Tidur</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
@@ -113,7 +108,6 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ka-mandi">K-Mandi</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
@@ -124,7 +118,6 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ru-makan">R-Makan</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
@@ -135,7 +128,6 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="dapur">Dapur</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">

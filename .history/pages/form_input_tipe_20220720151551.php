@@ -1,5 +1,6 @@
 <div class="row">
     <div class="col-6">
+
         <div class="form-group">
             <label>Pilih Perumahan</label>
             <select id="change-perumtipe" class="custom-select">
@@ -45,44 +46,40 @@
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="balkon">Balkon</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="heigh-24px">
+                            <img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>
                     <input type="number" id="balkon" class="form-control" name="balkon" placeholder="Balkon...">
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="taman">Taman</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/ikon-display/taman.png" alt="PT KANPA Logo" class="heigh-24px">
+                            <img src="assets/img/ikon-display/taman.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>
                     <input type="number" id="taman" class="form-control" name="taman" placeholder="Taman...">
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="carport">Carport</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="heigh-24px">
+                            <img src="assets/img/ikon-display/carport2.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>
                     <input type="number" id="carportr" class="form-control" name="carportr" placeholder="Carportr...">
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ru-tamu">R-Tamu</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="heigh-24px">
+                            <img src="assets/img/ikon-display/ruang-tamu.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>
                     <input type="number" id="ru-tamu" class="form-control" name="ru_tamu" placeholder="R-Tamu...">
@@ -91,55 +88,50 @@
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ru-keluarga">R-Keluarga</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="heigh-24px">
+                            <img src="assets/img/ikon-display/kamar-tidur.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>
                     <input type="number" id="ru-keluarga" class="form-control" name="ru_keluarga" placeholder="Ru_Keluarga...">
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ka-tidur">K-Tidur</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="heigh-24px">
+                            <img src="assets/img/ikon-display/kamar-tidur.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>
                     <input type="number" id="ka-tidur" class="form-control" name="ka_tidur" placeholder="K-Tidur...">
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ka-mandi">K-Mandi</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="heigh-24px">
+                            <img src="assets/img/ikon-display/kamar-mandi.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>
                     <input type="number" id="ka-mandi" class="form-control" name="ka_mandi" placeholder="K-Mandi...">
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="ru-makan">R-Makan</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="heigh-24px">
+                            <img src="assets/img/ikon-display/r-makan.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>
                     <input type="number" id="ru-makan" class="form-control" name="ru_makan" placeholder="Ru-Makan...">
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-6">
-                <label for="dapur">Dapur</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text pad-cus-6px">
-                            <img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="heigh-24px">
+                            <img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="heigh-24px img-circle elevation-3">
                         </span>
                     </div>
                     <input type="number" id="dapur" class="form-control" name="dapur" placeholder="Dapur...">
