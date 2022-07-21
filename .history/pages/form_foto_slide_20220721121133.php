@@ -245,7 +245,7 @@ if ($_SESSION['id_user'] == '') {
                             <input type="text" id="id-pilih-perum" name="id_fotperum" value="" hidden>
                             <input type="text" id="id-pilih-tipe" name="id_fottipe" value="" hidden>
                             <div class="form-group ">
-                                <input type="text" id="link" class="form-control" name="link" placeholder="Link ..." autocomplete="off" value="">
+                                <input type="text" id="link" class="form-control" name="link" placeholder="Link ..." autocomplete="off" required value="">
                             </div>
                             <div class="custom-file">
                                 <input type="file" name="file_foto[]" class="custom-file-input" id="chooseFile" multiple disabled>

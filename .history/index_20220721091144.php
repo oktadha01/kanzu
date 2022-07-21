@@ -261,6 +261,7 @@ session_start();
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://360player.io/static/dist/scripts/embed.js" defer></script>
     <!-- <script src="assets/js/vendor.min.js"></script> -->
     <!-- AdminLTE App -->
     <script src="assets/js/demo.js"></script>
