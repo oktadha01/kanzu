@@ -17,7 +17,7 @@ if ($list == '0') {
 
         echo '<div class="col-lg-4 col-md-12 col-12 mt-3">
         <div class="bg-product">
-                        <a href="index.php?p=detail&id=' . $row['nm_perum'] . '">
+                        <a href="index.php?p=detail&id='. $row['nm_perum'] . '">
                             <img src="assets/img/foto_display/' . $row['fot_display'] . '" alt="PT KANPA Logo" class="img-fluid" />
                         </a>
                         <div class="p-2">
@@ -67,52 +67,52 @@ if ($list == '0') {
                                                 <center>
                                                     <h6>' . $row['ka_mandi'] . '</h6>
                                                 </center>
-                                            </td>' ;
+                                            </td>
                                             
-                                              if ( $row['dapur'] == NULL)  { 
+                                            if ('. $row['dapur'] == null .') {
 
-                                             } else { 
-                                                echo' <td scope="col" class="text-center">
+                                             } else {
+                                                <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
                                                         <h6>' . $row['dapur'] . '</h6>
                                                     </center>
-                                                </td>' ;
-                                            } 
+                                                </td>
+                                             }
                                             
-                                            if ($row['ru_keluarga'] == NULL) {  
+                                            if ('. $row['ru_keluarga'] == null . ') {
 
-                                             } else { 
-                                               echo '<td scope="col" class="text-center">
+                                             } else {
+                                                <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
-                                                        <h6>' . $row['ru_keluarga'] . '</h6>
+                                                        <h6>'. $row['ru_keluarga'] . '</h6>
                                                     </center>
-                                                </td>';
-                                           } 
+                                                </td>
+                                             }
                                             
-                                            if ($row['ru_makan']  == NULL){ 
+                                            if ('. $row['ru_makan'] == null . ') {
 
-                                            } else { 
-                                              echo '<td scope="col" class="text-center">
+                                             } else {
+                                                <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
-                                                        <h6>' . $row['ru_makan'] . '</h6>
+                                                        <h6>'. $row['ru_makan'] . '</h6>
                                                     </center>
-                                                </td>';
-                                            } 
+                                                </td>
+                                             }
                                             
-                                            if ($row['balkon']  == NULL){ 
+                                            if ('. $row['balkon'] == null . ') {
 
-                                            } else { 
-                                              echo '<td scope="col" class="text-center">
+                                             } else {
+                                                <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
-                                                        <h6>' . $row['balkon'] . '</h6>
+                                                        <h6>'. $row['balkon'] . '</h6>
                                                     </center>
-                                                </td>';
-                                            } 
-                                       echo' </tr>
+                                                </td>
+                                             }
+                                        </tr>
                                     </thead>
                                 </table>
                             </div>
@@ -123,6 +123,6 @@ if ($list == '0') {
                             </div>
                         </div>
                     </div>
-                    </div>' ;
+   </div>';
     }
 }

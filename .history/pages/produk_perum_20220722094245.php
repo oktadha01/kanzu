@@ -67,62 +67,17 @@ if ($list == '0') {
                                                 <center>
                                                     <h6>' . $row['ka_mandi'] . '</h6>
                                                 </center>
-                                            </td>' ;
-                                            
-                                              if ( $row['dapur'] == NULL)  { 
+                                            </td>';
 
-                                             } else { 
-                                                echo' <td scope="col" class="text-center">
+        if ($row['dapur'] == NULL) {
+            echo 'ya';
+        } else {
+            echo ' <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
                                                         <h6>' . $row['dapur'] . '</h6>
                                                     </center>
-                                                </td>' ;
-                                            } 
-                                            
-                                            if ($row['ru_keluarga'] == NULL) {  
-
-                                             } else { 
-                                               echo '<td scope="col" class="text-center">
-                                                    <img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                    <center>
-                                                        <h6>' . $row['ru_keluarga'] . '</h6>
-                                                    </center>
                                                 </td>';
-                                           } 
-                                            
-                                            if ($row['ru_makan']  == NULL){ 
-
-                                            } else { 
-                                              echo '<td scope="col" class="text-center">
-                                                    <img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                    <center>
-                                                        <h6>' . $row['ru_makan'] . '</h6>
-                                                    </center>
-                                                </td>';
-                                            } 
-                                            
-                                            if ($row['balkon']  == NULL){ 
-
-                                            } else { 
-                                              echo '<td scope="col" class="text-center">
-                                                    <img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
-                                                    <center>
-                                                        <h6>' . $row['balkon'] . '</h6>
-                                                    </center>
-                                                </td>';
-                                            } 
-                                       echo' </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                            <div class="col-12 mb-2">
-                                <center>
-                                    <a href="index.php?p=detail&id=' . $row['nm_perum'] . '" data-id="" class="btn-sm bg-btn-detail btn-primary">Lihat Detail >></a>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                    </div>' ;
+        }
     }
 }

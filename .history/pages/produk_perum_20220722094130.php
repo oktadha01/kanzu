@@ -77,42 +77,42 @@ if ($list == '0') {
                                                     <center>
                                                         <h6>' . $row['dapur'] . '</h6>
                                                     </center>
-                                                </td>' ;
-                                            } 
-                                            
-                                            if ($row['ru_keluarga'] == NULL) {  
+                                                </td>
+                                            <?php } ?>
+                                            <?php
+                                            if ' . ($row['ru_keluarga'] == NULL). ' {  ?>
 
-                                             } else { 
-                                               echo '<td scope="col" class="text-center">
+                                             <?php } else { ?>
+                                                <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
                                                         <h6>' . $row['ru_keluarga'] . '</h6>
                                                     </center>
-                                                </td>';
-                                           } 
-                                            
-                                            if ($row['ru_makan']  == NULL){ 
+                                                </td>
+                                           <?php } ?>
+                                            <?php
+                                            if ' . ( $row['ru_makan']  == NULL) . ' { ?>
 
-                                            } else { 
-                                              echo '<td scope="col" class="text-center">
+                                            <?php } else { ?>
+                                                <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
                                                         <h6>' . $row['ru_makan'] . '</h6>
                                                     </center>
-                                                </td>';
-                                            } 
-                                            
-                                            if ($row['balkon']  == NULL){ 
+                                                </td>
+                                            <?php } ?>
+                                            <?php
+                                            if ' . ( $row['balkon']  == NULL) . ' { ?>
 
-                                            } else { 
-                                              echo '<td scope="col" class="text-center">
+                                            <?php } else { ?>
+                                                <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
                                                         <h6>' . $row['balkon'] . '</h6>
                                                     </center>
-                                                </td>';
-                                            } 
-                                       echo' </tr>
+                                                </td>
+                                           <?php  } ?>
+                                        </tr>
                                     </thead>
                                 </table>
                             </div>
