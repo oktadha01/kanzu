@@ -245,7 +245,15 @@ session_start();
     </div>
     <!-- ./wrapper -->
 
-
+    <?php
+    $no = 1;
+    $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE nm_perum='$_POST[id_detail]'");
+    while ($row = mysqli_fetch_array($ambil_data)) {
+    ?>
+        <script type="text/javascript">
+            $('#id-perum-tipe').val('<?php echo $row['nm_perum']; ?>');
+        </script>
+    <?php } ?>
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -266,15 +274,7 @@ session_start();
     <script src="assets/js/demo.js"></script>
     <script src="assets/js/adminlte.js"></script>
     <script src="assets/js/index.js"></script>
-    <?php
-    $no = 1;
-    $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE nm_perum='$_POST[id_detail]'");
-    while ($row = mysqli_fetch_array($ambil_data)) {
-    ?>
-        <script type="text/javascript">
-            $('#id-perum-tipe').val('<?php echo $row['nm_perum']; ?>');
-        </script>
-    <?php } ?>
+
     <script>
         var didScroll;
         var lastScrollTop = 0;

@@ -39,17 +39,14 @@
 				?>
 					<div class="col-lg-4 col-md-12 col-12 col mt-4">
 						<div class="bg-product">
-							<form method="post" action="index.php?p=detail" enctype="multipart/form-data">
+							<a href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>">
 								<?php
 								$fot_display = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
 								while ($foto = mysqli_fetch_array($fot_display)) {
 								?>
-									<button type="submit" class="border-0px p-0">
-										<img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
-									</button>
+									<img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
 								<?php } ?>
-								<input type="text" id="id_detail" name="id_detail" value="<?php echo $row['nm_perum']; ?>" hidden>
-							</form>
+							</a>
 							<div class="p-2">
 								<h6 class="mb-0">mulai</h6>
 								<div class="row pl-1">
@@ -170,12 +167,10 @@
 									</table>
 								</div>
 								<div class="col-12 mb-2">
-									<form method="post" action="index.php?p=detail" enctype="multipart/form-data">
-										<center>
-											<button type="submit" class="btn-sm bg-btn-detail text-light">Lihat Detail >></button>
-											<input type="text" id="id_detail" name="id_detail" value="<?php echo $row['nm_perum']; ?>" hidden>
-										</center>
-									</form>
+									<center>
+										<a href="index.php?p=detail&id=" data-id="<?php echo $row['nm_perum']; ?>" class="btn-sm bg-btn-detail btn-primary btn-detail-perum">Lihat Detail >></a>
+									</center>
+									<input type="text" id="id_detail" value="">
 								</div>
 							</div>
 						</div>
@@ -337,7 +332,7 @@
 	</div>
 </div>
 <script>
-	// alert('ya');
+	alert('ya');
 	// $(document).ready(function() {
 
 	// });

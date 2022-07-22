@@ -51,7 +51,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 					<div class="row">
 						<?php
 						$no = 1;
-						$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, fasilitas WHERE perumahan.nm_perum='$_POST[id_detail]' AND perumahan.id_perum = fasilitas.id_fasperum");
+						$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, fasilitas WHERE perumahan.nm_perum='$_GET[id]' AND perumahan.id_perum = fasilitas.id_fasperum");
 						while ($row = mysqli_fetch_array($ambil_data)) {
 						?>
 							<div class="col-lg-6 col-12 mt-1">
@@ -69,7 +69,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 
 						<?php
 						$no = 1;
-						$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, lok_terdekat WHERE perumahan.nm_perum='$_POST[id_detail]' AND perumahan.id_perum = lok_terdekat.id_lokperum");
+						$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, lok_terdekat WHERE perumahan.nm_perum='$_GET[id]' AND perumahan.id_perum = lok_terdekat.id_lokperum");
 						while ($row = mysqli_fetch_array($ambil_data)) {
 						?>
 							<div class="col-12 mt-1">
@@ -86,9 +86,9 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 						<div class="card-header p-0 border-bottom-0">
 							<ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
 								<?php
-								// $perum = $_POST['i_detaild'];
+								// $perum = $_GET['id'];
 								$no = 1;
-								$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, tipe WHERE perumahan.nm_perum = '$_POST[id_detail]' AND perumahan.id_perum = tipe.id_tipeperum ");
+								$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, tipe WHERE perumahan.nm_perum = '$_GET[id]' AND perumahan.id_perum = tipe.id_tipeperum ");
 								while ($row = mysqli_fetch_array($ambil_data)) {
 								?>
 
@@ -107,7 +107,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 						<div class="card-body">
 							<!-- <div class="tab-content" id="custom-tabs-three-tabContent"> -->
 							<?php
-							$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, tipe WHERE perumahan.nm_perum = '$_POST[id_detail]' AND tipe.id_tipeperum = perumahan.id_perum");
+							$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, tipe WHERE perumahan.nm_perum = '$_GET[id]' AND tipe.id_tipeperum = perumahan.id_perum");
 							while ($row = mysqli_fetch_array($ambil_data)) {
 								$data_tipe = $row['nm_perum'];
 							?>

@@ -268,7 +268,7 @@ session_start();
     <script src="assets/js/index.js"></script>
     <?php
     $no = 1;
-    $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE nm_perum='$_POST[id_detail]'");
+    $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE nm_perum='$_GET[id]'");
     while ($row = mysqli_fetch_array($ambil_data)) {
     ?>
         <script type="text/javascript">

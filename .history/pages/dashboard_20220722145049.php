@@ -40,15 +40,15 @@
 					<div class="col-lg-4 col-md-12 col-12 col mt-4">
 						<div class="bg-product">
 							<form method="post" action="index.php?p=detail" enctype="multipart/form-data">
-								<?php
-								$fot_display = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
-								while ($foto = mysqli_fetch_array($fot_display)) {
-								?>
-									<button type="submit" class="border-0px p-0">
-										<img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
-									</button>
-								<?php } ?>
 								<input type="text" id="id_detail" name="id_detail" value="<?php echo $row['nm_perum']; ?>" hidden>
+								<a type="submit">
+									<?php
+									$fot_display = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
+									while ($foto = mysqli_fetch_array($fot_display)) {
+									?>
+										<img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
+									<?php } ?>
+								</a>
 							</form>
 							<div class="p-2">
 								<h6 class="mb-0">mulai</h6>
