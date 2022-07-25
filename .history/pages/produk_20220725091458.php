@@ -108,12 +108,9 @@
                                 </table>
                             </div>
                             <div class="col-12 mb-2">
-                                <form method="post" action="index.php?p=detail" enctype="multipart/form-data">
-                                    <center>
-                                        <button type="submit" class="btn-sm bg-btn-detail text-light">Lihat Detail >></button>
-                                        <input type="text" id="id_detail" name="id_detail" value="<?php echo $row['nm_perum']; ?>" hidden>
-                                    </center>
-                                </form>
+                                <center>
+                                    <a href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>" data-id="" class="btn-sm bg-btn-detail btn-primary">Lihat Detail >></a>
+                                </center>
                             </div>
                         </div>
                     </div>

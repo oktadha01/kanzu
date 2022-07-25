@@ -8,9 +8,8 @@
                 <div class="col-lg-4 col-md-4 col-12 mt-3">
                     <div class="bg-product">
                         <button type="submit" class="border-0px p-0">
-                            <img src="assets/img/foto_display/<?php echo $row['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
+                            <img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
                         </button>
-                        <input type="text" id="id_detail" name="id_detail" value="<?php echo $row['nm_perum']; ?>" hidden>
                         <div class="p-2">
                             <h6 class="mb-0">mulai</h6>
                             <div class="row pl-1">
@@ -108,12 +107,9 @@
                                 </table>
                             </div>
                             <div class="col-12 mb-2">
-                                <form method="post" action="index.php?p=detail" enctype="multipart/form-data">
-                                    <center>
-                                        <button type="submit" class="btn-sm bg-btn-detail text-light">Lihat Detail >></button>
-                                        <input type="text" id="id_detail" name="id_detail" value="<?php echo $row['nm_perum']; ?>" hidden>
-                                    </center>
-                                </form>
+                                <center>
+                                    <a href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>" data-id="" class="btn-sm bg-btn-detail btn-primary">Lihat Detail >></a>
+                                </center>
                             </div>
                         </div>
                     </div>
