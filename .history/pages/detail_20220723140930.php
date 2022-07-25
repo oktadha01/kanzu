@@ -1,3 +1,4 @@
+
 <?php
 $no = 1;
 $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, fasilitas WHERE perumahan.nm_perum='$_POST[id_detail]'");
@@ -138,9 +139,7 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 												$fot_display = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
 												while ($foto = mysqli_fetch_array($fot_display)) {
 												?>
-													<button type="submit" class="border-0px p-0">
-														<img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
-													</button>
+													<img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
 												<?php } ?>
 											</a>
 											<div class="p-2">
@@ -176,12 +175,9 @@ while ($row = mysqli_fetch_array($ambil_data)) {
 												</h5>
 												<p class="font-weight-bold"><?php echo $row['alamat']; ?></p>
 												<div class="col-12 mb-2">
-													<form method="post" action="index.php?p=detail" enctype="multipart/form-data">
-														<center>
-															<button type="submit" class="btn-sm bg-btn-detail text-light">Lihat Detail >></button>
-															<input type="text" id="id_detail" name="id_detail" value="<?php echo $row['nm_perum']; ?>" hidden>
-														</center>
-													</form>
+													<center>
+														<a href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>" data-id="" class="btn-sm bg-btn-detail btn-primary">Lihat Detail >></a>
+													</center>
 												</div>
 											</div>
 										</div>

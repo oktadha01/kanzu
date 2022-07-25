@@ -2,9 +2,7 @@
 <!-- <img src="assets/img/home1.jpg" alt="PT KANPA Logo" class="bg-img img-fluid elevation-3"> -->
 <!-- Content Header (Page header) -->
 
-<?php
-include '../koneksi.php';
-?>
+
 <div id="" class="container">
 	<div class="row mt-5rem">
 		<div class="col-12 p-0">
@@ -172,10 +170,11 @@ include '../koneksi.php';
 									</table>
 								</div>
 								<div class="col-12 mb-2">
-									<form method="post" action="index.php?p=detail" enctype="multipart/form-data">
+									<form method="post">
 										<center>
-											<button type="submit" class="btn-sm bg-btn-detail text-light">Lihat Detail >></button>
-											<input type="text" id="id_detail" name="id_detail" value="<?php echo $row['nm_perum']; ?>" hidden>
+											<button type="button" class="btn-sm bg-btn-detail text-light nav-menu">Lihat Detail >></button>
+											<!-- <input type="text" id="id_detail" name="id_detail" value="<?php echo $row['nm_perum']; ?>" hidden> -->
+											<input type="submit" id="menu" name="menu" value="detail">
 										</center>
 									</form>
 								</div>
@@ -340,7 +339,13 @@ include '../koneksi.php';
 </div>
 <script>
 	// alert('ya');
-	// $(document).ready(function() {
-
-	// });
+	$(document).ready(function() {
+		$('.nav-menu').click(function() {
+			// alert('ya');
+			// var menu = $(this).attr('id');
+			var file = $(this).parents().find("#menu").val();
+			file.trigger("click");
+			alert($('#menu').val());
+		});
+	});
 </script>
