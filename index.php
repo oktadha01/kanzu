@@ -39,8 +39,9 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
     <!-- Ionicons -->
     <!-- <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
     <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css"> -->
@@ -54,32 +55,19 @@ session_start();
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
+
 <body class="container hold-transition layout-top-nav pl-0 pr-0">
     <div class="row">
-        <div class="col">
+        <div class="col mr-0 ml-0">
             <div id="load"></div>
         </div>
     </div>
-    <script>
-        document.onreadystatechange = function() {
-            var state = document.readyState
-            if (state == 'interactive') {
-                document.getElementById('conten').style.visibility = "hidden";
-            } else if (state == 'complete') {
-                setTimeout(function() {
-                    document.getElementById('interactive');
-                    document.getElementById('load').style.visibility = "hidden";
-                    document.getElementById('conten').style.visibility = "visible";
-                }, 1000);
-            }
-        }
-    </script>
-    <div class="conten">
+    <!-- <div id="conten"> -->
         <div class="wrapper">
             <!-- Navbar -->
             <nav id="navbar" class="main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">
                 <div class=" container-fluid pr-1">
-                    <a href="index.php?=dashboard" class="navbar-brand p-0">
+                    <a href="#perumahan-murah-ungaran-semarang" id="dashboard" class="navmenu navbar-brand p-0">
                         <img src="<?php echo 'assets/img/logokanpaheader.jpeg'; ?>" alt="PT KANPA Logo" class="brand-image" style="height: 64px; width: 64px;">
                     </a>
                     <span class="brand-text font-weight-bold" style="font-size: initial;">KANZU PERMAI ABADI</span>
@@ -90,16 +78,16 @@ session_start();
                         <!-- Left navbar links -->
                         <ul class="navbar-nav border-b">
                             <li class="nav-item">
-                                <a href="index.php?=dashboard" class="nav-link menu-nav">Home</a>
+                                <a href="#perumahan-murah-ungaran-semarang-cluster-milenial" class="nav-link menu-nav navmenu" id="dashboard">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?p=produk" class="nav-link menu-nav">Produk</a>
+                                <a href="#wujudkan-rumah-impian-anda-bersama-PT-KANPA" class="nav-link menu-nav navmenu" id="produk">Produk</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?p=estimasi_harga" class="nav-link menu-nav">Estimasi Harga</a>
+                                <a href="#pilih-rumah-impian-anda" class="nav-link menu-nav navmenu" id="estimasi_harga">Estimasi Harga</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?p=berita" class="nav-link menu-nav">Berita</a>
+                                <a href="#bersama-pt-kanpa-kita-bisa-wujutkan-semuanya" class="nav-link menu-nav navmenu" id="berita">Berita</a>
                             </li>
                             <?php
                             if (@$_SESSION['privilege'] == 'Admin') { ?>
@@ -147,12 +135,13 @@ session_start();
                     } else {
                         echo 'Halaman Tidak Ditemukan';
                     }
-                } else {
-                    include($pages_dir . '/dashboard.php');
-                }
-                ?>
+                } else { ?>
+                <?php } ?>
+                <div class="halaman-menu"></div>
+                <!-- include($pages_dir . '/dashboard.php'); -->
 
                 <!-- </div> -->
+
             </div>
             <!-- /.content-wrapper -->
             <a class="wafixed" href="https://wa.me/6281249995616" target="_blank">
@@ -242,40 +231,60 @@ session_start();
                 </center>
             </footer>
         </div>
-    </div>
+    <!-- </div> -->
     <!-- ./wrapper -->
+    <?php
+    $id = $_GET['perum'];
+    ?>
+    <input type="text" name="id_perum" id="id_perum" value="<?php echo $id; ?>" hidden>
 
-
+    </div>
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.min.js"></script> -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
     <script src="plugins/toastr/toastr.min.js"></script>
     <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- AdminLTE App -->
     <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
     <!-- <script src="assets/js/vendor.min.js"></script> -->
-    <!-- AdminLTE App -->
     <script src="assets/js/demo.js"></script>
     <script src="assets/js/adminlte.js"></script>
     <script src="assets/js/index.js"></script>
-    <?php
-    $no = 1;
-    $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE nm_perum='$_POST[id_detail]'");
-    while ($row = mysqli_fetch_array($ambil_data)) {
-    ?>
-        <script type="text/javascript">
-            $('#id-perum-tipe').val('<?php echo $row['nm_perum']; ?>');
-        </script>
-    <?php } ?>
-    <script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+        });
+
+
+
+        window.onhashchange = function() {
+            $("#navbar .menu-nav-active").removeClass("menu-nav-active");
+            $("#navbar a[href=\"" + location.hash + "\"]").addClass("menu-nav-active");
+        }
+
+        $(function() {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+
+            // passes on every "a" tag 
+            $("#navbar a").each(function() {
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+                    $(this).closest("a").addClass("menu-nav-active");
+                }
+            });
+        });
+
         var didScroll;
         var lastScrollTop = 0;
         var delta = 5;
@@ -315,19 +324,6 @@ session_start();
         }
 
         $(function() {
-            // this will get the full URL at the address bar
-            var url = window.location.href;
-
-            // passes on every "a" tag 
-            $("#navbar a").each(function() {
-                // checks if its the same on the address bar
-                if (url == (this.href)) {
-                    $(this).closest("a").addClass("menu-nav-active");
-                }
-            });
-        });
-
-        $(function() {
             $('#reservation').daterangepicker({
                 singleDatePicker: true,
                 showDropdowns: true,
@@ -336,28 +332,22 @@ session_start();
                 }
             })
         });
-
-        // $(document).on('click', '.btn-detail-perum', function() {
-        //     var id_detail = $(this).attr('id');
-        //     alert(id_detail);
-        // });
-    </script>
-
-    <script>
-        <?php
-        $no = 1;
-        $ambil_data = mysqli_query($koneksi, "SELECT * FROM berita");
-        while ($row = mysqli_fetch_array($ambil_data)) {
-        ?>
-            $('.konten<?php echo $row['id_berita']; ?>').hide(300);
-            $('#tittle-berita<?php echo $row['id_berita']; ?>, .img<?php echo $row['id_berita']; ?>').on('click', function(e) {
-                $('.konten<?php echo $row['id_berita']; ?>').toggle(300);
-            });
-        <?php } ?>
     </script>
     <script>
-
+        document.onreadystatechange = function() {
+            var state = document.readyState
+            if (state == 'interactive') {
+                document.getElementById('conten').style.visibility = "hidden";
+            } else if (state == 'complete') {
+                setTimeout(function() {
+                    document.getElementById('interactive');
+                    document.getElementById('load').style.visibility = "hidden";
+                    document.getElementById('conten').style.visibility = "visible";
+                }, 1000);
+            }
+        }
     </script>
+
 </body>
 
 </html>

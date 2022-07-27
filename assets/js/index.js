@@ -1,5 +1,94 @@
 $(document).ready(function () {
 
+    if ($('#id_perum').val() == '') {
+        // alert('tidak')
+    } else {
+        var id_detail = $('#id_perum').val();
+        setCookie("halaman", "pages/detail.php?id_perum=" + id_detail, 30);
+        $('.halaman-menu').load(getCookie("halaman"));
+    }
+    if (location.hash == '#perumahan-siap-huni-di-pusat-kota') {
+        thisdata = $(this).attr('href');
+        document.getElementById("detail").innerHTML = thisdata
+        // console.log(thisdata);
+        // alert(window.location.href + $(this).attr('id'));
+        alert(location.hash + thisdata);
+        // window.location.href = thisdata;
+        // setCookie("halaman", "pages/detail.php?id_perum=" + id_detail, 30);
+        // $('.halaman-menu').load(getCookie("halaman"));
+
+    }
+
+    if (location.hash == '#perumahan-murah-ungaran-semarang-cluster-milenial') {
+        setCookie("halaman", "pages/dashboard.php", 30);
+        $('.halaman-menu').load(getCookie("halaman"));
+
+    } else if (location.hash == '#wujudkan-rumah-impian-anda-bersama-PT-KANPA') {
+        setCookie("halaman", "pages/produk.php", 30);
+        $('.halaman-menu').load(getCookie("halaman"));
+
+    } else if (location.hash == '#pilih-rumah-impian-anda') {
+        setCookie("halaman", "pages/estimasi_harga.php", 30);
+        $('.halaman-menu').load(getCookie("halaman"));
+
+    } else if (location.hash == '#bersama-pt-kanpa-kita-bisa-wujutkan-semuanya') {
+        setCookie("halaman", "pages/berita.php", 30);
+        $('.halaman-menu').load(getCookie("halaman"));
+
+    } else if (location.hash == '') {
+        location.hash = '#perumahan-murah-ungaran-semarang-cluster-milenial'
+        location.hash == '#dashboard'
+        setCookie("halaman", "pages/dashboard.php", 30);
+        $('.halaman-menu').load(getCookie("halaman"));
+    }
+
+    var halaman = getCookie("halaman");
+    if (halaman == "") {
+        setCookie("halaman", "pages/dashboard.php", 30);
+        $('.halaman-menu').load(getCookie("halaman"));
+    } else {
+        $('.halaman-menu').load(getCookie("halaman"));
+    }
+
+    $('.navmenu').click(function () {
+        var newURL = location.href.split("?")[0];
+        window.history.pushState('object', document.title, newURL);
+        var newURL = location.href.split("index.php")[0];
+        window.history.pushState('object', document.title, newURL);
+        var navbar_toggler = $(this).parents().find(".navbar-toggler");
+        navbar_toggler.trigger("click");
+        var menu = $(this).attr('id');
+        // window.location.href = window.location.href;
+        setCookie("halaman", 'pages/' + menu + ".php", 30);
+        $('.halaman-menu').load(getCookie("halaman")).fadeIn("slow");
+        $('#id_perum').val('')
+        $('html, body').animate({
+            scrollTop: 0
+        }, 'slow');
+    });
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
 
     $('#detail').load("pages/form_edit_perum.php");
     $('.data').load("pages/data_perum.php");
@@ -9,30 +98,9 @@ $(document).ready(function () {
     $('.data-tipe').load("pages/form_input_tipe.php");
     $('#data-pembeli').load('pages/data_pembeli.php');
 
-    $('.slider').slick({
-        autoplay: true,
-        autoplaySpeed: 2500,
-        dots: true
-    });
+
 
     bsCustomFileInput.init();
-
-    $('.nav-tab1').addClass('active');
-    let formData = new FormData();
-    formData.append('id-perum-tipe', $('#id-perum-tipe').val());
-    formData.append('id-tipe', $('#id-tipe').val());
-    $.ajax({
-        type: 'POST',
-        url: "pages/data_detail_tipe.php",
-        data: formData,
-        cache: false,
-        processData: false,
-        contentType: false,
-        success: function (data) {
-            // alert(data);
-            $("#data-detail-tipe").html(data);
-        }
-    });
 
     // CHAT WA
     $('#pilih-tipe').change(function (e) {
@@ -186,6 +254,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.edit-data-tipe', function () {
+
         // $("#dynamic_field-edit").remove();
         var id_tipe = $(this).attr('id');
         $('#post-id-tipe').val(id_tipe);
@@ -203,9 +272,6 @@ $(document).ready(function () {
             success: function (data) {
                 // alert(data);
                 $("#form-edit-tipe").html(data);
-                // $('#detail').removeAttr('hidden');
-                // $('#form-input-data-perum').attr('hidden', true);
-                // $('#detail').load("pages/form_edit_perum.php");
 
             },
             error: function () {
@@ -219,6 +285,9 @@ $(document).ready(function () {
 
     $(document).on('click', '.detail-edit-data', function () {
         // $("#dynamic_field-edit").remove();
+        $('html, body').animate({
+            scrollTop: 0
+        }, 'slow');
         var data_id = $(this).attr('id');
         $('#post-id-perum').val(data_id);
         let formData = new FormData();

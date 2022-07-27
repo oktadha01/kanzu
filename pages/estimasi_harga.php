@@ -1,69 +1,66 @@
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+<div class="halaman">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+    <?php
 
+    $minimum_range = 100;
 
-<?php
+    $maximum_range = 500;
 
-$minimum_range = 100;
-
-$maximum_range = 500;
-
-?>
-<section class="content-header pt-5rem">
-    <div class="container-fluid">
-        <div class="card">
-            <div id="myDIV" class="card-body">
-                <!-- <h3 align="center">Membuat Filter Harga Menggunakan AJAXJQuery Dan PHP</h3> -->
-                <h5>Pilih Harga</h5>
-                <div class="row">
-                    <div class="col-lg-2 col-md-4 col-4 ">
-                        <button type="button" name="" id="harga1" class="btn btn-xs bor-est bor-est-active">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 200 - 250 jt</h6>
-                        </button>
+    ?>
+    <section class="content-header pt-5rem">
+        <div class="container-fluid">
+            <div class="card">
+                <div id="myDIV" class="card-body">
+                    <!-- <h3 align="center">Membuat Filter Harga Menggunakan AJAXJQuery Dan PHP</h3> -->
+                    <h5>Pilih Harga</h5>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-4 col-4 ">
+                            <button type="button" name="" id="harga1" class="btn btn-xs bor-est bor-est-active">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 200 - 250 jt</h6>
+                            </button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga2" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 251 - 300 jt</h6>
+                            </button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga3" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 301 - 400 jt</h6>
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga2" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 251 - 300 jt</h6>
-                        </button>
+                    <div class="row mt-1">
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga4" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 401 - 500 jt</h6>
+                            </button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga5" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 501 - 600 jt</h6>
+                            </button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga6" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 601 jt - 1 M</h6>
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga3" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 301 - 400 jt</h6>
-                        </button>
+                    <div class="row">
+                        <div class="col-12" style="padding-top:12px">
+                            <div id="price_range"></div>
+                        </div>
                     </div>
+                    <div id="load_product" class="row"></div>
                 </div>
-                <div class="row mt-1">
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga4" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 401 - 500 jt</h6>
-                        </button>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga5" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 501 - 600 jt</h6>
-                        </button>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga6" class="btn btn-xs bor-est">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 601 jt - 1 M</h6>
-                        </button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12" style="padding-top:12px">
-                        <div id="price_range"></div>
-                    </div>
-                </div>
-                <div id="load_product" class="row"></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 <input type="text" id="minimum_range" value="200" hidden>
 <input type="text" id="maximum_range" value="250" hidden>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
     var header = document.getElementById("myDIV");
     var btns = header.getElementsByClassName("bor-est");
@@ -76,8 +73,6 @@ $maximum_range = 500;
         });
     }
     $(document).ready(function() {
-
-
         let formData = new FormData();
         formData.append('minimum_range', $('#minimum_range').val());
         formData.append('maximum_range', $('#maximum_range').val());
@@ -235,38 +230,44 @@ $maximum_range = 500;
                 }
             });
         });
-        // $('#minimum_range').on('input', function(e) {
-        //     var file = $(this).parents().find("#price_range");
-        //     file.trigger("slider");
-        // });
-        // $("#price_range").slider({
-        //     range: true,
-        //     min: 100,
-        //     max: 500,
-        //     values: [<?php echo $minimum_range; ?>, <?php echo $maximum_range; ?>],
-        //     slide: function(event, ui) {
-        //         $("#minimum_range").val(ui.values[0]);
 
-        //         $("#maximum_range").val(ui.values[1]);
-
-        //         load_product(ui.values[0], ui.values[1]);
-        //     }
-        // });
-
-        // load_product(<?php echo $minimum_range; ?>, <?php echo $maximum_range; ?>);
-
-        // function load_product(minimum_range, maximum_range) {
-        //     $.ajax({
-        //         url: "pages/produk_perum.php",
-        //         method: "POST",
-        //         data: {
-        //             minimum_range: minimum_range,
-        //             maximum_range: maximum_range
-        //         },
-        //         success: function(data) {
-        //             $('#load_product').fadeIn('slow').html(data);
-        //         }
-        //     });
-        // }
+        $('.detail-perum, .produk-lain').click(function() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'slow');
+            var menu = $(this).attr('id');
+            if (menu == 'produk') {
+                setCookie("halaman", 'pages/' + menu + ".php", 30);
+                $('.halaman-menu').load(getCookie("halaman"));
+            } else {
+                var id_detail = $('#id_perum').val();
+                setCookie("halaman", 'pages/' + menu + ".php?id_perum=" + id_detail, 30);
+                $('.halaman-menu').load(getCookie("halaman"));
+            }
+            // alert(menu);
+        });
     });
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
 </script>

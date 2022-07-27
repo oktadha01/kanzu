@@ -14,10 +14,11 @@ if ($list == '0') {
     $data->execute();
     $res1 = $data->get_result();
     while ($row = $res1->fetch_assoc()) {
-
+        $desk = $row['deskripsi'];
+        $deskripsi = preg_replace("![^a-z0-9]+!i", "-", $desk);
         echo '<div class="col-lg-4 col-md-12 col-12 mt-3">
         <div class="bg-product">
-                        <a href="index.php?p=detail&id=' . $row['nm_perum'] . '">
+                        <a href="?perum=' . $row['id_perum'] . '#' . $deskripsi . '" class="detail-perum" id="detail" data-id="' . $row['id_perum'] . '">
                             <img src="assets/img/foto_display/' . $row['fot_display'] . '" alt="PT KANPA Logo" class="img-fluid" />
                         </a>
                         <div class="p-2">
@@ -67,62 +68,58 @@ if ($list == '0') {
                                                 <center>
                                                     <h6>' . $row['ka_mandi'] . '</h6>
                                                 </center>
-                                            </td>' ;
-                                            
-                                              if ( $row['dapur'] == NULL)  { 
+                                            </td>';
 
-                                             } else { 
-                                                echo' <td scope="col" class="text-center">
+        if ($row['dapur'] == NULL) {
+        } else {
+            echo ' <td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
                                                         <h6>' . $row['dapur'] . '</h6>
                                                     </center>
-                                                </td>' ;
-                                            } 
-                                            
-                                            if ($row['ru_keluarga'] == NULL) {  
+                                                </td>';
+        }
 
-                                             } else { 
-                                               echo '<td scope="col" class="text-center">
+        if ($row['ru_keluarga'] == NULL) {
+        } else {
+            echo '<td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
                                                         <h6>' . $row['ru_keluarga'] . '</h6>
                                                     </center>
                                                 </td>';
-                                           } 
-                                            
-                                            if ($row['ru_makan']  == NULL){ 
+        }
 
-                                            } else { 
-                                              echo '<td scope="col" class="text-center">
+        if ($row['ru_makan']  == NULL) {
+        } else {
+            echo '<td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
                                                         <h6>' . $row['ru_makan'] . '</h6>
                                                     </center>
                                                 </td>';
-                                            } 
-                                            
-                                            if ($row['balkon']  == NULL){ 
+        }
 
-                                            } else { 
-                                              echo '<td scope="col" class="text-center">
+        if ($row['balkon']  == NULL) {
+        } else {
+            echo '<td scope="col" class="text-center">
                                                     <img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
                                                     <center>
                                                         <h6>' . $row['balkon'] . '</h6>
                                                     </center>
                                                 </td>';
-                                            } 
-                                       echo' </tr>
+        }
+        echo ' </tr>
                                     </thead>
                                 </table>
                             </div>
                             <div class="col-12 mb-2">
-                                <center>
-                                    <a href="index.php?p=detail&id=' . $row['nm_perum'] . '" data-id="" class="btn-sm bg-btn-detail btn-primary">Lihat Detail >></a>
-                                </center>
+                            <center>
+                            <a href="?perum=' . $row['id_perum'] . '#' . $deskripsi . '" id="detail" data-id="' . $row['id_perum'] . '" class="btn-sm bg-btn-detail btn-primary detail-perum">Lihat Detail >></a>
+                        </center>
                             </div>
                         </div>
                     </div>
-                    </div>' ;
+                    </div>';
     }
 }
