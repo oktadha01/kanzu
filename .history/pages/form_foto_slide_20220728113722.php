@@ -87,12 +87,11 @@ if ($_SESSION['id_user'] == '') {
                             $targetFilePath  = $uploadsDir . $newfilefoto;
                             $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
                             $id_perum      = $_POST['id_fotperum'];
-                            $link      = $_POST['link'];
                             $uploadOk = 1;
 
                             if (in_array($fileType, $allowedFileType)) {
                                 if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                                    $sqlVal = "('" . $id_perum . "', '" . $newfilefoto . "', '" . $link . "')";
+                                    $sqlVal = "('" . $id_perum . "', '" . $newfilefoto . "')";
                                 } else {
                                     $response = array(
                                         "status" => "alert-danger",
@@ -107,7 +106,7 @@ if ($_SESSION['id_user'] == '') {
                             }
                             // Add into MySQL database
                             if (!empty($sqlVal)) {
-                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fotperum, file_slideperum, link) VALUES $sqlVal");
+                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fotperum, file_slideperum) VALUES $sqlVal");
                                 if ($insert) {
                                     $response = array(
                                         "status" => "alert-success",
@@ -116,7 +115,7 @@ if ($_SESSION['id_user'] == '') {
                                 } else {
                                     $response = array(
                                         "status" => "alert-danger",
-                                        "message" => "Files coudn't be uploaded due to database erroraaa."
+                                        "message" => "Files coudn't be uploaded due to database error."
                                     );
                                 }
                             }
@@ -145,12 +144,11 @@ if ($_SESSION['id_user'] == '') {
                             $targetFilePath  = $uploadsDir . $newfilefoto;
                             $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
                             $id_tipe      = $_POST['id_fottipe'];
-                            $link      = $_POST['link'];
                             $uploadOk = 1;
 
                             if (in_array($fileType, $allowedFileType)) {
                                 if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                                    $sqlVal = "('" . $id_tipe . "', '" . $newfilefoto . "', '" . $link . "')";
+                                    $sqlVal = "('" . $id_tipe . "', '" . $newfilefoto . "')";
                                 } else {
                                     $response = array(
                                         "status" => "alert-danger",
@@ -165,7 +163,7 @@ if ($_SESSION['id_user'] == '') {
                             }
                             // Add into MySQL database
                             if (!empty($sqlVal)) {
-                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fottipe, file_slidetipe, link) VALUES $sqlVal");
+                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fottipe, file_slidetipe) VALUES $sqlVal");
                                 if ($insert) {
                                     $response = array(
                                         "status" => "alert-success",
@@ -324,6 +322,8 @@ if ($_SESSION['id_user'] == '') {
     <script>
         $(document).ready(function() {
 
+
+
             // SELECT INPUT
             $('#pilih-perum').change(function(e) {
                 $('#chooseFile').removeAttr('disabled', true);
@@ -344,7 +344,6 @@ if ($_SESSION['id_user'] == '') {
                     success: function(msg) {
                         // alert(data);
                         $("#pilih-tipe").html(msg);
-
                     },
                     error: function() {
                         alert("Data Gagal Diupload");
@@ -491,7 +490,7 @@ if ($_SESSION['id_user'] == '') {
                     $('#link').removeAttr('hidden', true);
                     $('#link').val('');
                 } else {
-                    $('#link').val('0');
+                    $('#link').val('-');
                     $('#link').attr('hidden', true);
                     $('#chooseFile').attr('disabled', true);
                     $('#in-dashboard').val('0');
@@ -500,6 +499,7 @@ if ($_SESSION['id_user'] == '') {
                 }
             });
             // END CHEKLIST INPUT FOTO DASHBOARD
+            alert($('#link').val());
         });
     </script>
 <?php } ?>

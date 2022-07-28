@@ -14,11 +14,11 @@ if ($list == '0') {
     $data->execute();
     $res1 = $data->get_result();
     while ($row = $res1->fetch_assoc()) {
-        $nmperum = $row['nm_perum'];
-        $perum = preg_replace("![^a-z0-9]+!i", "-", $nmperum);
+        $desk = $row['deskripsi'];
+        $deskripsi = preg_replace("![^a-z0-9]+!i", "-", $desk);
         echo '<div class="col-lg-4 col-md-12 col-12 mt-3">
         <div class="bg-product">
-                        <a href="?perum=' . $row['id_perum'] . '#' . $perum . '" class="detail-perum" id="detail" data-id="' . $row['id_perum'] . '">
+                        <a href="?perum=' . $row['id_perum'] . '#' . $deskripsi . '" class="detail-perum" id="detail" data-id="' . $row['id_perum'] . '">
                             <img src="assets/img/foto_display/' . $row['fot_display'] . '" alt="PT KANPA Logo" class="img-fluid" />
                         </a>
                         <div class="p-2">
@@ -115,7 +115,7 @@ if ($list == '0') {
                             </div>
                             <div class="col-12 mb-2">
                             <center>
-                            <a href="?perum=' . $row['id_perum'] . '#' . $perum . '" id="detail" data-id="' . $row['id_perum'] . '" class="btn-sm bg-btn-detail btn-primary detail-perum">Lihat Detail >></a>
+                            <a href="?perum=' . $row['id_perum'] . '#' . $deskripsi . '" id="detail" data-id="' . $row['id_perum'] . '" class="btn-sm bg-btn-detail btn-primary detail-perum">Lihat Detail >></a>
                         </center>
                             </div>
                         </div>

@@ -35,8 +35,8 @@
 					$data_perum = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE status_perum = 'Direkomendasikan' ");
 					while ($row = mysqli_fetch_array($data_perum)) {
 						$id_perum = $row['id_perum'];
-						$nmperum = $row['nm_perum'];
-						$perum = preg_replace("![^a-z0-9]+!i", "-", $nmperum);
+						$desk = $row['deskripsi'];
+						$deskripsi = preg_replace("![^a-z0-9]+!i", "-", $desk);
 					?>
 						<div class="col-lg-4 col-md-12 col-12 col mt-4">
 							<div class="bg-product">
@@ -44,7 +44,7 @@
 								$fot_display = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
 								while ($foto = mysqli_fetch_array($fot_display)) {
 								?>
-									<a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
+									<a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $deskripsi; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
 										<img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
 									</a>
 								<?php } ?>
@@ -170,7 +170,7 @@
 									</div>
 									<div class="col-12 mb-2">
 										<center>
-											<a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
+											<a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $deskripsi; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
 												<button type="button" class="btn-sm bg-btn-detail text-light detail-perum">Lihat Detail >></button>
 											</a>
 										</center>

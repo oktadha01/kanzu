@@ -165,7 +165,7 @@ if ($_SESSION['id_user'] == '') {
                             }
                             // Add into MySQL database
                             if (!empty($sqlVal)) {
-                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fottipe, file_slidetipe, link) VALUES $sqlVal");
+                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fottipe, file_slidetipe) VALUES $sqlVal");
                                 if ($insert) {
                                     $response = array(
                                         "status" => "alert-success",
@@ -500,6 +500,7 @@ if ($_SESSION['id_user'] == '') {
                 }
             });
             // END CHEKLIST INPUT FOTO DASHBOARD
+            alert($('#link').val());
         });
     </script>
 <?php } ?>

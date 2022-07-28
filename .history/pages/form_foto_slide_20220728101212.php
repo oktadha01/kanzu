@@ -87,12 +87,11 @@ if ($_SESSION['id_user'] == '') {
                             $targetFilePath  = $uploadsDir . $newfilefoto;
                             $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
                             $id_perum      = $_POST['id_fotperum'];
-                            $link      = $_POST['link'];
                             $uploadOk = 1;
 
                             if (in_array($fileType, $allowedFileType)) {
                                 if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                                    $sqlVal = "('" . $id_perum . "', '" . $newfilefoto . "', '" . $link . "')";
+                                    $sqlVal = "('" . $id_perum . "', '" . $newfilefoto . "')";
                                 } else {
                                     $response = array(
                                         "status" => "alert-danger",
@@ -107,7 +106,7 @@ if ($_SESSION['id_user'] == '') {
                             }
                             // Add into MySQL database
                             if (!empty($sqlVal)) {
-                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fotperum, file_slideperum, link) VALUES $sqlVal");
+                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fotperum, file_slideperum) VALUES $sqlVal");
                                 if ($insert) {
                                     $response = array(
                                         "status" => "alert-success",
@@ -116,7 +115,7 @@ if ($_SESSION['id_user'] == '') {
                                 } else {
                                     $response = array(
                                         "status" => "alert-danger",
-                                        "message" => "Files coudn't be uploaded due to database erroraaa."
+                                        "message" => "Files coudn't be uploaded due to database error."
                                     );
                                 }
                             }
@@ -145,12 +144,11 @@ if ($_SESSION['id_user'] == '') {
                             $targetFilePath  = $uploadsDir . $newfilefoto;
                             $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
                             $id_tipe      = $_POST['id_fottipe'];
-                            $link      = $_POST['link'];
                             $uploadOk = 1;
 
                             if (in_array($fileType, $allowedFileType)) {
                                 if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                                    $sqlVal = "('" . $id_tipe . "', '" . $newfilefoto . "', '" . $link . "')";
+                                    $sqlVal = "('" . $id_tipe . "', '" . $newfilefoto . "')";
                                 } else {
                                     $response = array(
                                         "status" => "alert-danger",
@@ -165,7 +163,7 @@ if ($_SESSION['id_user'] == '') {
                             }
                             // Add into MySQL database
                             if (!empty($sqlVal)) {
-                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fottipe, file_slidetipe, link) VALUES $sqlVal");
+                                $insert = $koneksi->query("INSERT INTO fot_slide (id_fottipe, file_slidetipe) VALUES $sqlVal");
                                 if ($insert) {
                                     $response = array(
                                         "status" => "alert-success",
@@ -248,7 +246,7 @@ if ($_SESSION['id_user'] == '') {
                             <input type="text" id="id-pilih-perum" name="id_fotperum" value="" hidden>
                             <input type="text" id="id-pilih-tipe" name="id_fottipe" value="" hidden>
                             <div class="form-group ">
-                                <input type="text" id="link" class="form-control" name="link" placeholder="Link ..." autocomplete="off" value="0">
+                                <input type="text" id="link" class="form-control" name="link" placeholder="Link ..." autocomplete="off" value="-">
                             </div>
                             <div class="custom-file">
                                 <input type="file" name="file_foto[]" class="custom-file-input" id="chooseFile" multiple disabled>
@@ -261,6 +259,7 @@ if ($_SESSION['id_user'] == '') {
                         </form>
                     </div>
                 </div>
+
                 <!-- Display response messages -->
                 <?php if (!empty($response)) { ?>
                     <div class="alert <?php echo $response["status"]; ?>">
@@ -324,6 +323,8 @@ if ($_SESSION['id_user'] == '') {
     <script>
         $(document).ready(function() {
 
+
+
             // SELECT INPUT
             $('#pilih-perum').change(function(e) {
                 $('#chooseFile').removeAttr('disabled', true);
@@ -344,6 +345,7 @@ if ($_SESSION['id_user'] == '') {
                     success: function(msg) {
                         // alert(data);
                         $("#pilih-tipe").html(msg);
+
 
                     },
                     error: function() {
@@ -476,12 +478,13 @@ if ($_SESSION['id_user'] == '') {
 
             $('#chooseFile').attr('disabled');
             $('#link').attr('hidden', true);
-
+            $('#link').val('-');
+            
             $('#pilih-tipe').change(function(e) {
                 var tipe = $("#pilih-tipe").find(':selected').val();
                 $('#id-pilih-tipe').val(tipe);
             });
-
+            
             // CHEKLIST INPUT FOTO DASHBOARD
             $('#cheklis-upload-fotdashboard').click(function(e) {
                 if ($(this).is(":checked")) {
@@ -489,17 +492,17 @@ if ($_SESSION['id_user'] == '') {
                     $('#in-dashboard').val('dashboard');
                     $('#chooseFile').removeAttr('disabled', true);
                     $('#link').removeAttr('hidden', true);
-                    $('#link').val('');
+                    $('#link').val();
                 } else {
-                    $('#link').val('0');
+                    $('#link').val('-');
                     $('#link').attr('hidden', true);
                     $('#chooseFile').attr('disabled', true);
                     $('#in-dashboard').val('0');
                     // alert('tdk');
-                    alert($('#link').val());
                 }
             });
             // END CHEKLIST INPUT FOTO DASHBOARD
+
         });
     </script>
 <?php } ?>

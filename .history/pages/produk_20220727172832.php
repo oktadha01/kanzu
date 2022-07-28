@@ -10,12 +10,12 @@
                 <?php
                 $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan, tipe WHERE perumahan.id_perum = tipe.id_tipeperum");
                 while ($row = mysqli_fetch_array($ambil_data)) {
-                    $nmperum = $row['deskripsi'];
-                    $perum = preg_replace("![^a-z0-9]+!i", "-", $nmperum);
+                    $desk = $row['deskripsi'];
+                    $deskripsi = preg_replace("![^a-z0-9]+!i", "-", $desk);
                 ?>
                     <div class="col-lg-4 col-md-4 col-12 mt-3">
                         <div class="bg-product">
-                            <a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
+                            <a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $deskripsi; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
                                 <img src="assets/img/foto_display/<?php echo $row['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
                             </a>
                             <div class="p-2">
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="col-12 mb-2">
                                     <center>
-                                        <a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
+                                        <a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $deskripsi; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
                                             <button type="button" class="btn-sm bg-btn-detail text-light detail-perum">Lihat Detail >></button>
                                         </a>
                                     </center>
@@ -137,8 +137,8 @@
                     $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE perumahan.status_perum = 'Direkomendasikan' ");
                     while ($row = mysqli_fetch_array($ambil_data)) {
                         $id_perum = $row['id_perum'];
-                        $nmperum = $row['nm_prum'];
-                        $perum = preg_replace("![^a-z0-9]+!i", "-", $nmperum);
+                        $desk = $row['deskripsi'];
+                        $deskripsi = preg_replace("![^a-z0-9]+!i", "-", $desk);
                     ?>
                         <div class="gallery-cell">
                             <div class="row">
@@ -148,7 +148,7 @@
                                         $fot_display = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
                                         while ($foto = mysqli_fetch_array($fot_display)) {
                                         ?>
-                                            <a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
+                                            <a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $deskripsi; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
                                                 <img src="assets/img/foto_display/<?php echo $foto['fot_display']; ?>" alt="PT KANPA Logo" class="img-fluid" />
                                             </a>
                                         <?php } ?>
@@ -186,7 +186,7 @@
                                             <p class="font-weight-bold"><?php echo $row['alamat']; ?></p>
                                             <div class="col-12 mb-2">
                                                 <center>
-                                                    <a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>" class="btn-sm bg-btn-detail btn-primary detail-perum">Lihat Detail >></a>
+                                                    <a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $deskripsi; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>" class="btn-sm bg-btn-detail btn-primary detail-perum">Lihat Detail >></a>
                                                 </center>
                                             </div>
                                         </div>

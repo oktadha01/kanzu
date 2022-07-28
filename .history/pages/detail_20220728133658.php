@@ -133,7 +133,7 @@
 							$ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE perumahan.status_perum = 'Direkomendasikan' ");
 							while ($row = mysqli_fetch_array($ambil_data)) {
 								$id_perum = $row['id_perum'];
-								$nmperum = $row['nm_perum'];
+								$nmperum = $row['deskripsi'];
 								$perum = preg_replace("![^a-z0-9]+!i", "-", $nmperum);
 							?>
 								<div class="gallery-cell">

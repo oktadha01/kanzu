@@ -94,9 +94,9 @@ session_start();
                                 <li class="nav-item dropdown">
                                     <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link menu-nav dropdown-toggle">DATA</a>
                                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                        <li><a href="index.php?p=tambah_data" class="dropdown-item menu-nav menu admin"> Olah data </a></li>
-                                        <li><a href="index.php?p=form_foto_slide" class="dropdown-item menu-nav menu admin"> Olah foto slide </a></li>
-                                        <li><a href="index.php?p=pembeli" class="dropdown-item menu-nav menu admin"> Data Pembeli </a></li>
+                                        <li><a href="index.php?p=tambah_data" class="dropdown-item"> Olah data </a></li>
+                                        <li><a href="index.php?p=form_foto_slide" class="dropdown-item"> Olah foto slide </a></li>
+                                        <li><a href="index.php?p=pembeli" class="dropdown-item"> Data Pembeli </a></li>
                                     </ul>
                                 </li>
                             <?php } else { ?>
