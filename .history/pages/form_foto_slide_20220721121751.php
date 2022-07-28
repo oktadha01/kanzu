@@ -1,5 +1,4 @@
 <?php
-include '..koneksi.php';
 if ($_SESSION['id_user'] == '') {
     header("location:index.php");
 } else {
