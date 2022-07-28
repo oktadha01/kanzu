@@ -56,31 +56,29 @@ session_start();
 </head>
 
 
-    <div class="container animate__animated animate__fadeInRight" id="load"></div>
+<body class="container hold-transition layout-top-nav pl-0 pr-0">
+    <!-- <div id="conten"> -->
+    <div class="container" id="load"></div>
 
     <script>
         document.onreadystatechange = function() {
             var state = document.readyState
             if (state == 'interactive') {
                 document.getElementById('conten').style.visibility = "hidden";
-                document.getElementById('footer').style.visibility = "hidden";
+                // document.getElementById('navbar').style.visibility = "hidden";
             } else if (state == 'complete') {
                 setTimeout(function() {
                     document.getElementById('interactive');
-                    $('#load').removeClass('animate__fadeInRight');
-                    $('#load').addClass('animate__fadeOutLeft');
-                    // document.getElementById('load').style.visibility = "hidden";
+                    document.getElementById('load').style.visibility = "hidden";
                     document.getElementById('conten').style.visibility = "visible";
                     document.getElementById('navbar').style.visibility = "visible";
-                }, 2000);
+                }, 1000);
             }
         }
     </script>
-<body class="container hold-transition layout-top-nav pl-0 pr-0">
-    <!-- <div id="conten"> -->
-    <div class="wrapper">
+    <div id="conten" class="wrapper">
         <!-- Navbar -->
-        <nav id="navbar" class="animate__animated animate__fadeInDown main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">
+        <nav id="navbar" class=" animate__backInRight main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">
             <div class=" container-fluid pr-1">
                 <a href="#perumahan-murah-ungaran-semarang" id="dashboard" class="navmenu navbar-brand p-0">
                     <img src="<?php echo 'assets/img/logokanpaheader.jpeg'; ?>" alt="PT KANPA Logo" class="brand-image" style="height: 64px; width: 64px;">
@@ -136,7 +134,7 @@ session_start();
         </nav>
         <!-- /.navbar -->
         <!-- Content Wrapper. Contains page content -->
-        <div id="conten" class="content-wrapper bg-white">
+        <div class="content-wrapper bg-white">
             <!-- <div class="content"> -->
             <!-- Main content -->
             <?php

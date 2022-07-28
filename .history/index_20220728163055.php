@@ -56,6 +56,8 @@ session_start();
 </head>
 
 
+<body class="container hold-transition layout-top-nav pl-0 pr-0">
+    <!-- <div id="conten"> -->
     <div class="container animate__animated animate__fadeInRight" id="load"></div>
 
     <script>
@@ -66,6 +68,7 @@ session_start();
                 document.getElementById('footer').style.visibility = "hidden";
             } else if (state == 'complete') {
                 setTimeout(function() {
+                    // alert('ya');
                     document.getElementById('interactive');
                     $('#load').removeClass('animate__fadeInRight');
                     $('#load').addClass('animate__fadeOutLeft');
@@ -76,8 +79,6 @@ session_start();
             }
         }
     </script>
-<body class="container hold-transition layout-top-nav pl-0 pr-0">
-    <!-- <div id="conten"> -->
     <div class="wrapper">
         <!-- Navbar -->
         <nav id="navbar" class="animate__animated animate__fadeInDown main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">

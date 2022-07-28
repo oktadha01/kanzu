@@ -67,11 +67,11 @@ session_start();
             } else if (state == 'complete') {
                 setTimeout(function() {
                     document.getElementById('interactive');
-                    $('#load').removeClass('animate__fadeInRight');
-                    $('#load').addClass('animate__fadeOutLeft');
-                    // document.getElementById('load').style.visibility = "hidden";
-                    document.getElementById('conten').style.visibility = "visible";
-                    document.getElementById('navbar').style.visibility = "visible";
+                    // $('#load').removeClass('animate__fadeInRight');
+                    // $('#load').addClass('animate__fadeOutLeft');
+                    // // document.getElementById('load').style.visibility = "hidden";
+                    // document.getElementById('conten').style.visibility = "visible";
+                    // document.getElementById('navbar').style.visibility = "visible";
                 }, 2000);
             }
         }

@@ -45,8 +45,8 @@ session_start();
             } else if (state == 'complete') {
                 setTimeout(function() {
                     document.getElementById('interactive');
-                    // document.getElementById('load').style.visibility = "hidden";
-                    // document.getElementById('login').style.visibility = "visible";
+                    document.getElementById('load').style.visibility = "hidden";
+                    document.getElementById('login').style.visibility = "visible";
                 }, 1000);
             }
         }

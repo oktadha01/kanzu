@@ -40,7 +40,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 
     <!-- Ionicons -->
     <!-- <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
@@ -56,31 +56,12 @@ session_start();
 </head>
 
 
-    <div class="container animate__animated animate__fadeInRight" id="load"></div>
-
-    <script>
-        document.onreadystatechange = function() {
-            var state = document.readyState
-            if (state == 'interactive') {
-                document.getElementById('conten').style.visibility = "hidden";
-                document.getElementById('footer').style.visibility = "hidden";
-            } else if (state == 'complete') {
-                setTimeout(function() {
-                    document.getElementById('interactive');
-                    $('#load').removeClass('animate__fadeInRight');
-                    $('#load').addClass('animate__fadeOutLeft');
-                    // document.getElementById('load').style.visibility = "hidden";
-                    document.getElementById('conten').style.visibility = "visible";
-                    document.getElementById('navbar').style.visibility = "visible";
-                }, 2000);
-            }
-        }
-    </script>
-<body class="container hold-transition layout-top-nav pl-0 pr-0">
+<div id="load"></div>
+<body class="hold-transition layout-top-nav pl-0 pr-0">
     <!-- <div id="conten"> -->
     <div class="wrapper">
         <!-- Navbar -->
-        <nav id="navbar" class="animate__animated animate__fadeInDown main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">
+        <nav id="navbar" class="main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">
             <div class=" container-fluid pr-1">
                 <a href="#perumahan-murah-ungaran-semarang" id="dashboard" class="navmenu navbar-brand p-0">
                     <img src="<?php echo 'assets/img/logokanpaheader.jpeg'; ?>" alt="PT KANPA Logo" class="brand-image" style="height: 64px; width: 64px;">
@@ -136,7 +117,7 @@ session_start();
         </nav>
         <!-- /.navbar -->
         <!-- Content Wrapper. Contains page content -->
-        <div id="conten" class="content-wrapper bg-white">
+        <div class="content-wrapper bg-white">
             <!-- <div class="content"> -->
             <!-- Main content -->
             <?php
@@ -348,7 +329,20 @@ session_start();
             })
         });
     </script>
-
+    <script>
+        document.onreadystatechange = function() {
+            var state = document.readyState
+            if (state == 'interactive') {
+                document.getElementById('conten').style.visibility = "hidden";
+            } else if (state == 'complete') {
+                setTimeout(function() {
+                    document.getElementById('interactive');
+                    document.getElementById('load').style.visibility = "hidden";
+                    document.getElementById('conten').style.visibility = "visible";
+                }, 1000);
+            }
+        }
+    </script>
 
 </body>
 
