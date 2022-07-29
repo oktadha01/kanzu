@@ -71,7 +71,7 @@ session_start();
                     $('#load').addClass('animate__fadeOutLeft');
                     // document.getElementById('load').style.visibility = "hidden";
                     document.getElementById('conten').style.visibility = "visible";
-                    document.getElementById('footer').style.visibility = "visible";
+                    document.getElementById('navbar').style.visibility = "visible";
                 }, 2000);
             }
         }
