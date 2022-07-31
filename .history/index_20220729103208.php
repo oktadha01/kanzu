@@ -160,14 +160,9 @@ session_start();
 
         </div>
         <!-- /.content-wrapper -->
-        <?php
-        $data_perum = mysqli_query($koneksi, "SELECT *FROM user WHERE id_user = '2'");
-        while ($data = mysqli_fetch_array($data_perum)) {
-        ?>
-            <a class="wafixed" href="https://wa.me/<?php echo $data['kontak']; ?>" target="_blank">
-                <img src="assets/img/logowa.png" alt="logo WA" class="height-3rem img-circle elevation-3">
-            </a>
-        <?php } ?>
+        <a class="wafixed" href="https://wa.me/6281249995616" target="_blank">
+            <img src="assets/img/logowa.png" alt="logo WA" class="height-3rem img-circle elevation-3">
+        </a>
 
         <!-- Main Footer -->
         <footer id="footer" class="main-footer bg-kanpa">
@@ -333,13 +328,15 @@ session_start();
             // This is necessary so you never see what is "behind" the navbar.
             if (st > lastScrollTop && st > navbarHeight) {
                 // Scroll Down
+                $('#navbar').removeClass('animate__fadeInDown');
+                $('#navbar').addClass('animate__fadeOutUp');
                 $('#navbar').hide(200);
             } else {
                 // Scroll Up
                 if (st + $(window).height() < $(document).height()) {
+                    $('#navbar').removeClass('animate__fadeOutUp');
+                    $('#navbar').addClass('animate__fadeInDown');
                     $('#navbar').show(200);
-                    // $('#navbar').removeClass('animate__fadeInDown');
-                    // $('#navbar').;
                 }
             }
 
