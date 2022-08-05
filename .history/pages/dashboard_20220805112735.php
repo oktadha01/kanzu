@@ -62,8 +62,8 @@
 										<?php } ?>
 									</div>
 									<h5 class="font-weight-bold">
-										<a class="text-dark detail-perum" href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>"><?php echo $row['nm_perum']; ?></a>
-										<a class="text-dark detail-perum" href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>"> - Tipe mulai
+										<a class="text-dark" href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>"><?php echo $row['nm_perum']; ?></a>
+										<a class="text-dark" href=""> - Tipe mulai
 											<table>
 												<tr>
 													<?php

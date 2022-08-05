@@ -62,8 +62,8 @@
 										<?php } ?>
 									</div>
 									<h5 class="font-weight-bold">
-										<a class="text-dark detail-perum" href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>"><?php echo $row['nm_perum']; ?></a>
-										<a class="text-dark detail-perum" href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>"> - Tipe mulai
+										<a class="text-dark" href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>"><?php echo $row['nm_perum']; ?></a>
+										<a class="text-dark" href=""> - Tipe mulai
 											<table>
 												<tr>
 													<?php
@@ -81,35 +81,93 @@
 										</a>
 									</h5>
 									<p class="font-weight-bold"><?php echo $row['alamat']; ?></p>
-									<?php
-									$spesifikasi = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
-									while ($spek = mysqli_fetch_array($spesifikasi)) {
-									?>
+									<div class="table-responsive p-0">
+										<table class="table table-head-fixed text-nowrap table-hover">
+											<thead>
+												<tr>
+													<?php
+													$spesifikasi = mysqli_query($koneksi, "SELECT * FROM tipe WHERE id_tipeperum = $id_perum ORDER BY harga limit 1 ");
+													while ($spek = mysqli_fetch_array($spesifikasi)) {
+													?>
+														<td scope="col" class="text-center">
+															<img src="assets/img/ikon-display/taman.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<center>
+																<h6><?php echo $spek['taman']; ?></h6>
+															</center>
+														</td>
+														<td scope="col" class="text-center">
+															<img src="assets/img/ikon-display/carport.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<center>
+																<h6><?php echo $spek['carportr']; ?></h6>
+															</center>
+														</td>
+														<td scope="col" class="text-center">
+															<img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<center>
+																<h6><?php echo $spek['ru_tamu']; ?></h6>
+															</center>
+														</td>
+														<td scope="col" class="text-center">
+															<img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<center>
+																<h6><?php echo $spek['ka_tidur']; ?></h6>
+															</center>
+														</td>
+														<td scope="col" class="text-center">
+															<img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-4rem"><br>
+															<center>
+																<h6><?php echo $spek['ka_mandi']; ?></h6>
+															</center>
+														</td>
+														<?php
+														if ($spek['dapur'] == null) { ?>
 
-										<div class="row jus-content">
-											<!-- <div class=""> -->
-											<center class="m-2">
-												<img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-4rem"><br>
-												<h6><?php echo $spek['ru_tamu']; ?></h6>
-											</center>
+														<?php } else { ?>
+															<td scope="col" class="text-center">
+																<img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+																<center>
+																	<h6><?php echo $spek['dapur']; ?></h6>
+																</center>
+															</td>
+														<?php } ?>
+														<?php
+														if ($spek['ru_keluarga'] == null) { ?>
 
-											<center class="m-2">
-												<img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-4rem"><br>
-												<h6><?php echo $spek['ka_tidur']; ?></h6>
-											</center>
+														<?php } else { ?>
+															<td scope="col" class="text-center">
+																<img src="assets/img/ikon-display/ru-keluarga.png" alt="PT KANPA Logo" class="height-4rem"><br>
+																<center>
+																	<h6><?php echo $spek['ru_keluarga']; ?></h6>
+																</center>
+															</td>
+														<?php } ?>
+														<?php
+														if ($spek['ru_makan'] == null) { ?>
 
-											<center class="m-2">
-												<img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-4rem"><br>
-												<h6><?php echo $spek['ka_mandi']; ?></h6>
-											</center>
+														<?php } else { ?>
+															<td scope="col" class="text-center">
+																<img src="assets/img/ikon-display/ru-makan.png" alt="PT KANPA Logo" class="height-4rem"><br>
+																<center>
+																	<h6><?php echo $spek['ru_makan']; ?></h6>
+																</center>
+															</td>
+														<?php } ?>
+														<?php
+														if ($spek['balkon'] == null) { ?>
 
-											<center class="m-2">
-												<img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
-												<h6><?php echo $spek['dapur']; ?></h6>
-											</center>
-											<!-- </div> -->
-										</div>
-									<?php } ?>
+														<?php } else { ?>
+															<td scope="col" class="text-center">
+																<img src="assets/img/ikon-display/balkon.png" alt="PT KANPA Logo" class="height-4rem"><br>
+																<center>
+																	<h6><?php echo $spek['balkon']; ?></h6>
+																</center>
+															</td>
+														<?php } ?>
+													<?php } ?>
+												</tr>
+											</thead>
+										</table>
+									</div>
 									<div class="col-12 mb-2">
 										<center>
 											<a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
@@ -200,34 +258,35 @@
 								<h4>Info Lebih Lanjut</h4>
 							</div>
 							<div class="card-body">
-								<form method="post" action="prosess/proses_simpan_data_kastemer.php" enctype="multipart/form-data">
-									<div class="row">
-										<div class="col-lg-6 col-md-6 col-12">
-											<div class="form-group">
-												<label for="pilih-perum">Pilih Perumahan</label>
-												<select id="pilih-perum" name="wa_nmperum" class="custom-select">
-													<option value="0">Pilih Perumahan</option>
-													<?php
-													include '../koneksi.php';
-													$no = 1;
-													$query = "SELECT * FROM perumahan ORDER BY id_perum DESC";
-													$data = $koneksi->prepare($query);
-													$data->execute();
-													$res1 = $data->get_result();
-													while ($row = $res1->fetch_assoc()) {
-													?>
-														<option value="<?php echo $row['nm_perum']; ?> "><?php echo $row['nm_perum']; ?></option>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label for="pilih-perum">Pilih Perumahan</label>
+											<select id="pilih-perum" name="id_perum" class="custom-select">
+												<option value="0">Pilih Perumahan</option>
+												<?php
+												include '../koneksi.php';
+												$no = 1;
+												$query = "SELECT * FROM perumahan ORDER BY id_perum DESC";
+												$data = $koneksi->prepare($query);
+												$data->execute();
+												$res1 = $data->get_result();
+												while ($row = $res1->fetch_assoc()) {
+												?>
+													<option value="<?php echo $row['id_perum']; ?> "><?php echo $row['nm_perum']; ?></option>
 
-													<?php } ?>
-												</select>
-											</div>
+												<?php } ?>
+											</select>
 										</div>
 									</div>
+								</div>
+								<form method="post" action="../prosess/proses_simpan_data_kastemer.php" enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-lg-4 col-md-4 col-12">
 											<label for="nm-kastemer">Nama Lengkap</label>
 											<div class="form-group ">
 												<input type="text" id="" class="form-control" name="action_wa" value="wa-dashboard" hidden>
+												<input type="text" id="wa-nmperum" class="form-control" name="wa_nmperum" value="" hidden>
 												<input type="text" id="nm-kastemer" class="form-control" name="nm_kastemer" placeholder="Nama Lengkap ..." autocomplete="off" required value="">
 											</div>
 										</div>

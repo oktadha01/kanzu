@@ -28,10 +28,8 @@ if ($list == '0') {
                                 <h6 class="ml-1 font-weight-bold">*' . $row['promo'] . '</h6>
                             </div>
                             <h4 class="font-weight-bold">
-                            <a class="text-dark detail-perum" href="?perum=' . $row['id_perum'] . '#' . $perum . '" id="detail" data-id="' . $row['id_perum'] . '">' . $row['nm_perum'] . '</a>
-                            <a class="text-dark detail-perum" href="?perum=' . $row['id_perum'] . '#' . $perum . '" id="detail" data-id="' . $row['id_perum'] . '"> - Tipe mulai
-                                
-                            <h4 class="font-weight-bold bor-tip-dash fit-conten">
+                                <a class="text-dark" href="index.php?p=detail&id=' . $row['nm_perum'] . '">' . $row['nm_perum'] . ' - Tipe mulai
+                                    <h4 class="font-weight-bold bor-tip-dash fit-conten">
                                         ' . $row['luas_p'] . '/' . $row['luas_t'] . '
                                     </h4>
                                 </a>

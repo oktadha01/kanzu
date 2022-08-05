@@ -62,8 +62,8 @@
 										<?php } ?>
 									</div>
 									<h5 class="font-weight-bold">
-										<a class="text-dark detail-perum" href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>"><?php echo $row['nm_perum']; ?></a>
-										<a class="text-dark detail-perum" href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>"> - Tipe mulai
+										<a class="text-dark" href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>"><?php echo $row['nm_perum']; ?></a>
+										<a class="text-dark" href=""> - Tipe mulai
 											<table>
 												<tr>
 													<?php
@@ -86,37 +86,44 @@
 									while ($spek = mysqli_fetch_array($spesifikasi)) {
 									?>
 
-										<div class="row jus-content">
-											<!-- <div class=""> -->
-											<center class="m-2">
-												<img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-4rem"><br>
+										<div class="jus-content">
+											<img src="assets/img/ikon-display/ru-tamu.png" alt="PT KANPA Logo" class="height-4rem"><br>
+											<center>
 												<h6><?php echo $spek['ru_tamu']; ?></h6>
 											</center>
 
-											<center class="m-2">
-												<img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+											<img src="assets/img/ikon-display/ka-tidur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+											<center>
 												<h6><?php echo $spek['ka_tidur']; ?></h6>
 											</center>
 
-											<center class="m-2">
-												<img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-4rem"><br>
+											<img src="assets/img/ikon-display/ka-mandi.png" alt="PT KANPA Logo" class="height-4rem"><br>
+											<center>
 												<h6><?php echo $spek['ka_mandi']; ?></h6>
 											</center>
 
-											<center class="m-2">
-												<img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+											<img src="assets/img/ikon-display/dapur.png" alt="PT KANPA Logo" class="height-4rem"><br>
+											<center>
 												<h6><?php echo $spek['dapur']; ?></h6>
 											</center>
-											<!-- </div> -->
+										<?php } ?>
 										</div>
-									<?php } ?>
-									<div class="col-12 mb-2">
-										<center>
-											<a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
-												<button type="button" class="btn-sm bg-btn-detail text-light detail-perum">Lihat Detail >></button>
-											</a>
-										</center>
-									</div>
+										<div class="table-responsive p-0">
+											<table class="table table-head-fixed text-nowrap table-hover">
+												<thead>
+													<tr>
+
+													</tr>
+												</thead>
+											</table>
+										</div>
+										<div class="col-12 mb-2">
+											<center>
+												<a href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" class="detail-perum" id="detail" data-id="<?php echo $row['id_perum']; ?>">
+													<button type="button" class="btn-sm bg-btn-detail text-light detail-perum">Lihat Detail >></button>
+												</a>
+											</center>
+										</div>
 								</div>
 							</div>
 						</div>

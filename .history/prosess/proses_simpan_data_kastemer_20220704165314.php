@@ -10,8 +10,8 @@ if ($action_wa == 'wa-detail') {
     $nm_kastemer          = $_POST['nm_kastemer'];
     $no_wa          = $_POST['no_wa'];
     $email          = $_POST['email'];
-    $status_kstmr          = '-';
-    $daftar = mysqli_query($koneksi, "INSERT INTO kastemer (nm_kastemer, no_wa, email, wa_nmperum, wa_tipeperum, status_kstmr) values ('$nm_kastemer', '$no_wa', '$email', '$wa_nmperum', '$wa_tipeperum', '$status_kstmr')");
+
+    $daftar = mysqli_query($koneksi, "INSERT INTO kastemer (wa_nmperum, wa_tipeperum, nm_kastemer, no_wa, email) values ('$wa_nmperum', '$wa_tipeperum', '$nm_kastemer', '$no_wa', '$email')");
     if ($daftar) {
         header("location:https://wa.me/$kontak?text=Saya $nm_kastemer No Wa $no_wa Email $email' Ingin tau lebih lanjut tentang perumahan  $wa_nmperum' dengan tipe $wa_tipeperum");
     } else {
@@ -23,12 +23,10 @@ if ($action_wa == 'wa-detail') {
     $nm_kastemer          = $_POST['nm_kastemer'];
     $no_wa          = $_POST['no_wa'];
     $email          = $_POST['email'];
-    $wa_tipeperum          = '-';
-    $status_kstmr          = '-';
 
-    $daftar = mysqli_query($koneksi, "INSERT INTO kastemer (nm_kastemer, no_wa, email, wa_nmperum, wa_tipeperum, status_kstmr) values ('$nm_kastemer', '$no_wa', '$email', '$wa_nmperum',  '$wa_tipeperum', '$status_kstmr')");
+    $daftar = mysqli_query($koneksi, "INSERT INTO kastemer (wa_nmperum, wa_tipeperum, nm_kastemer, no_wa, email) values ('$wa_nmperum', '$wa_tipeperum', '$nm_kastemer', '$no_wa', '$email')");
     if ($daftar) {
-        header("location:https://wa.me/$kontak?text=Saya $nm_kastemer No Wa $no_wa Email $email Ingin tau lebih lanjut tentang perumahan  $wa_nmperum");
+        header("location:https://wa.me/$kontak?text=Saya $nm_kastemer No Wa $no_wa Email $email Ingin tau lebih lanjut tentang perumahan  $wa_nmperum.");
     } else {
         echo 'Proses gagal';
     }

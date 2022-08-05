@@ -339,9 +339,8 @@ session_start();
             } else {
                 // Scroll Up
                 if (st + $(window).height() < $(document).height()) {
-                    $('#navbar').removeClass('animate__fadeOutUp');
+                    // $('#navbar').show(200);
                     $('#navbar').addClass('animate__fadeInDown');
-                    $('#navbar').show(200);
                     // $('#navbar').;
                 }
             }

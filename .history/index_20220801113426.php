@@ -335,7 +335,7 @@ session_start();
                 // Scroll Down
                 $('#navbar').removeClass('animate__fadeInDown');
                 $('#navbar').addClass('animate__fadeOutUp');
-                // $('#navbar').hide(200);
+                $('#navbar').hide(200);
             } else {
                 // Scroll Up
                 if (st + $(window).height() < $(document).height()) {

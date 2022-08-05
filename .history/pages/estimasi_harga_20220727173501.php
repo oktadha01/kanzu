@@ -9,48 +9,51 @@
     ?>
     <section class="content-header pt-5rem">
         <div class="container-fluid">
-            <div id="myDIV">
-                <h5>Pilih Harga</h5>
-                <div class="row">
-                    <div class="col-lg-2 col-md-4 col-4 ">
-                        <button type="button" name="" id="harga1" class="btn btn-xs bor-est col-12 bor-est-active">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 200 - 250 jt</h6>
-                        </button>
+            <div class="card">
+                <div id="myDIV" class="card-body">
+                    <!-- <h3 align="center">Membuat Filter Harga Menggunakan AJAXJQuery Dan PHP</h3> -->
+                    <h5>Pilih Harga</h5>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-4 col-4 ">
+                            <button type="button" name="" id="harga1" class="btn btn-xs bor-est bor-est-active">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 200 - 250 jt</h6>
+                            </button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga2" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 251 - 300 jt</h6>
+                            </button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga3" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 301 - 400 jt</h6>
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga2" class="btn btn-xs bor-est col-12">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 251 - 300 jt</h6>
-                        </button>
+                    <div class="row mt-1">
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga4" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 401 - 500 jt</h6>
+                            </button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga5" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 501 - 600 jt</h6>
+                            </button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-4">
+                            <button type="button" name="" id="harga6" class="btn btn-xs bor-est">
+                                <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 601 jt - 1 M</h6>
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga3" class="btn btn-xs bor-est col-12">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 301 - 400 jt</h6>
-                        </button>
+                    <div class="row">
+                        <div class="col-12" style="padding-top:12px">
+                            <div id="price_range"></div>
+                        </div>
                     </div>
+                    <div id="load_product" class="row"></div>
                 </div>
-                <div class="row mt-1">
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga4" class="btn btn-xs bor-est col-12">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 401 - 500 jt</h6>
-                        </button>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga5" class="btn btn-xs bor-est col-12">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 501 - 600 jt</h6>
-                        </button>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga6" class="btn btn-xs bor-est col-12">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 601 jt - 1 M</h6>
-                        </button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12" style="padding-top:12px">
-                        <div id="price_range"></div>
-                    </div>
-                </div>
-                <div id="load_product" class="row"></div>
             </div>
         </div>
     </section>

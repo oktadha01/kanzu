@@ -25,8 +25,7 @@
                                     <h6 class="ml-1 font-weight-bold">*<?php echo $row['promo']; ?></h6>
                                 </div>
                                 <h4 class="font-weight-bold">
-                                    <a class="text-dark detail-perum" href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>"><?php echo $row['nm_perum']; ?></a>
-                                    <a class="text-dark detail-perum" href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>"> - Tipe mulai
+                                    <a class="text-dark" href="index.php?p=detail&id=<?php echo $row['nm_perum']; ?>"><?php echo $row['nm_perum']; ?> - Tipe mulai
                                         <h4 class="font-weight-bold bor-tip-dash fit-conten">
                                             <?php echo $row['luas_p']; ?>/<?php echo $row['luas_t']; ?>
                                         </h4>

@@ -11,7 +11,7 @@ if ($action_wa == 'wa-detail') {
     $no_wa          = $_POST['no_wa'];
     $email          = $_POST['email'];
     $status_kstmr          = '-';
-    $daftar = mysqli_query($koneksi, "INSERT INTO kastemer (nm_kastemer, no_wa, email, wa_nmperum, wa_tipeperum, status_kstmr) values ('$nm_kastemer', '$no_wa', '$email', '$wa_nmperum', '$wa_tipeperum', '$status_kstmr')");
+    $daftar = mysqli_query($koneksi, "INSERT INTO kastemer (nm_kastemer, no_wa, email, wa_nmperum, wa_tipeperum) values ('$nm_kastemer', '$no_wa', '$email', '$wa_nmperum', '$wa_tipeperum')");
     if ($daftar) {
         header("location:https://wa.me/$kontak?text=Saya $nm_kastemer No Wa $no_wa Email $email' Ingin tau lebih lanjut tentang perumahan  $wa_nmperum' dengan tipe $wa_tipeperum");
     } else {
