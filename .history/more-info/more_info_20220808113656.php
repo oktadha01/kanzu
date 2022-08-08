@@ -1,10 +1,11 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 ob_start();
 session_start();
 // $ambil_data = mysqli_query($koneksi, "SELECT * FROM user where id_user = '$_SESSION[id_user]'");
 // $data = mysqli_fetch_array($ambil_data);
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -30,7 +31,7 @@ session_start();
             background: url("assets/img/logokanpa.png") no-repeat center center rgba(20 31 70)
         }
     </style>
-    <link rel="shortcut icon" href="assets/img/logokanpatitle.jpeg">
+    <link rel="shortcut icon" href="../assets/img/logokanpatitle.jpeg">
     <!-- Tell the browser to be responsive to screen width -->
     <!-- Font Awesome -->
 
@@ -48,11 +49,11 @@ session_start();
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
-    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="../assets/css/app.min.css">
     <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 
-    <link rel="stylesheet" href="assets/css/adminlte.min.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
 </head>
 
 
@@ -84,7 +85,7 @@ session_start();
         <nav id="navbar" class="animate__animated animate__fadeInDown main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">
             <div class=" container-fluid pr-1">
                 <a href="#perumahan-murah-ungaran-semarang" id="dashboard" class="navmenu navbar-brand p-0">
-                    <img src="<?php echo 'assets/img/logokanpaheader.jpeg'; ?>" alt="PT KANPA Logo" class="brand-image" style="height: 64px; width: 64px;">
+                    <img src="<?php echo '../assets/img/logokanpaheader.jpeg'; ?>" alt="PT KANPA Logo" class="brand-image" style="height: 64px; width: 64px;">
                 </a>
                 <span class="brand-text font-weight-bold" style="font-size: initial;">KANZU PERMAI ABADI</span>
                 <button class="navbar-toggler order-1 p bg-white" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,164 +109,108 @@ session_start();
                         <li class="nav-item">
                             <a href="#more-info" class="nav-link menu-nav navmenu" id="more_info">More Info</a>
                         </li>
-                        <?php
-                        if (@$_SESSION['privilege'] == 'Admin') { ?>
-                            <li class="nav-item dropdown">
-                                <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link menu-nav dropdown-toggle">DATA</a>
-                                <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                    <li><a href="index.php?p=tambah_data" class="dropdown-item menu-nav menu admin"> Olah data </a></li>
-                                    <li><a href="index.php?p=form_foto_slide" class="dropdown-item menu-nav menu admin"> Olah foto slide </a></li>
-                                    <li><a href="index.php?p=pembeli" class="dropdown-item menu-nav menu admin"> Data Pembeli </a></li>
-                                </ul>
-                            </li>
-                        <?php } else { ?>
-                        <?php } ?>
                     </ul>
-                    <!-- Right navbar links -->
-
-                    <?php
-                    if (@$_SESSION['privilege'] == 'Admin') { ?>
-                        <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto border-r">
-                            <!-- Messages Dropdown Menu -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link menu-nav" href="logout.php">
-                                    <i class="fa-solid fa-right-to-bracket"></i> LOGOUT
-                                </a>
-                            </li>
-                        </ul>
-                    <?php } else { ?>
-                    <?php } ?>
                 </div>
             </div>
         </nav>
-        <!-- /.navbar -->
-        <!-- Content Wrapper. Contains page content -->
         <div id="conten" class="content-wrapper bg-white">
-            <!-- <div class="content"> -->
-            <!-- Main content -->
+
             <?php
-            $pages_dir = 'pages';
-            if (!empty($_GET['p'])) {
-                $pages = scandir($pages_dir, 0);
-                // unset($pages[0],$pages[1]);
-                $p = $_GET['p'];
-                if (in_array($p . '.php', $pages)) {
-                    include($pages_dir . '/' . $p . '.php');
-                } else {
-                    echo 'Halaman Tidak Ditemukan';
-                }
-            } else { ?>
+            $data_perum = mysqli_query($koneksi, "SELECT *FROM user WHERE id_user = '2'");
+            while ($data = mysqli_fetch_array($data_perum)) {
+            ?>
+                <a class="wafixed" href="https://wa.me/<?php echo $data['kontak']; ?>" target="_blank">
+                    <img src="../assets/img/logowa.png" alt="logo WA" class="height-3rem img-circle elevation-3">
+                </a>
             <?php } ?>
-            <div class="halaman-menu"></div>
-            <!-- include($pages_dir . '/dashboard.php'); -->
 
-            <!-- </div> -->
-
+            <!-- Main Footer -->
+            <footer id="footer" class="main-footer bg-kanpa">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <h4 class="font-weight-bold color-orange">Jam Kerja</h4>
+                        <h6 class="text-light"><i class="fa-solid fa-calendar-days"></i> Senin - Minggu :</h6>
+                        <h6 class="text-light"><i class="fa-solid fa-clock"></i> 08AM - 16PM</h6>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <h4 class="font-weight-bold color-orange">Kantor Penjualan</h4>
+                        <h6 class="text-light">Jl. Pattimura Raya, Komplek Masjid Baitut Taqwa, Mapagan, Lerep, Kec. Ungaran Bar., Kabupaten Semarang, Jawa Tengah 50518</h6>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <h4 class="font-weight-bold color-orange">Info Kontak</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <h6 class="text-light"><i class="fa-solid fa-square-phone"></i> (024) 7590 1139</h6>
+                            </div>
+                            <div class="col-12">
+                                <?php
+                                $data_perum = mysqli_query($koneksi, "SELECT *FROM user WHERE id_user = '2'");
+                                while ($data = mysqli_fetch_array($data_perum)) {
+                                ?>
+                                    <h6 class="text-light"><i class="fa-brands fa-whatsapp-square"></i> <?php echo $data['kontak']; ?></h6>
+                                <?php } ?>
+                            </div>
+                            <div class="col-12">
+                                <h6 class="text-light"><i class="fa-solid fa-envelope"></i> Kanzugroupindonesia@gamail.com</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <table class="table table-head-fixed text-nowrap table-hover">
+                                    <thead>
+                                        <tr>
+                                            <td scope="col" class="text-center">
+                                                <a class="text-light" href="#">
+                                                    <div class="border-r">
+                                                        <i class="heigh-20px fa-brands fa-whatsapp-square"></i>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td scope="col" class="text-center">
+                                                <a class="text-light" href="https://instagram.com/pt.kanpa?igshid=YmMyMTA2M2Y=">
+                                                    <div class="border-r">
+                                                        <i class="heigh-20px fa-brands fa-instagram-square"></i>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td scope="col" class="text-center">
+                                                <a class="text-light" href="#">
+                                                    <div class="border-r">
+                                                        <i class="heigh-20px fa-brands fa-facebook"></i>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td scope="col" class="text-center">
+                                                <a class="text-light" href="#">
+                                                    <div class="border-r">
+                                                        <i class="heigh-20px fa-solid fa-envelope"></i>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td scope="col" class="text-center">
+                                                <a class="text-light" href="https://www.youtube.com/channel/UCLliJCkXBmAHT_ujeGicfjQ">
+                                                    <div class="border-r">
+                                                        <i class="heigh-20px fa-brands fa-youtube"></i>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Default to the left -->
+                <center>
+                    <strong><a href="http://kanpa.co.id/">Kanpa.co.id</a></strong>
+                </center>
+            </footer>
         </div>
-        <!-- /.content-wrapper -->
-        <?php
-        $data_perum = mysqli_query($koneksi, "SELECT *FROM user WHERE id_user = '2'");
-        while ($data = mysqli_fetch_array($data_perum)) {
-        ?>
-            <a class="wafixed" href="https://wa.me/<?php echo $data['kontak']; ?>" target="_blank">
-                <img src="assets/img/logowa.png" alt="logo WA" class="height-3rem img-circle elevation-3">
-            </a>
-        <?php } ?>
-
-        <!-- Main Footer -->
-        <footer id="footer" class="main-footer bg-kanpa">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-12">
-                    <h4 class="font-weight-bold color-orange">Jam Kerja</h4>
-                    <h6 class="text-light"><i class="fa-solid fa-calendar-days"></i> Senin - Minggu :</h6>
-                    <h6 class="text-light"><i class="fa-solid fa-clock"></i> 08AM - 16PM</h6>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                    <h4 class="font-weight-bold color-orange">Kantor Penjualan</h4>
-                    <h6 class="text-light">Jl. Pattimura Raya, Komplek Masjid Baitut Taqwa, Mapagan, Lerep, Kec. Ungaran Bar., Kabupaten Semarang, Jawa Tengah 50518</h6>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                    <h4 class="font-weight-bold color-orange">Info Kontak</h4>
-                    <div class="row">
-                        <div class="col-12">
-                            <h6 class="text-light"><i class="fa-solid fa-square-phone"></i> (024) 7590 1139</h6>
-                        </div>
-                        <div class="col-12">
-                            <?php
-                            $data_perum = mysqli_query($koneksi, "SELECT *FROM user WHERE id_user = '2'");
-                            while ($data = mysqli_fetch_array($data_perum)) {
-                            ?>
-                                <h6 class="text-light"><i class="fa-brands fa-whatsapp-square"></i> <?php echo $data['kontak']; ?></h6>
-                            <?php } ?>
-                        </div>
-                        <div class="col-12">
-                            <h6 class="text-light"><i class="fa-solid fa-envelope"></i> Kanzugroupindonesia@gamail.com</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <table class="table table-head-fixed text-nowrap table-hover">
-                                <thead>
-                                    <tr>
-                                        <td scope="col" class="text-center">
-                                            <a class="text-light" href="#">
-                                                <div class="border-r">
-                                                    <i class="heigh-20px fa-brands fa-whatsapp-square"></i>
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td scope="col" class="text-center">
-                                            <a class="text-light" href="https://instagram.com/pt.kanpa?igshid=YmMyMTA2M2Y=">
-                                                <div class="border-r">
-                                                    <i class="heigh-20px fa-brands fa-instagram-square"></i>
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td scope="col" class="text-center">
-                                            <a class="text-light" href="#">
-                                                <div class="border-r">
-                                                    <i class="heigh-20px fa-brands fa-facebook"></i>
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td scope="col" class="text-center">
-                                            <a class="text-light" href="#">
-                                                <div class="border-r">
-                                                    <i class="heigh-20px fa-solid fa-envelope"></i>
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td scope="col" class="text-center">
-                                            <a class="text-light" href="https://www.youtube.com/channel/UCLliJCkXBmAHT_ujeGicfjQ">
-                                                <div class="border-r">
-                                                    <i class="heigh-20px fa-brands fa-youtube"></i>
-                                                </div>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Default to the left -->
-            <center>
-                <strong><a href="http://kanpa.co.id/">Kanpa.co.id</a></strong>
-            </center>
-        </footer>
-    </div>
-    <!-- </div> -->
-    <!-- ./wrapper -->
-    <?php
-    $id = $_GET['perum'];
-    ?>
-    <input type="text" name="id_perum" id="id_perum" value="<?php echo $id; ?>" hidden>
 
     </div>
-    <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- <script src="assets/js/jquery.min.js"></script> -->
+    <!-- <script src="../assets/js/jquery.min.js"></script> -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -280,14 +225,13 @@ session_start();
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
-    <!-- <script src="assets/js/vendor.min.js"></script> -->
-    <script src="assets/js/demo.js"></script>
-    <script src="assets/js/adminlte.js"></script>
-    <script src="assets/js/index.js"></script>
+    <!-- <script src="../assets/js/vendor.min.js"></script> -->
+    <script src="../assets/js/demo.js"></script>
+    <script src="../assets/js/adminlte.js"></script>
+    <script src="../assets/js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var newURL = location.href.split("index.php")[0];
-            window.history.pushState('object', document.title, newURL);
+
         });
 
 

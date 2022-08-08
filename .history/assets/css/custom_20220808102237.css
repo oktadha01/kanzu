@@ -586,9 +586,11 @@ body {
 .btn-more-info {
     border: 2px solid #060606;
     border-radius: 21px;
-    color: #000;
 }
-.btn-more-info:hover {
+
+.btn-more-info :hover {
+    border: 2px solid #060606;
+    border-radius: 21px;
     background: rgb(20 31 70);
     color: lightcoral;
     box-shadow: rgb(0 0 0 / 56%) 0px 5px 5px;

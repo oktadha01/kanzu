@@ -586,7 +586,6 @@ body {
 .btn-more-info {
     border: 2px solid #060606;
     border-radius: 21px;
-    color: #000;
 }
 .btn-more-info:hover {
     background: rgb(20 31 70);

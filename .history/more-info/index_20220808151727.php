@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 ob_start();
 session_start();
 // $ambil_data = mysqli_query($koneksi, "SELECT * FROM user where id_user = '$_SESSION[id_user]'");
@@ -27,10 +27,10 @@ session_start();
             height: 100%;
             position: fixed;
             z-index: 9999;
-            background: url("assets/img/logokanpa.png") no-repeat center center rgba(20 31 70)
+            background: url("../assets/img/logokanpa.png") no-repeat center center rgba(20 31 70)
         }
     </style>
-    <link rel="shortcut icon" href="assets/img/logokanpatitle.jpeg">
+    <link rel="shortcut icon" href="../assets/img/logokanpatitle.jpeg">
     <!-- Tell the browser to be responsive to screen width -->
     <!-- Font Awesome -->
 
@@ -48,11 +48,11 @@ session_start();
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
-    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="../assets/css/app.min.css">
     <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 
-    <link rel="stylesheet" href="assets/css/adminlte.min.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
 </head>
 
 
@@ -84,7 +84,7 @@ session_start();
         <nav id="navbar" class="animate__animated animate__fadeInDown main-header navbar navbar-expand-md navbar-light navbar-white" style="top: 0px; max-width: 1140px;">
             <div class=" container-fluid pr-1">
                 <a href="#perumahan-murah-ungaran-semarang" id="dashboard" class="navmenu navbar-brand p-0">
-                    <img src="<?php echo 'assets/img/logokanpaheader.jpeg'; ?>" alt="PT KANPA Logo" class="brand-image" style="height: 64px; width: 64px;">
+                    <img src="<?php echo '../assets/img/logokanpaheader.jpeg'; ?>" alt="PT KANPA Logo" class="brand-image" style="height: 64px; width: 64px;">
                 </a>
                 <span class="brand-text font-weight-bold" style="font-size: initial;">KANZU PERMAI ABADI</span>
                 <button class="navbar-toggler order-1 p bg-white" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,47 +94,21 @@ session_start();
                     <!-- Left navbar links -->
                     <ul class="navbar-nav border-b">
                         <li class="nav-item">
-                            <a href="#perumahan-murah-ungaran-semarang-cluster-milenial" class="nav-link menu-nav navmenu" id="dashboard">Home</a>
+                            <a href="../index.php#perumahan-murah-ungaran-semarang-cluster-milenial" class="nav-link menu-nav navmenu" id="dashboard">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#wujudkan-rumah-impian-anda-bersama-PT-KANPA" class="nav-link menu-nav navmenu" id="produk">Produk</a>
+                            <a href="../index.php#wujudkan-rumah-impian-anda-bersama-PT-KANPA" class="nav-link menu-nav navmenu" id="produk">Produk</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#pilih-rumah-impian-anda" class="nav-link menu-nav navmenu" id="estimasi_harga">Estimasi Harga</a>
+                            <a href="../index.php#pilih-rumah-impian-anda" class="nav-link menu-nav navmenu" id="estimasi_harga">Estimasi Harga</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#bersama-pt-kanpa-kita-bisa-wujutkan-semuanya" class="nav-link menu-nav navmenu" id="berita">Berita</a>
+                            <a href="../index.php#bersama-pt-kanpa-kita-bisa-wujutkan-semuanya" class="nav-link menu-nav navmenu" id="berita">Berita</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#more-info" class="nav-link menu-nav navmenu" id="more_info">More Info</a>
+                            <a href="../index.php#more-info" class="nav-link menu-nav navmenu" id="more_info">More Info</a>
                         </li>
-                        <?php
-                        if (@$_SESSION['privilege'] == 'Admin') { ?>
-                            <li class="nav-item dropdown">
-                                <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link menu-nav dropdown-toggle">DATA</a>
-                                <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                    <li><a href="index.php?p=tambah_data" class="dropdown-item menu-nav menu admin"> Olah data </a></li>
-                                    <li><a href="index.php?p=form_foto_slide" class="dropdown-item menu-nav menu admin"> Olah foto slide </a></li>
-                                    <li><a href="index.php?p=pembeli" class="dropdown-item menu-nav menu admin"> Data Pembeli </a></li>
-                                </ul>
-                            </li>
-                        <?php } else { ?>
-                        <?php } ?>
                     </ul>
-                    <!-- Right navbar links -->
-
-                    <?php
-                    if (@$_SESSION['privilege'] == 'Admin') { ?>
-                        <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto border-r">
-                            <!-- Messages Dropdown Menu -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link menu-nav" href="logout.php">
-                                    <i class="fa-solid fa-right-to-bracket"></i> LOGOUT
-                                </a>
-                            </li>
-                        </ul>
-                    <?php } else { ?>
-                    <?php } ?>
                 </div>
             </div>
         </nav>
@@ -143,24 +117,35 @@ session_start();
         <div id="conten" class="content-wrapper bg-white">
             <!-- <div class="content"> -->
             <!-- Main content -->
-            <?php
-            $pages_dir = 'pages';
-            if (!empty($_GET['p'])) {
-                $pages = scandir($pages_dir, 0);
-                // unset($pages[0],$pages[1]);
-                $p = $_GET['p'];
-                if (in_array($p . '.php', $pages)) {
-                    include($pages_dir . '/' . $p . '.php');
-                } else {
-                    echo 'Halaman Tidak Ditemukan';
-                }
-            } else { ?>
-            <?php } ?>
-            <div class="halaman-menu"></div>
-            <!-- include($pages_dir . '/dashboard.php'); -->
-
-            <!-- </div> -->
-
+            <div class="container mt-5rem">
+                <center class="p-5">
+                    <a href="../index.php#perumahan-murah-ungaran-semarang-cluster-milenial">
+                        <div class="col-12 btn-more-info p-2 mb-3">
+                            <h6 class="mb-0">Website PT KANPA</h6>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/+6282333507931?text=Halo%20PT%20KANPA%2C%20Saya%20mau%20tanya%20perumahan%20...">
+                        <div class="col-12 btn-more-info p-2 mb-3">
+                            <h6 class="mb-0">Customer Service</h6>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/+628122955100?text=Halo%20Mas%20Fajar%2C%20Saya%20mau%20tanya%20perumahan%20...">
+                        <div class="col-12 btn-more-info p-2 mb-3">
+                            <h6 class="mb-0">Marketing Fajar</h6>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/+6281215564690?text=Halo%20Mbak%20Maharani%2C%20Saya%20mau%20tanya%20perumahan%20...">
+                        <div class="col-12 btn-more-info p-2 mb-3">
+                            <h6 class="mb-0">Marketing Maharani</h6>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/+6282333507931?text=Halo%20PT%20KANPA%2C%20Saya%20mau%20tanya%20perumahan%20...">
+                        <div class="col-12 btn-more-info p-2 mb-3">
+                            <h6 class="mb-0">Youtube PT. KANPA</h6>
+                        </div>
+                    </a>
+                </center>
+            </div>
         </div>
         <!-- /.content-wrapper -->
         <?php
@@ -168,7 +153,7 @@ session_start();
         while ($data = mysqli_fetch_array($data_perum)) {
         ?>
             <a class="wafixed" href="https://wa.me/<?php echo $data['kontak']; ?>" target="_blank">
-                <img src="assets/img/logowa.png" alt="logo WA" class="height-3rem img-circle elevation-3">
+                <img src="../assets/img/logowa.png" alt="logo WA" class="height-3rem img-circle elevation-3">
             </a>
         <?php } ?>
 
@@ -257,15 +242,9 @@ session_start();
     </div>
     <!-- </div> -->
     <!-- ./wrapper -->
-    <?php
-    $id = $_GET['perum'];
-    ?>
-    <input type="text" name="id_perum" id="id_perum" value="<?php echo $id; ?>" hidden>
-
-    </div>
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- <script src="assets/js/jquery.min.js"></script> -->
+    <!-- <script src="../assets/js/jquery.min.js"></script> -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -280,14 +259,14 @@ session_start();
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
-    <!-- <script src="assets/js/vendor.min.js"></script> -->
-    <script src="assets/js/demo.js"></script>
-    <script src="assets/js/adminlte.js"></script>
-    <script src="assets/js/index.js"></script>
+    <!-- <script src="../assets/js/vendor.min.js"></script> -->
+    <script src="../assets/js/demo.js"></script>
+    <script src="../assets/js/adminlte.js"></script>
+    <script src="../assets/js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var newURL = location.href.split("index.php")[0];
-            window.history.pushState('object', document.title, newURL);
+            // var newURL = location.href.split("#")[0];
+            // window.history.pushState('object', document.title, newURL);
         });
 
 

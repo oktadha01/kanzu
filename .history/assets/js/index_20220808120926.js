@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     if ($('#id_perum').val() == '') {
         // alert('tidak')
     } else {
@@ -7,10 +7,10 @@ $(document).ready(function () {
         setCookie("halaman", "pages/detail.php?id_perum=" + id_detail, 30);
         $('.halaman-menu').load(getCookie("halaman"));
     }
-    if (location.hash == '#perumahan-siap-huni-di-pusat-kota') {
+    if (location.hash == '#wujudkan-rumah-impian-anda-bersama-PT-KANPA') {
         thisdata = $(this).attr('href');
         alert(location.hash + thisdata);
-        document.getElementById("detail").innerHTML = thisdata
+        // document.getElementById("detail").innerHTML = thisdata
 
     }
 

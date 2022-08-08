@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     if ($('#id_perum').val() == '') {
         // alert('tidak')
     } else {

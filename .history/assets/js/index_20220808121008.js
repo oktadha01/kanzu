@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     if ($('#id_perum').val() == '') {
         // alert('tidak')
     } else {
@@ -10,7 +10,7 @@ $(document).ready(function () {
     if (location.hash == '#perumahan-siap-huni-di-pusat-kota') {
         thisdata = $(this).attr('href');
         alert(location.hash + thisdata);
-        document.getElementById("detail").innerHTML = thisdata
+        // document.getElementById("detail").innerHTML = thisdata
 
     }
 

@@ -105,9 +105,6 @@ session_start();
                         <li class="nav-item">
                             <a href="#bersama-pt-kanpa-kita-bisa-wujutkan-semuanya" class="nav-link menu-nav navmenu" id="berita">Berita</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#more-info" class="nav-link menu-nav navmenu" id="more_info">More Info</a>
-                        </li>
                         <?php
                         if (@$_SESSION['privilege'] == 'Admin') { ?>
                             <li class="nav-item dropdown">
@@ -286,8 +283,7 @@ session_start();
     <script src="assets/js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var newURL = location.href.split("index.php")[0];
-            window.history.pushState('object', document.title, newURL);
+
         });
 
 

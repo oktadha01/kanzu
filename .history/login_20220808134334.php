@@ -50,6 +50,20 @@ session_start();
                 }, 1000);
             }
         }
+        document.onreadystatechange = function() {
+        var state = document.readyState
+        if (state == 'interactive') {
+            document.getElementById('login').style.visibility = "hidden";
+        } else if (state == 'complete') {
+            setTimeout(function() {
+                document.getElementById('interactive');
+                $('#load').removeClass('animate__fadeInRight');
+                $('#load').addClass('animate__fadeOutLeft');
+                // document.getElementById('load').style.visibility = "hidden";
+                document.getElementById('login').style.visibility = "visible";
+            }, 2000);
+        }
+    }
     </script>
     <div id="login" class="container mt-auto pl-0">
         <!-- <center> -->

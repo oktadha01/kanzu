@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     if ($('#id_perum').val() == '') {
         // alert('tidak')
     } else {
@@ -9,8 +9,8 @@ $(document).ready(function () {
     }
     if (location.hash == '#perumahan-siap-huni-di-pusat-kota') {
         thisdata = $(this).attr('href');
-        alert(location.hash + thisdata);
         document.getElementById("detail").innerHTML = thisdata
+        alert(location.hash + thisdata);
 
     }
 
@@ -58,7 +58,7 @@ $(document).ready(function () {
         navbar_toggler.trigger("click");
         var menu = $(this).attr('id');
         // window.location.href = window.location.href;
-        setCookie("halaman", 'pages/' + menu + ".php", 30);
+        setCookie("halaman", '../pages/' + menu + ".php", 30);
         $('.halaman-menu').load(getCookie("halaman")).fadeIn("slow");
         $('#id_perum').val('')
         $('html, body').animate({

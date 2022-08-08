@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     if ($('#id_perum').val() == '') {
         // alert('tidak')
     } else {
@@ -7,12 +7,12 @@ $(document).ready(function () {
         setCookie("halaman", "pages/detail.php?id_perum=" + id_detail, 30);
         $('.halaman-menu').load(getCookie("halaman"));
     }
-    if (location.hash == '#perumahan-siap-huni-di-pusat-kota') {
-        thisdata = $(this).attr('href');
-        alert(location.hash + thisdata);
-        document.getElementById("detail").innerHTML = thisdata
+    // if (location.hash == '#perumahan-siap-huni-di-pusat-kota') {
+    //     thisdata = $(this).attr('href');
+    //     document.getElementById("detail").innerHTML = thisdata
+    //     alert(location.hash + thisdata);
 
-    }
+    // }
 
     if (location.hash == '#perumahan-murah-ungaran-semarang-cluster-milenial') {
         setCookie("halaman", "pages/dashboard.php", 30);

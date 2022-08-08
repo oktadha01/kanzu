@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    
+    var newURL = location.href.split("index.php")[0];
+    window.history.pushState('object', document.title, newURL);
     if ($('#id_perum').val() == '') {
         // alert('tidak')
     } else {

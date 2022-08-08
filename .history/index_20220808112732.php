@@ -261,8 +261,6 @@ session_start();
     $id = $_GET['perum'];
     ?>
     <input type="text" name="id_perum" id="id_perum" value="<?php echo $id; ?>" hidden>
-
-    </div>
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- <script src="assets/js/jquery.min.js"></script> -->
@@ -286,8 +284,7 @@ session_start();
     <script src="assets/js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var newURL = location.href.split("index.php")[0];
-            window.history.pushState('object', document.title, newURL);
+
         });
 
 

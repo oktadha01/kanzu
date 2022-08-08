@@ -108,35 +108,6 @@ session_start();
                         <li class="nav-item">
                             <a href="#more-info" class="nav-link menu-nav navmenu" id="more_info">More Info</a>
                         </li>
-                        <?php
-                        if (@$_SESSION['privilege'] == 'Admin') { ?>
-                            <li class="nav-item dropdown">
-                                <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link menu-nav dropdown-toggle">DATA</a>
-                                <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                    <li><a href="index.php?p=tambah_data" class="dropdown-item menu-nav menu admin"> Olah data </a></li>
-                                    <li><a href="index.php?p=form_foto_slide" class="dropdown-item menu-nav menu admin"> Olah foto slide </a></li>
-                                    <li><a href="index.php?p=pembeli" class="dropdown-item menu-nav menu admin"> Data Pembeli </a></li>
-                                </ul>
-                            </li>
-                        <?php } else { ?>
-                        <?php } ?>
-                    </ul>
-                    <!-- Right navbar links -->
-
-                    <?php
-                    if (@$_SESSION['privilege'] == 'Admin') { ?>
-                        <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto border-r">
-                            <!-- Messages Dropdown Menu -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link menu-nav" href="logout.php">
-                                    <i class="fa-solid fa-right-to-bracket"></i> LOGOUT
-                                </a>
-                            </li>
-                        </ul>
-                    <?php } else { ?>
-                    <?php } ?>
-                </div>
-            </div>
         </nav>
         <!-- /.navbar -->
         <!-- Content Wrapper. Contains page content -->
@@ -286,8 +257,7 @@ session_start();
     <script src="assets/js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var newURL = location.href.split("index.php")[0];
-            window.history.pushState('object', document.title, newURL);
+
         });
 
 
