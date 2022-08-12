@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
-
-@oktadha01
-oktadha01
-/
-kanzu
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-kanzu/index.php /
-@oktadha01
-oktadha01 more info
-Latest commit a14b4cf 4 days ago
-History
-1 contributor
-370 lines (339 sloc) 18.5 KB
-
 <?php
 include 'koneksi.php';
 ob_start();
@@ -296,8 +267,8 @@ session_start();
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- <script src="assets/js/jquery.min.js"></script> -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
@@ -315,8 +286,8 @@ session_start();
     <script src="assets/js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            // var newURL = location.href.split("index.php")[0];
-            // window.history.pushState('object', document.title, newURL);
+            var newURL = location.href.split("index.php")[0];
+            window.history.pushState('object', document.title, newURL);
         });
 
 

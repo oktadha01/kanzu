@@ -315,8 +315,8 @@ session_start();
     <script src="assets/js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            // var newURL = location.href.split("index.php")[0];
-            // window.history.pushState('object', document.title, newURL);
+            var newURL = location.href.split("index.php")[0];
+            window.history.pushState('object', document.title, newURL);
         });
 
 

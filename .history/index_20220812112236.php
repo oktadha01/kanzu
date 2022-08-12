@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
-
-@oktadha01
-oktadha01
-/
-kanzu
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-kanzu/index.php /
-@oktadha01
-oktadha01 more info
-Latest commit a14b4cf 4 days ago
-History
-1 contributor
-370 lines (339 sloc) 18.5 KB
-
 <?php
 include 'koneksi.php';
 ob_start();
