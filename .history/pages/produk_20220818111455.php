@@ -76,7 +76,7 @@
             <div class="col-12">
                 <div class="gallery js-flickity" data-flickity-options='{ "freeScroll": true }'>
                     <?php
-                    $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE perumahan.status_perum = 'Direkomendasikan' ORDER BY id_perum DESC");
+                    $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE perumahan.status_perum = 'Direkomendasikan' ");
                     while ($row = mysqli_fetch_array($ambil_data)) {
                         $id_perum = $row['id_perum'];
                         $nmperum = $row['nm_prum'];

@@ -50,8 +50,8 @@ $(document).ready(function () {
     }
 
     $('.navmenu').click(function () {
-        var newURL = location.href.split("?")[0];
-        window.history.pushState('object', document.title, newURL);
+        // var newURL = location.href.split("?")[0];
+        // window.history.pushState('object', document.title, newURL);
         var newURL = location.href.split("index.php")[0];
         window.history.pushState('object', document.title, newURL);
         var navbar_toggler = $(this).parents().find(".navbar-toggler");
@@ -185,7 +185,6 @@ $(document).ready(function () {
         // alert($('#nm-foto-lantai1').val())
         $('#action-berita').val('tambah-berita');
         const in_foto_berita = $('#in-foto-berita').prop('files')[0];
-        // alert(in_foto_berita);
         let formData = new FormData();
         formData.append('action-berita', $('#action-berita').val());
         formData.append('in-foto-berita', in_foto_berita);

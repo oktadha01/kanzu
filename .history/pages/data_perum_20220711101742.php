@@ -13,7 +13,7 @@
                 <?php
                 include '../koneksi.php';
                 $no = 1;
-                $ambil_data = mysqli_query($koneksi, "SELECT * FROM perumahan ORDER BY id_perum DESC");
+                $ambil_data = mysqli_query($koneksi, "SELECT * FROM perumahan");
                 while ($row = mysqli_fetch_array($ambil_data)) {
                 ?>
                     <tr>

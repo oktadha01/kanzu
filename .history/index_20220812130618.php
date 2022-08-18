@@ -157,7 +157,7 @@ session_start();
             } else { ?>
             <?php } ?>
             <div class="halaman-menu"></div>
-            <!-- <h1>kanpa</h1> -->
+            <h1>kanpa</h1>
             <!-- include($pages_dir . '/dashboard.php'); -->
 
             <!-- </div> -->
@@ -286,6 +286,12 @@ session_start();
     <script src="assets/js/adminlte.js"></script>
     <script src="assets/js/index.js"></script>
     <script type="text/javascript">
+        $(document).ready(function() {
+            
+        });
+
+
+
         window.onhashchange = function() {
             $("#navbar .menu-nav-active").removeClass("menu-nav-active");
             $("#navbar a[href=\"" + location.hash + "\"]").addClass("menu-nav-active");

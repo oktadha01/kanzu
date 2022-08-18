@@ -7,7 +7,7 @@
 			<div class="col-12 p-0">
 				<div id="slider" class="slider m-0">
 					<?php
-					$ambil_data = mysqli_query($koneksi, "SELECT file_slidedashboard, link FROM fot_slide WHERE file_slidedashboard ORDER BY id_fotslide DESC");
+					$ambil_data = mysqli_query($koneksi, "SELECT file_slidedashboard, link FROM fot_slide WHERE file_slidedashboard ORDER BY id_fotslide");
 					while ($slide = mysqli_fetch_array($ambil_data)) {
 					?>
 						<div>
@@ -32,7 +32,7 @@
 			<div class="container">
 				<div class="row">
 					<?php
-					$data_perum = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE status_perum = 'Direkomendasikan' ORDER BY id_perum DESC");
+					$data_perum = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE status_perum = 'Direkomendasikan' ORDER BY id_perum");
 					while ($row = mysqli_fetch_array($data_perum)) {
 						$id_perum = $row['id_perum'];
 						$nmperum = $row['nm_perum'];
