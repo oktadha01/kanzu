@@ -4,7 +4,7 @@
 
     $minimum_range = 100;
 
-    $maximum_range = 500;
+    $maximum_range = 250;
 
     ?>
     <section class="content-header pt-5rem">
@@ -13,35 +13,35 @@
                 <h5>Pilih Harga</h5>
                 <div class="row">
                     <div class="col-lg-2 col-md-4 col-4 ">
-                        <button type="button" name="" id="harga1" class="btn btn-xs bor-est col-12 bor-est-active">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 200 - 250 jt</h6>
+                        <button type="button" name="" id="harga1" class="btn btn-xs bor-est bor-est-active">
+                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 100 - 250 jt</h6>
                         </button>
                     </div>
                     <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga2" class="btn btn-xs bor-est col-12">
+                        <button type="button" name="" id="harga2" class="btn btn-xs bor-est">
                             <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 251 - 300 jt</h6>
                         </button>
                     </div>
                     <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga3" class="btn btn-xs bor-est col-12">
+                        <button type="button" name="" id="harga3" class="btn btn-xs bor-est">
                             <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 301 - 400 jt</h6>
                         </button>
                     </div>
                 </div>
                 <div class="row mt-1">
                     <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga4" class="btn btn-xs bor-est col-12">
+                        <button type="button" name="" id="harga4" class="btn btn-xs bor-est">
                             <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 401 - 500 jt</h6>
                         </button>
                     </div>
                     <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga5" class="btn btn-xs bor-est col-12">
+                        <button type="button" name="" id="harga5" class="btn btn-xs bor-est">
                             <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 501 - 600 jt</h6>
                         </button>
                     </div>
                     <div class="col-lg-2 col-md-4 col-4">
-                        <button type="button" name="" id="harga6" class="btn btn-xs bor-est col-12">
-                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 601 jt - 1 M</h6>
+                        <button type="button" name="" id="harga6" class="btn btn-xs btn-price-1m bor-est">
+                            <h6 class="font-weight-bold mb-0"><i class="fa-regular fa-money-bill-1"></i> 1 M</h6>
                         </button>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
         </div>
     </section>
 </div>
-<input type="text" id="minimum_range" value="200" hidden>
-<input type="text" id="maximum_range" value="250" hidden>
+<input type="text" id="minimum_range" value="<?php echo $minimum_range;?>" hidden>
+<input type="text" id="maximum_range" value="<?php echo $maximum_range;?>" hidden>
 
 <script>
     var header = document.getElementById("myDIV");
@@ -90,7 +90,7 @@
             }
         });
         $('#harga1').click(function(e) {
-            $("#minimum_range").val('200');
+            $("#minimum_range").val('100');
             $("#maximum_range").val('250');
             let formData = new FormData();
             formData.append('minimum_range', $('#minimum_range').val());
@@ -205,8 +205,8 @@
             });
         });
         $('#harga6').click(function(e) {
-            $("#minimum_range").val('601');
-            $("#maximum_range").val('1 m');
+            $("#minimum_range").val('1000');
+            $("#maximum_range").val('10000');
             let formData = new FormData();
             formData.append('minimum_range', $('#minimum_range').val());
             formData.append('maximum_range', $('#maximum_range').val());

@@ -17,6 +17,8 @@ $ka_tidur = $data['ka_tidur'];
 $ka_mandi = $data['ka_mandi'];
 $dapur = $data['dapur'];
 $harga = $data['harga'];
+$harga_m = $data['harga-m'];
+$satuan_harga = $data['satuan-harga'];
 $promo = $data['promo'];
 
 $edit_gambar = $_POST['edit-gambar'];
@@ -35,9 +37,9 @@ if ($edit_gambar == 'display') {
     $path_fot_editdisplay = "../assets/img/foto_display/" . $new_fot_editdisplay;
 
     $upload_fot_editdisplay = move_uploaded_file($tmp_fot_editdisplay, $path_fot_editdisplay);
-    
+
     if ($upload_fot_editdisplay) {
-        $query1 = "UPDATE tipe SET fot_display = '" . $new_fot_editdisplay . "', id_tipeperum = '" . $id_tipeperum . "', lantai = '" . $lantai . "', luas_t = '" . $luas_t . "', luas_p = '" . $luas_p . "', balkon = '" . $balkon . "', taman = '" . $taman . "', carportr = '" . $carportr . "', ru_tamu = '" . $ru_tamu . "', ru_keluarga = '" . $ru_keluarga . "', ka_tidur = '" . $ka_tidur . "', ka_mandi = '" . $ka_mandi . "', dapur = '" . $dapur . "', harga = '" . $harga . "', promo = '" . $promo . "', fot_lantai1 = '" . $fot_lantai1 . "', fot_lantai2 = '" . $fot_lantai2 . "', fot_grid = '" . $fot_grid . "' WHERE id_tipe ='" . $id_tipegambar . "'";
+        $query1 = "UPDATE tipe SET fot_display = '" . $new_fot_editdisplay . "', id_tipeperum = '" . $id_tipeperum . "', lantai = '" . $lantai . "', luas_t = '" . $luas_t . "', luas_p = '" . $luas_p . "', balkon = '" . $balkon . "', taman = '" . $taman . "', carportr = '" . $carportr . "', ru_tamu = '" . $ru_tamu . "', ru_keluarga = '" . $ru_keluarga . "', ka_tidur = '" . $ka_tidur . "', ka_mandi = '" . $ka_mandi . "', dapur = '" . $dapur . "', harga = '" . $harga . "', harga_m ='" . $harga_m . "', satuan_harga ='" . $satuan_harga . "', promo = '" . $promo . "', fot_lantai1 = '" . $fot_lantai1 . "', fot_lantai2 = '" . $fot_lantai2 . "', fot_grid = '" . $fot_grid . "' WHERE id_tipe ='" . $id_tipegambar . "'";
         $sql = mysqli_query($koneksi, $query1); // Eksekusi/ Jalankan query dari variabel $query
         if ($sql) {
             echo "Proses konfirmasi Berhasil";
@@ -65,7 +67,7 @@ if ($edit_gambar == 'display') {
         lantai = '" . $lantai . "', luas_t = '" . $luas_t . "', luas_p = '" . $luas_p . "', balkon = '" . $balkon . "', 
         taman = '" . $taman . "', carportr = '" . $carportr . "', ru_tamu = '" . $ru_tamu . "', ru_keluarga = '" . $ru_keluarga . "', 
         ka_tidur = '" . $ka_tidur . "', ka_mandi = '" . $ka_mandi . "', dapur = '" . $dapur . "', harga = '" . $harga . "', 
-        promo = '" . $promo . "', fot_display = '" . $fot_display . "', fot_lantai2 = '" . $fot_lantai2 . "', 
+        harga_m ='" . $harga_m . "', satuan_harga ='" . $satuan_harga . "', promo = '" . $promo . "', fot_display = '" . $fot_display . "', fot_lantai2 = '" . $fot_lantai2 . "', 
         fot_grid = '" . $fot_grid . "' WHERE id_tipe ='" . $id_tipegambar . "'";
         $sql = mysqli_query($koneksi, $query1); // Eksekusi/ Jalankan query dari variabel $query
         if ($sql) {
@@ -94,7 +96,7 @@ if ($edit_gambar == 'display') {
         lantai = '" . $lantai . "', luas_t = '" . $luas_t . "', luas_p = '" . $luas_p . "', balkon = '" . $balkon . "', 
         taman = '" . $taman . "', carportr = '" . $carportr . "', ru_tamu = '" . $ru_tamu . "', ru_keluarga = '" . $ru_keluarga . "', 
         ka_tidur = '" . $ka_tidur . "', ka_mandi = '" . $ka_mandi . "', dapur = '" . $dapur . "', harga = '" . $harga . "', 
-        promo = '" . $promo . "', fot_display = '" . $fot_display . "', fot_lantai1 = '" . $fot_lantai1 . "', 
+        harga_m ='" . $harga_m . "', satuan_harga ='" . $satuan_harga . "', promo = '" . $promo . "', fot_display = '" . $fot_display . "', fot_lantai1 = '" . $fot_lantai1 . "', 
         fot_grid = '" . $fot_grid . "' WHERE id_tipe ='" . $id_tipegambar . "'";
         $sql = mysqli_query($koneksi, $query1); // Eksekusi/ Jalankan query dari variabel $query
         if ($sql) {
@@ -123,7 +125,7 @@ if ($edit_gambar == 'display') {
         lantai = '" . $lantai . "', luas_t = '" . $luas_t . "', luas_p = '" . $luas_p . "', balkon = '" . $balkon . "', 
         taman = '" . $taman . "', carportr = '" . $carportr . "', ru_tamu = '" . $ru_tamu . "', ru_keluarga = '" . $ru_keluarga . "', 
         ka_tidur = '" . $ka_tidur . "', ka_mandi = '" . $ka_mandi . "', dapur = '" . $dapur . "', harga = '" . $harga . "', 
-        promo = '" . $promo . "', fot_display = '" . $fot_display . "', fot_lantai1 = '" . $fot_lantai1 . "', 
+        harga_m ='" . $harga_m . "', satuan_harga ='" . $satuan_harga . "', promo = '" . $promo . "', fot_display = '" . $fot_display . "', fot_lantai1 = '" . $fot_lantai1 . "', 
         fot_lantai2 = '" . $fot_lantai2 . "' WHERE id_tipe ='" . $id_tipegambar . "'";
         $sql = mysqli_query($koneksi, $query1); // Eksekusi/ Jalankan query dari variabel $query
         if ($sql) {

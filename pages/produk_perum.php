@@ -2,18 +2,17 @@
 
 include "../koneksi.php";
 // $connect = new PDO("mysqli:host=localhost;dbname=root", "", "kanpa");
-$ambil_data = mysqli_query($koneksi, "SELECT * FROM perumahan, tipe WHERE perumahan.id_perum = tipe.id_tipeperum AND harga BETWEEN '" . $_POST["minimum_range"] . "' AND '" . $_POST["maximum_range"] . "' ORDER BY harga ASC");
+$min = $_POST["minimum_range"];
+$max = $_POST["maximum_range"];
+$ambil_data = mysqli_query($koneksi, "SELECT * FROM perumahan, tipe WHERE perumahan.id_perum = tipe.id_tipeperum AND harga BETWEEN $min AND $max ORDER BY harga ASC");
 $list = mysqli_num_rows($ambil_data);
 if ($list == '0') {
     echo '<h4 align="center">Maaf harga tidak tersedia, Silahkan cari harga estimasi lainnya</h4>
             <div class="row">';
 } else {
 
-    $query = "SELECT * FROM perumahan, tipe WHERE perumahan.id_perum = tipe.id_tipeperum AND harga BETWEEN '" . $_POST["minimum_range"] . "' AND '" . $_POST["maximum_range"] . "' ORDER BY harga ASC";
-    $data = $koneksi->prepare($query);
-    $data->execute();
-    $res1 = $data->get_result();
-    while ($row = $res1->fetch_assoc()) {
+    $ambil_data = mysqli_query($koneksi, "SELECT * FROM perumahan, tipe WHERE perumahan.id_perum = tipe.id_tipeperum AND harga BETWEEN $min AND $max ORDER BY harga ASC");
+    while ($row = mysqli_fetch_array($ambil_data)) {
         $nmperum = $row['nm_perum'];
         $perum = preg_replace("![^a-z0-9]+!i", "-", $nmperum);
         echo '<div class="col-lg-4 col-md-12 col-12 mt-3">
@@ -23,12 +22,17 @@ if ($list == '0') {
                         </a>
                         <div class="p-2">
                             <h6 class="mb-0">mulai</h6>
-                            <div class="row pl-1">
-                                <h5 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp ' . $row['harga'] . ' <sub>jt</sub></h5>
-                                <h6 class="ml-1 font-weight-bold">*' . $row['promo'] . '</h6>
-                            </div>
+                            <div class="row pl-1">';
+        if ($row['satuan_harga'] == 'Jt') {
+            echo '<h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp ' . $row['harga'] . ' <sub>jt</sub></h6>
+                                <h6 class="ml-1 font-weight-bold">*' . $row['promo'] . '</h6>';
+        } else if ($row['satuan_harga'] == 'M') {
+            echo '<h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp ' . $row['harga_m'] . ' <sub>M</sub></h6>
+                                <h6 class="ml-1 font-weight-bold">*' . $row['promo'] . '</h6>';
+        }
+        echo '</div>
                             <h4 class="font-weight-bold">
-                            <a class="text-dark detail-perum" href="?perum=' . $row['id_perum'] . '#' . $perum . '" id="detail" data-id="' . $row['id_perum'] . '">' . $row['nm_perum'] . '</a>
+                          <a class="text-dark detail-perum" href="?perum=' . $row['id_perum'] . '#' . $perum . '" id="detail" data-id="' . $row['id_perum'] . '">' . $row['nm_perum'] . '</a>
                             <a class="text-dark detail-perum" href="?perum=' . $row['id_perum'] . '#' . $perum . '" id="detail" data-id="' . $row['id_perum'] . '"> - Tipe mulai
                                 
                             <h4 class="font-weight-bold bor-tip-dash fit-conten">

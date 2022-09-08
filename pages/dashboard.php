@@ -57,8 +57,17 @@
 										// $harga_terendah = mysqli_query($koneksi, "SELECT MIN(harga) AS harga_terendah, promo FROM tipe WHERE id_tipeperum = $id_perum limit 1 ");
 										while ($harga = mysqli_fetch_array($harga_terendah)) {
 										?>
-											<h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $harga['harga']; ?> <sub>jt</sub></h6>
-											<h6 class="ml-1 font-weight-bold">*<?php echo $harga['promo']; ?></h6>
+											<?php
+											if ($harga['satuan_harga'] == 'Jt') { ?>
+												<h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $harga['harga']; ?> <sub>jt</sub></h6>
+												<h6 class="ml-1 font-weight-bold">*<?php echo $harga['promo']; ?></h6>
+											<?php
+											} else if ($harga['satuan_harga'] == 'M') { ?>
+												<h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $harga['harga_m']; ?> <sub>M</sub></h6>
+												<h6 class="ml-1 font-weight-bold">*<?php echo $harga['promo']; ?></h6>
+											<?php
+											}
+											?>
 										<?php } ?>
 									</div>
 									<h5 class="font-weight-bold">

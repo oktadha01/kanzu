@@ -148,13 +148,37 @@
         </div>
     </div>
     <div class="col-lg-4 col-md-4 col-12">
-        <label for="harga">Harga</label>
-        <div class="form-group">
-            <input type="text" id="harga" class="form-control" name="harga" placeholder="Harga ..." autocomplete="off" required value="">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+                <label for="harga">Harga-JT</label>
+                <div class="form-group">
+                    <input type="text" id="harga" class="form-control" name="harga" placeholder="Harga ..." autocomplete="off" required value="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <label for="harga">Harga-M</label>
+                <div class="form-group">
+                    <input type="text" id="harga-m" class="form-control" name="harga_m" placeholder="Harga ..." autocomplete="off" required value="">
+                </div>
+            </div>
         </div>
-        <label for="">Promo</label>
-        <div class="input-group mb-3">
-            <input type="text" id="promo" name="promo" class="form-control" placeholder="Promo ...">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="form-group">
+                    <label>Pilih Satuan</label>
+                    <select id="satuan-harga" name="satuan_harga" class="custom-select">
+                        <option value="">Pilih Satuan</option>
+                        <option value="Jt">Jutaan</option>
+                        <option value="M">Miliaran</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <label for="">Promo</label>
+                <div class="input-group mb-3">
+                    <input type="text" id="promo" name="promo" class="form-control" placeholder="Promo ...">
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -379,6 +403,8 @@
             formData.append('ru-makan', $('#ru-makan').val());
             formData.append('dapur', $('#dapur').val());
             formData.append('harga', $('#harga').val());
+            formData.append('harga-m', $('#harga-m').val());
+            formData.append('satuan-harga', $('#satuan-harga').val());
             formData.append('status', $('#status').val());
             formData.append('promo', $('#promo').val());
             formData.append('url-vr', $('#url-vr').val());

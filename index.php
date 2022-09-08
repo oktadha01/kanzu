@@ -12,11 +12,12 @@ session_start();
     <meta charset="utf-8">
     <title>Rumah Murah di Semarang di Bawah Rp 200 Jt Terlengkap | Kanpa.co.id</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="Da0TUaYScK7AIiQsOyTgtDTpMIBgIFtz3Gb7zkltBB4" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-dns-prefetch-control" content="on">
     <!-- Meta untuk SEO -->
-    <meta name="description" content="Cari rumah dijual di Semarang di Bawah Rp 200 Jt. Rumah minimalis terjangkau termurah di semarang Bisa KPR ✔️ Harga paling murah ✔️ Lokasi strategis ✔️ Proses mudah &amp; cepat">
-    <meta name="keywords" content="PT Kanpa, rumah murah di semarang, KPR rumah murah terjangkau di semarang, perumahan murah, KPR murah terjangkau, KPR murah proses mudah di semarang, carikpr rumah di semarang murah terjangkau">
+    <meta name="description" content="Cari Rumah di Semarang di Bawah Rp 200 Jt. Rumah minimalis terjangkau, termurah di semarang Bisa KPR Harga paling murah Lokasi strategis Proses mudah & cepat">
+    <meta name="keywords" content="PT Kanpa, rumah murah di semarang, jual rumah semarang, jual rumah ungaran, jual rumah, jual rumah gunung pati, perumahan ungaran, rumah murah ungaran,perumahan murah semarang, perumahan bukit permai ungaran, perumahan murah subsidi, kpr, griya kautsar ungaran, bukit permai 2 ungaran ">
     <meta name="robots" content="INDEX,FOLLOW">
     <!-- akhir Meta untuk SEO -->
 
@@ -295,7 +296,7 @@ session_start();
             // this will get the full URL at the address bar
             var url = window.location.href;
 
-            // passes on every "a" tag 
+            // passes on every "a" tag
             $("#navbar a").each(function() {
                 // checks if its the same on the address bar
                 if (url == (this.href)) {

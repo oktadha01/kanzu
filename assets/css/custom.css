@@ -324,6 +324,14 @@ body {
     max-width: 90%;
 }
 
+.max-height-27rem {
+    max-height: 27rem;
+}
+
+.max-height-6rem {
+    max-height: 6rem;
+}
+
 .bg-kanpa {
     background: rgb(20 31 70);
 }
@@ -338,6 +346,11 @@ body {
 
 .border-radius-5px {
     border-radius: 5px;
+}
+
+.btn-price-1m {
+    width: 108px;
+    height: 24px;
 }
 
 .btn-soft-primary {
@@ -588,6 +601,7 @@ body {
     border-radius: 21px;
     color: #000;
 }
+
 .btn-more-info:hover {
     background: rgb(20 31 70);
     color: lightcoral;

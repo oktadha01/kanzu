@@ -15,6 +15,8 @@ $ka_mandi = $_POST['ka-mandi'];
 $ru_makan = $_POST['ru-makan'];
 $dapur = $_POST['dapur'];
 $harga = $_POST['harga'];
+$harga_m = $_POST['harga-m'];
+$satuan_harga = $_POST['satuan-harga'];
 $promo = $_POST['promo'];
 $url_vr = $_POST['url-vr'];
 
@@ -40,8 +42,8 @@ if ($nm_foto_lantai2 == "") {
     $upload_fot_grid = move_uploaded_file($tmp_fot_grid, $path_fot_grid);
     $upload_fot_lantai1 = move_uploaded_file($tmp_fot_lantai1, $path_fot_lantai1);
     if ($upload_fot_display && $upload_fot_grid && $upload_fot_lantai1) {
-        $daftar = mysqli_query($koneksi, "INSERT INTO tipe (id_tipeperum, lantai, luas_t, luas_p, balkon, taman, carportr, ru_tamu, ru_keluarga, ka_tidur, ka_mandi, ru_makan, dapur, fot_display, fot_grid, fot_lantai1, harga, promo, url_vr)
-         values ('$id_tipeperum', '$lantai', '$luas_t', '$luas_p', '$balkon', '$taman', '$carportr', '$ru_tamu', '$ru_keluarga', '$ka_tidur', '$ka_mandi', '$dapur', '$ru_makan', '$new_fot_display', '$new_fot_grid', '$new_fot_lantai1', '$harga', '$promo', '$url_vr')");
+        $daftar = mysqli_query($koneksi, "INSERT INTO tipe (id_tipeperum, lantai, luas_t, luas_p, balkon, taman, carportr, ru_tamu, ru_keluarga, ka_tidur, ka_mandi, ru_makan, dapur, fot_display, fot_grid, fot_lantai1, harga, harga_m, satuan_harga, promo, url_vr)
+         values ('$id_tipeperum', '$lantai', '$luas_t', '$luas_p', '$balkon', '$taman', '$carportr', '$ru_tamu', '$ru_keluarga', '$ka_tidur', '$ka_mandi', '$dapur', '$ru_makan', '$new_fot_display', '$new_fot_grid', '$new_fot_lantai1', '$harga', '$harga_m', '$satuan_harga', '$promo', '$url_vr')");
         if ($daftar) { // Cek jika proses simpan ke database sukses atau tidak
             // Jika Sukses, Lakukan :
             echo 'Proses Berhasil';
@@ -82,8 +84,8 @@ if ($nm_foto_lantai2 == "") {
     $upload_fot_lantai1 = move_uploaded_file($tmp_fot_lantai1, $path_fot_lantai1);
     $upload_fot_lantai2 = move_uploaded_file($tmp_fot_lantai2, $path_fot_lantai2);
     if ($upload_fot_display && $upload_fot_grid && $upload_fot_lantai1 && $upload_fot_lantai2) {
-        $daftar = mysqli_query($koneksi, "INSERT INTO tipe (id_tipeperum, lantai, luas_t, luas_p, balkon, taman, carportr, ru_tamu, ru_keluarga, ka_tidur, ka_mandi, ru_makan, dapur, fot_display, fot_grid, fot_lantai1, fot_lantai2, harga, promo, url_vr) 
-        values ('$id_tipeperum', '$lantai', '$luas_t', '$luas_p', '$balkon', '$taman', '$carportr', '$ru_tamu', '$ru_keluarga', '$ka_tidur', '$ka_mandi', '$ru_makan', '$dapur', '$new_fot_display', '$new_fot_grid', '$new_fot_lantai1', '$new_fot_lantai2', '$harga', '$promo', '$url_vr')");
+        $daftar = mysqli_query($koneksi, "INSERT INTO tipe (id_tipeperum, lantai, luas_t, luas_p, balkon, taman, carportr, ru_tamu, ru_keluarga, ka_tidur, ka_mandi, ru_makan, dapur, fot_display, fot_grid, fot_lantai1, fot_lantai2, harga, harga_m, satuan_harga, promo, url_vr) 
+        values ('$id_tipeperum', '$lantai', '$luas_t', '$luas_p', '$balkon', '$taman', '$carportr', '$ru_tamu', '$ru_keluarga', '$ka_tidur', '$ka_mandi', '$ru_makan', '$dapur', '$new_fot_display', '$new_fot_grid', '$new_fot_lantai1', '$new_fot_lantai2', '$harga', '$harga_m', '$satuan_harga', '$promo', '$url_vr')");
         if ($daftar) { // Cek jika proses simpan ke database sukses atau tidak
             // Jika Sukses, Lakukan :
             echo 'Proses Berhasil';

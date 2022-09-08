@@ -21,8 +21,18 @@
                             <div class="p-2">
                                 <h6 class="mb-0">mulai</h6>
                                 <div class="row pl-1">
-                                    <h5 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $row['harga']; ?> <sub>jt</sub></h5>
-                                    <h6 class="ml-1 font-weight-bold">*<?php echo $row['promo']; ?></h6>
+                                    <?php
+                                    if ($row['satuan_harga'] == 'Jt') { ?>
+                                        <h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $row['harga']; ?> <sub>jt</sub></h6>
+                                        <h6 class="ml-1 font-weight-bold">*<?php echo $row['promo']; ?></h6>
+                                    <?php
+                                    } else if ($row['satuan_harga'] == 'M') { ?>
+                                        <h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $row['harga_m']; ?> <sub>M</sub></h6>
+                                        <h6 class="ml-1 font-weight-bold">*<?php echo $row['promo']; ?></h6>
+                                    <?php
+
+                                    }
+                                    ?>
                                 </div>
                                 <h4 class="font-weight-bold">
                                     <a class="text-dark detail-perum" href="?perum=<?php echo $row['id_perum']; ?>#<?php echo $perum; ?>" id="detail" data-id="<?php echo $row['id_perum']; ?>"><?php echo $row['nm_perum']; ?></a>
@@ -79,7 +89,7 @@
                     $ambil_data = mysqli_query($koneksi, "SELECT *FROM perumahan WHERE perumahan.status_perum = 'Direkomendasikan' ORDER BY id_perum DESC");
                     while ($row = mysqli_fetch_array($ambil_data)) {
                         $id_perum = $row['id_perum'];
-                        $nmperum = $row['nm_prum'];
+                        $nmperum = $row['nm_perum'];
                         $perum = preg_replace("![^a-z0-9]+!i", "-", $nmperum);
                     ?>
                         <div class="gallery-cell">
@@ -102,8 +112,18 @@
                                                 // $harga_terendah = mysqli_query($koneksi, "SELECT MIN(harga) AS harga_terendah, promo FROM tipe WHERE id_tipeperum = $id_perum limit 1 ");
                                                 while ($harga = mysqli_fetch_array($harga_terendah)) {
                                                 ?>
-                                                    <h6 class="bg-price font-weight-bold p-1">Rp <?php echo $harga['harga']; ?> <sub>jt</sub></h6>
-                                                    <h6 class="ml-1 font-weight-bold">*<?php echo $harga['promo']; ?></h6>
+                                                    <?php
+                                                    if ($harga['satuan_harga'] == 'Jt') { ?>
+                                                        <h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $harga['harga']; ?> <sub>jt</sub></h6>
+                                                        <h6 class="ml-1 font-weight-bold">*<?php echo $harga['promo']; ?></h6>
+                                                    <?php
+                                                    } else if ($harga['satuan_harga'] == 'M') { ?>
+                                                        <h6 class="bg-kanpa text-light border-radius-5px fit-conten font-weight-bold p-1">Rp <?php echo $harga['harga_m']; ?> <sub>M</sub></h6>
+                                                        <h6 class="ml-1 font-weight-bold">*<?php echo $harga['promo']; ?></h6>
+                                                    <?php
+
+                                                    }
+                                                    ?>
                                                 <?php } ?>
                                             </div>
                                             <h5 class="font-weight-bold">
